@@ -2,47 +2,48 @@
 
 using namespace std;
 
-
+	
 int main() {
+    // les distancies s'han de imprimir amb 4 decimals de precisió. ??set::precision(4);
     string s; 
     bool fin = false;
     while (cin >> s and not fin) {
         if (s == "crea_especie") {
         }
-        if (s == "obtener_gen") {
+        else if (s == "obtener_gen") {
 
         }
-        if (s == "distancia") {
+        else if (s == "distancia") {
 
         }
-        if (s == "elimina_especie") {
+        else if (s == "elimina_especie") {
 
         }
-        if (s == "existe_especie") {
+        else if (s == "existe_especie") {
 
         }
-        if (s == "lee_cjt_especies") {
+        else if (s == "lee_cjt_especies") {
 
         }
-        if (s == "imprime_cjt_especies") {
+        else if (s == "imprime_cjt_especies") {
 
         }
-        if (s == "tabla_distancias") {
+        else if (s == "tabla_distancias") {
 
         }
-        if (s == "inicializa_clusters") {
+        else if (s == "inicializa_clusters") {
 
         }
-        if (s == "ejecuta_paso_wpgma") {
+        else if (s == "ejecuta_paso_wpgma") {
 
         }
-        if (s == "imrime_cluster") {
+        else if (s == "imrime_cluster") {
 
         }
-        if (s == "imprime_arbol_filogenetico") {
+        else if (s == "imprime_arbol_filogenetico") {
 
         }
-        if (s == "fin") {
+        else if (s == "fin") {
             fin = true;
         }
     }
