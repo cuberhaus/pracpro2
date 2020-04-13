@@ -8,7 +8,10 @@ int main() {
     bool fin = false;
     cjt_especies c;
     cluster clu;
+    int k;
+    cin >> k;
     while (cin >> s and not fin) {
+
         if (s == "crea_especie") {
             bool existe;
             especie e;
@@ -36,7 +39,7 @@ int main() {
             existe = c.existe_especie(id1);
             existe2 = c.existe_especie(id2);
             if (existe and existe2) {
-                cout << c.obtener_distancia(c.obtener_especie(id1).obtener_gen(), c.obtener_especie(id2).obtener_gen());
+                cout << c.obtener_distancia(c.obtener_especie(id1).obtener_gen(), c.obtener_especie(id2).obtener_gen(), k);
             }
         }
         else if (s == "elimina_especie") {
@@ -60,14 +63,23 @@ int main() {
             c.leer_conjunto();
         }
         else if (s == "imprime_cjt_especies") {
+            c.imprimir_conjunto();
         }
         else if (s == "tabla_distancias") {
+            c.calcular_tabladistancias(k); 
         }
         else if (s == "inicializa_clusters") {
+            c.inicializar_clusters();
+            c.inicializar_distmap();
+            c.imprimir_clusters();
+            c.inicializar_distar();
+            c.imprimir_distmap();
         }
         else if (s == "ejecuta_paso_wpgma") {
+
         }
-        else if (s == "imrime_cluster") {
+        else if (s == "imprime_cluster") {
+             
         }
         else if (s == "imprime_arbol_filogenetico") {
         }

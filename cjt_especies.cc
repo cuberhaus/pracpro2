@@ -12,3 +12,18 @@ void cjt_especies::leer_conjunto() {
     }
 }
 
+void cjt_especies::calcular_tabladistancias(int & k const) const {
+    it1
+    it2
+    for (int it1 = 0; i < estset.size(); ++i) {
+        for () {
+            if (it1==it2) {
+                cout << 0 
+            }
+            else {
+                cout << obtener_distancia((*it1).gen,it2->.gen,k);
+            }
+        }
+        cout << endl;
+    }
+}
