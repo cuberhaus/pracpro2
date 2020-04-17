@@ -4,12 +4,13 @@
 
 class cjt_especies {
     private:
+        static int k;
         set <especies> espset; // not too sure about this
         map <string, map<string, double >> distmap;
         map <string, map<double, string >> distar;
         map <string, clusters> clustmap;
     public: 
-        cjt_especies();
+        cjt_especies(const int k);
         fusiona_clusters() {
             cluster c1,c2;
             c1 = clustmap[id1];
@@ -40,7 +41,7 @@ class cjt_especies {
          * \pre dos strings en la entrada  
          * \post devuelve la distància entre les dos genes
          */
-        double obtener_distancia(const string& gen1, const string& gen2,const int& k) const; 
+        double obtener_distancia(const string& gen1, const string& gen2) const; 
         /** @brief 
          */
         void eliminar_especie(const string& id); 
@@ -49,10 +50,12 @@ class cjt_especies {
 
         void imprimir_conjunto() const;
 
-        void calcular_tabladistancias(const int& k); //fors con genes (no hace falta guardarlo, imprimirlo)
-        void inicializar_clusters(k);  // poner las especies dentro del cluster dentro del bintree 
-        void inicializar_distmap(k);
+        void calcular_tabladistancias(); //fors con genes (no hace falta guardarlo, imprimirlo) "cout"
+        void inicializar_clusters();  // poner las especies dentro del cluster dentro del bintree 
+        void inicializar_distmap(); // se guarda en la clase "las coje desde el set"
+        void actualizar_dist_map(); // junta las especies con menor distancia (los strings) i calcula las distancias a los demas (clusters)
+        void inicializar_distar();  // se guarda en la clase
         void imprimir_distmap() const;
 
-        void imprimir_clusters();
+        void imprimir_cluster();
 }
