@@ -1,9 +1,13 @@
 #ifndef especie_hh
 #define especie_hh
 
+/** @class especie
+ * @brief Contiene un id y un gen
+ * El coste de las operaciones es constante
+ */
 class especie {
     private:
-        string id;// idk what to put here
+        string id;
         string gen;
 
     public:
@@ -12,18 +16,26 @@ class especie {
      * post
      */
     especie();
-    /** @brief Lee una especie
-     * \pre true
-     * \post id i gen 
+    /** @brief Crea una especie dado un id y un gen 
+     * \pre True
+     * \post Crea una especie con id y un gen 
      */
-    especie(string & id const, string & gen const) {
-        this->id = id;
-        this->gen = gen;
-    }
+    especie(string & id const, string & gen const);
+    /** @brief Añade y/o cambia el id y el gen del P.I. por dos strings del input
+     * \pre True
+     * \post El P.I. tiene id y gen = iguales a los strings de la entrada
+     */
     void leer_especie();
-
-    string obtener_id(); // return id
-    string obtener_gen(); // return g
+    /** @brief Consulta el id del P.I.
+     * \pre True
+     * \post El resultado es el id del P.I.
+     */
+    string consultar_id() const;
+    /** @brief 
+     * \pre True
+     * \post El resultado es el gen del P.I.
+     */
+    string consultar_gen() const;
     
 }
 #endif

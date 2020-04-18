@@ -1,4 +1,7 @@
-
+#include <iostream>
+using namespace std;
+#include "especie.hh"
+#include "cluster.hh"
 
 void cjt_especies::leer_conjunto() {
     int n; 

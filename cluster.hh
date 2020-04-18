@@ -12,12 +12,24 @@ class cluster {
 
     public: 
         /** @brief Constructora 
+         * \pre True
+         * \post El resultado es un cluster con distancia 0
          */
         cluster();
-        /** @brief Imprime el cluster 
-         * \pre tclusterrue
-         * \post Imprime el cluster en el terminal 
+        /** @brief Constructora
+         * \pre True
+         * \post El resultado es un cluster con distancia dist y ID id
          */
-        imprime_cluster();
+        cluster(const double dist, const string id);
+        /** @brief Devuelve un bintree de clusters 
+         * \pre True
+         * \post El resultado es el bintree de clusters del P.I.
+         */
+        obtener_bin_tree();
+        /** @brief Devuelve una distancia
+         * \pre dist >= 0
+         * \post El resultado es la distancia del P.I.
+         */
+        obtener_distancia();
 }
 #endif
