@@ -5,10 +5,12 @@
 class cjt_especies {
     private:
         static int k;
-        set <especies> espset; // not too sure about this
-        map <string, map<string, double >> distmap;
+        map <especie, map<string, double >> distmap;
         map <string, map<double, string >> distar;
-        map <string, clusters> clustmap;
+
+
+-
+    map <string, especies>
     public: 
         cjt_especies(const int k);
         fusiona_clusters() {

@@ -7,8 +7,11 @@
  */
 class especie {
     private:
+        static int k;
         string id;
         string gen;
+        map <string, int> kmeros;
+        //map <string, double> d_esp();
 
     public:
     /** @brief Constructora
@@ -36,6 +39,6 @@ class especie {
      * \post El resultado es el gen del P.I.
      */
     string consultar_gen() const;
-    
+    void leer_k();
 }
 #endif

@@ -6,10 +6,9 @@
 class cluster {
 
     private:
-        BinTree <cluster> bindist;
         double dist;
         string id;
-
+        map <string, double> distmap;
     public: 
         /** @brief Constructora 
          * \pre True
@@ -17,6 +16,7 @@ class cluster {
          */
         cluster();
         /** @brief Constructora
+
          * \pre True
          * \post El resultado es un cluster con distancia dist y ID id
          */
