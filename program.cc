@@ -14,6 +14,7 @@ int main() {
     bool fin = false;
     cluster clu;
     cjt_especies c();
+    cjt_clusters clusters();
     especie e();
     e.leer_k();
 
@@ -72,18 +73,16 @@ int main() {
             c.imprimir_conjunto();
         }
         else if (s == "tabla_distancias") {
-            c.calcular_tabladistancias(); 
+            c.imprimir_tabla_distancias();
         }
         else if (s == "inicializa_clusters") {
-            c.inicializar_clusters();
-            c.inicializar_distmap();
-            c.imprimir_cluster();
-            c.imprimir_distmap();
+            clusters.inicialitza_clusters(c.consultar_tabla_distancias());
+            clusters.imprimir_clusters();
+            clusters.imprimir_tabla_distancias();
         }
         else if (s == "ejecuta_paso_wpgma") {
-            c.actualizar_dist_map();
-            c.fusiona_clusters();
-            c.imprimir_distmap();
+            clusters.fusiona_clusters();
+            clusters.imprimir_tabla_distancias()
         }
         else if (s == "imprime_cluster") {
             c.imprimir_cluster();

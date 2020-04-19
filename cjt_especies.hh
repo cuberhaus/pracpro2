@@ -4,8 +4,8 @@
 class cjt_especies {
     private:
         set <string, especie> espset;
-        map <especie, map<string, double >> distmap;
-        map <string, map<double, string >> distar;
+        map <string, map<string, double >> distmap;
+        //map <string, map<double, string >> distar;
     public: 
         cjt_especies(const int);
         /** @brief Devuelve una especie dado un string
@@ -20,7 +20,7 @@ class cjt_especies {
         bool existe_especie (const string &id) const;
         /** @brief añade una especie al set de especies
          * \pre especie en la entrada
-         * \post La especie se ha añadido al set espset
+         * \post La especie se ha añadido al set espset i se ha añadido a la tabla de distancias
          */
         void insertar_especie (const especie &e);
         /** @brief Obtiene la distància dados dos id 
@@ -28,7 +28,9 @@ class cjt_especies {
          * \post El resultado es la distància entre las dos especies
          */
         double consultar_distancia(const string& id1, const string& id2) const; 
-        /** @brief 
+        /** @brief Se elimina una especie del conjunto
+         * \pre Tamaño del set es estrictamente > 0
+         * \post La especie se ha eliminado y se ha actualizado la tabla de distancias
          */
         void eliminar_especie(const string& id); 
         /** @brief Borra las especies del conjunto anterior y se añaden de nuevas desde  el input
@@ -41,10 +43,15 @@ class cjt_especies {
          * \post Se escriben en el output el conjunto de especies
          */
         void imprimir_conjunto() const;
-
-        void calcular_tabladistancias(); 
-        void inicializar_clusters();  // poner las especies dentro del cluster dentro del bintree 
-        void inicializar_distmap(); // se guarda en la clase "las coje desde el set"
+        /** @brief Imprime la tabla de distancias
+         * \pre True
+         * \post Se ha imprimido en el output la tabla de distancias
+         */
+        void imprimir_tabla_distancias();
+        map<string, map<string, double>> consultar_tabla_distancias();
+        //void calcular_tabladistancias(); 
+        //void inicializar_clusters();  // poner las especies dentro del cluster dentro del bintree 
+        //void inicializar_distmap(); // se guarda en la clase "las coje desde el set"
         void actualizar_dist_map(); // junta las especies con menor distancia (los strings) i calcula las distancias a los demas (clusters)
         void inicializar_distar();  // se guarda en la clase
         void imprimir_distmap() const;
