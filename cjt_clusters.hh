@@ -9,6 +9,7 @@ class cjt_clusters {
         map <string, BinTree<clusters>> clustmap;
 
     public:
+        cjt_clusters();
         /** @brief fusiona los dos clusters a menor distancia en uno nuevo
          * \pre Hay almenos dos clusters guardados
          * \post Se han juntado dos clusters en uno

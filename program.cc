@@ -85,7 +85,7 @@ int main() {
             clusters.imprimir_tabla_distancias()
         }
         else if (s == "imprime_cluster") {
-            c.imprimir_cluster();
+
         }
         else if (s == "imprime_arbol_filogenetico") {
             c.inicializar_distar();
