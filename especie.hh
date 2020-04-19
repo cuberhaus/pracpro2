@@ -15,8 +15,8 @@ class especie {
 
     public:
     /** @brief Constructora
-     * pre
-     * post
+     * \pre True
+     * \post El resultado es una especie nueva
      */
     especie();
     /** @brief Crea una especie dado un id y un gen 
@@ -39,6 +39,15 @@ class especie {
      * \post El resultado es el gen del P.I.
      */
     string consultar_gen() const;
+    /** @brief Lee el parámetro k de la entrada
+     *  \pre True
+     *  \post El parámetro k ha sido actualizado
+     */
     void leer_k();
+    /** @brief Genera los kmeros correspondientes al gen de la especie
+     * \pre Gen esta inicializado
+     * \post El mapa de kmeros se ha actualizado
+     */
+    void generar_kmeros();
 }
 #endif

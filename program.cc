@@ -1,22 +1,29 @@
 #include <iostream>
-
+#include "cjt_clusters.hh"
+#include "cjt_especies.hh"
+#include "cluster.hh"
+#include "especie.hh"
 using namespace std;
 
 int main() {
-    // les distancies s'han de imprimir amb 4 decimals de precisió. ??set::precision(4);
+
+    cout.setf(ios::fixed);
+    cout.precision(4);
+        
     string s; 
     bool fin = false;
     cluster clu;
-    int k;
-    cin >> k;
-    cjt_especies c(k);
+    cjt_especies c();
+    especie e();
+    e.leer_k();
+
     while (cin >> s and not fin) {
 
         if (s == "crea_especie") {
             bool existe;
             especie e;
             e.leer_especie();
-            existe = c.existe_especie(e.obtener_id());
+            existe = c.existe_especie(e.consultar_id());
             if (not existe) {
                 c.insertar_especie(e);
             }
@@ -29,7 +36,7 @@ int main() {
             existe = c.existe_especie(s);
             if (existe) {
                 e = c.obtener_especie(s);
-                cout << e.obtener_gen();
+                cout << e.consultar_gen();
             }
         }
         else if (s == "distancia") {
@@ -39,7 +46,7 @@ int main() {
             existe = c.existe_especie(id1);
             existe2 = c.existe_especie(id2);
             if (existe and existe2) {
-                cout << c.obtener_distancia(c.obtener_especie(id1).obtener_gen(), c.obtener_especie(id2).obtener_gen());
+               cout << c.consultar_distancia(id1,id2);
             }
         }
         else if (s == "elimina_especie") {
@@ -50,7 +57,6 @@ int main() {
             if (existe) {
                 c.eliminar_especie(id);
             }
-            
         }
         else if (s == "existe_especie") {
             string id;

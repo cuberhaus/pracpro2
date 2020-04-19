@@ -16,7 +16,6 @@ class cluster {
          */
         cluster();
         /** @brief Constructora
-
          * \pre True
          * \post El resultado es un cluster con distancia dist y ID id
          */

@@ -6,4 +6,5 @@ class cjt_clusters {
     private:
         map <string, BinTree<clusters>> clustmap;
     public:
+        void fusiona_clusters();
 }
