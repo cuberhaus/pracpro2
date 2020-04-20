@@ -40,4 +40,9 @@ class cjt_clusters {
          * \post El resultado es el numero de elementos en el conjunto
          */
         int consultar_size_conjunto() const;
+        /** @brief Imprime la estructura arborescente
+         * \pre True
+         * \post Se ha imprimido la estructura arborescente en el output 
+         */
+        void imprimir_estructura() const;
 }

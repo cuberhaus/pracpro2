@@ -5,7 +5,6 @@ class cjt_especies {
     private:
         set <string, especie> espset;
         map <string, map<string, double >> distmap;
-        //map <string, map<double, string >> distar;
     public: 
         cjt_especies(const int);
         /** @brief Devuelve una especie dado un string
@@ -48,13 +47,10 @@ class cjt_especies {
          * \post Se ha imprimido en el output la tabla de distancias
          */
         void imprimir_tabla_distancias();
+        /** @brief Devuelve la tabla de distancias
+         * \pre True
+         * \post El resultado es la tabla de distancias
+         */
         map<string, map<string, double>> consultar_tabla_distancias();
-        //void calcular_tabladistancias(); 
-        //void inicializar_clusters();  // poner las especies dentro del cluster dentro del bintree 
-        //void inicializar_distmap(); // se guarda en la clase "las coje desde el set"
-        void actualizar_dist_map(); // junta las especies con menor distancia (los strings) i calcula las distancias a los demas (clusters)
-        void inicializar_distar();  // se guarda en la clase
-        void imprimir_distmap() const;
 
-        void imprimir_cluster();
 }

@@ -20,11 +20,11 @@ class cluster {
          * \post El resultado es un cluster con distancia dist y ID id
          */
         cluster(const double dist, const string id);
-        /** @brief Devuelve un bintree de clusters 
+        /** @brief Devuelve un map con las distancias a los demás clusters 
          * \pre True
-         * \post El resultado es el bintree de clusters del P.I.
+         * \post El resultado es el mapa con las distancias a los clusters del P.I.
          */
-        obtener_bin_tree();
+        obtener_dist_map();
         /** @brief Devuelve una distancia
          * \pre dist >= 0
          * \post El resultado es la distancia del P.I.
