@@ -21,9 +21,9 @@ int main() {
     string s; 
     bool fin = false;
     cluster clu;
-    cjt_especies c();
-    cjt_clusters clusters();
-    especie e();
+    cjt_especies c;
+    cjt_clusters clusters;
+    especie e;
     e.leer_k();
 
     while (cin >> s and not fin) {
@@ -84,19 +84,21 @@ int main() {
             c.imprimir_tabla_distancias();
         }
         else if (s == "inicializa_clusters") {
-            clusters.inicialitza_clusters(c.consultar_tabla_distancias());
+            clusters.inicializa_clusters(c.consultar_tabla_distancias());
             clusters.imprimir_clusters();
             clusters.imprimir_tabla_distancias();
         }
         else if (s == "ejecuta_paso_wpgma") {
             clusters.fusiona_clusters();
-            clusters.imprimir_tabla_distancias()
+            clusters.imprimir_tabla_distancias();
         }
         else if (s == "imprime_cluster") {
-            clusters.imprimir_cluster() 
+            string id;
+            cin >> id;
+            clusters.imprimir_cluster(id);
         }
         else if (s == "imprime_arbol_filogenetico") {
-            clusters.inicialitza_clusters();
+            clusters.inicializa_clusters(c.consultar_tabla_distancias());
             clusters.fusiona_todos_los_clusters();
             clusters.imprimir_estructura();
         }

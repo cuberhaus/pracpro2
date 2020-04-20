@@ -18,7 +18,7 @@ class cjt_especies {
         set <string, especie> espset;
         map <string, map<string, double >> distmap;
     public: 
-        cjt_especies(const int);
+        cjt_especies();
         /** @brief Devuelve una especie dado un string
          * \pre id se encuentra dentro del set espset
          * \post especie con el id de entrada
