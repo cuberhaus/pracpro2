@@ -1,5 +1,5 @@
-#ifndef cjt_clusters
-#define cjt_clusters
+#ifndef cjt_clusters_hh
+#define cjt_clusters_hh
 #ifndef NO_DIAGRAM
 #include <iostream>
 #include <map>
