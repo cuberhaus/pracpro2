@@ -68,26 +68,30 @@ $(function() {
 <div class="contents">
 <a href="cluster_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef cluster_hh</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define cluster_hh</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classcluster.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcluster.html">cluster</a> {</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordtype">double</span> dist;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">string</span> id;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        map &lt;string, double&gt; distmap;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>: </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classcluster.html#aa4e5f899744fa668e2dadc188013e562">   17</a></span>&#160;        <a class="code" href="classcluster.html#aa4e5f899744fa668e2dadc188013e562">cluster</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classcluster.html#a31e4e21aa9d918aba1d94154b193b27c">   22</a></span>&#160;        <a class="code" href="classcluster.html#a31e4e21aa9d918aba1d94154b193b27c">cluster</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> dist, <span class="keyword">const</span> <span class="keywordtype">string</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classcluster.html#a2844d5778fc17d4cb7e677f4346421e8">   27</a></span>&#160;        <a class="code" href="classcluster.html#a2844d5778fc17d4cb7e677f4346421e8">obtener_dist_map</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classcluster.html#a596a5421cf94a238b22d61ed7882812b">   32</a></span>&#160;        <a class="code" href="classcluster.html#a596a5421cf94a238b22d61ed7882812b">obtener_distancia</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classcluster.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcluster.html">cluster</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">double</span> dist;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">string</span> id;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        map &lt;string, double&gt; distmap;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>: </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classcluster.html#aa4e5f899744fa668e2dadc188013e562">   21</a></span>&#160;        <a class="code" href="classcluster.html#aa4e5f899744fa668e2dadc188013e562">cluster</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classcluster.html#a31e4e21aa9d918aba1d94154b193b27c">   26</a></span>&#160;        <a class="code" href="classcluster.html#a31e4e21aa9d918aba1d94154b193b27c">cluster</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> dist, <span class="keyword">const</span> <span class="keywordtype">string</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classcluster.html#a2844d5778fc17d4cb7e677f4346421e8">   31</a></span>&#160;        <a class="code" href="classcluster.html#a2844d5778fc17d4cb7e677f4346421e8">obtener_dist_map</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classcluster.html#a596a5421cf94a238b22d61ed7882812b">   36</a></span>&#160;        <a class="code" href="classcluster.html#a596a5421cf94a238b22d61ed7882812b">obtener_distancia</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasscluster_html_aa4e5f899744fa668e2dadc188013e562"><div class="ttname"><a href="classcluster.html#aa4e5f899744fa668e2dadc188013e562">cluster::cluster</a></div><div class="ttdeci">cluster()</div><div class="ttdoc">Constructora.</div></div>
 <div class="ttc" id="aclasscluster_html_a31e4e21aa9d918aba1d94154b193b27c"><div class="ttname"><a href="classcluster.html#a31e4e21aa9d918aba1d94154b193b27c">cluster::cluster</a></div><div class="ttdeci">cluster(const double dist, const string id)</div><div class="ttdoc">Constructora.</div></div>
 <div class="ttc" id="aclasscluster_html_a596a5421cf94a238b22d61ed7882812b"><div class="ttname"><a href="classcluster.html#a596a5421cf94a238b22d61ed7882812b">cluster::obtener_distancia</a></div><div class="ttdeci">obtener_distancia()</div><div class="ttdoc">Devuelve una distancia.</div></div>
 <div class="ttc" id="aclasscluster_html_a2844d5778fc17d4cb7e677f4346421e8"><div class="ttname"><a href="classcluster.html#a2844d5778fc17d4cb7e677f4346421e8">cluster::obtener_dist_map</a></div><div class="ttdeci">obtener_dist_map()</div><div class="ttdoc">Devuelve un map con las distancias a los demás clusters.</div></div>
-<div class="ttc" id="aclasscluster_html"><div class="ttname"><a href="classcluster.html">cluster</a></div><div class="ttdoc">Contiene un cluster.</div><div class="ttdef"><b>Definition:</b> <a href="cluster_8hh_source.html#l00006">cluster.hh:6</a></div></div>
+<div class="ttc" id="aclasscluster_html"><div class="ttname"><a href="classcluster.html">cluster</a></div><div class="ttdoc">Contiene un cluster.</div><div class="ttdef"><b>Definition:</b> <a href="cluster_8hh_source.html#l00010">cluster.hh:10</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generado por &#160;<a href="http://www.doxygen.org/index.html">
