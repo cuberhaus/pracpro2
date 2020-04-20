@@ -7,6 +7,7 @@
 #include <map>
 #include <string>
 #endif
+using namespace std;
 /** @class cjt_especies
  * @brief Contiene el conjunto de las especies
  */
@@ -62,4 +63,4 @@ class cjt_especies {
          */
         map<string, map<string, double>> consultar_tabla_distancias();
 
-}
+};

@@ -6,6 +6,7 @@
 #include "BinTree"
 #endif
 #include "clusters.hh"
+using namespace std;
 /** @brief Cjt_clusters
  * @brief Contiene un conjunto de clusters
  */
@@ -55,4 +56,4 @@ class cjt_clusters {
          * \post Todos los clusters se han fusionado
          */
         void fusiona_todos_los_clusters();
-}
+};

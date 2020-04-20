@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #endif
+using namespace std;
 /** @class cluster
  * @brief Contiene un cluster
  */
@@ -28,11 +29,11 @@ class cluster {
          * \pre True
          * \post El resultado es el mapa con las distancias a los clusters del P.I.
          */
-        obtener_dist_map();
+        map <string, double> obtener_dist_map();
         /** @brief Devuelve una distancia
          * \pre dist >= 0
          * \post El resultado es la distancia del P.I.
          */
-        obtener_distancia();
-}
+        double obtener_distancia();
+};
 #endif

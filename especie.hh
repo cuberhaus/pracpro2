@@ -49,5 +49,5 @@ class especie {
      * \post El mapa de kmeros se ha actualizado
      */
     void generar_kmeros();
-}
+};
 #endif
