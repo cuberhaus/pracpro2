@@ -1,8 +1,13 @@
+#ifndef NO_DIAGRAM
+
 #include <iostream>
-#include "cjt_clusters.hh"
-#include "cjt_especies.hh"
 #include "cluster.hh"
 #include "especie.hh"
+#endif
+
+#include "cjt_clusters.hh"
+#include "cjt_especies.hh"
+
 using namespace std;
 
 int main() {

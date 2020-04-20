@@ -1,6 +1,11 @@
 #ifndef cjt_clusters
 #define cjt_clusters
-
+#ifndef NO_DIAGRAM
+#include <map>
+#include <string>
+#include "BinTree"
+#endif
+#include "clusters.hh"
 /** @brief Cjt_clusters
  * @brief Contiene un conjunto de clusters
  */

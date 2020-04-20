@@ -1,0 +1,133 @@
+\hypertarget{program_8cc}{}\doxysection{Referencia del Archivo program.\+cc}
+\label{program_8cc}\index{program.cc@{program.cc}}
+Dependencia gráfica adjunta para program.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{program_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{program.cc@{program.cc}!main@{main}}
+\index{main@{main}!program.cc@{program.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 13 del archivo program.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13            \{}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     cout.setf(ios::fixed);}
+\DoxyCodeLine{16     cout.precision(4);}
+\DoxyCodeLine{17         }
+\DoxyCodeLine{18     \textcolor{keywordtype}{string} s; }
+\DoxyCodeLine{19     \textcolor{keywordtype}{bool} fin = \textcolor{keyword}{false};}
+\DoxyCodeLine{20     \mbox{\hyperlink{classcluster}{cluster}} clu;}
+\DoxyCodeLine{21     \mbox{\hyperlink{classcjt__especies}{cjt\_especies}} c();}
+\DoxyCodeLine{22     \mbox{\hyperlink{classcjt__clusters}{cjt\_clusters}} clusters();}
+\DoxyCodeLine{23     \mbox{\hyperlink{classespecie}{especie}} e();}
+\DoxyCodeLine{24     e.leer\_k();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keywordflow}{while} (cin >> s and not fin) \{}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"crea\_especie"}) \{}
+\DoxyCodeLine{29             \textcolor{keywordtype}{bool} existe;}
+\DoxyCodeLine{30             \mbox{\hyperlink{classespecie}{especie}} e;}
+\DoxyCodeLine{31             e.\mbox{\hyperlink{classespecie_af4ecb0292c711a24dde20653974f434b}{leer\_especie}}();}
+\DoxyCodeLine{32             existe = c.existe\_especie(e.\mbox{\hyperlink{classespecie_a4e0b39e2a7c152fa20c5858a4bb6b3ea}{consultar\_id}}());}
+\DoxyCodeLine{33             \textcolor{keywordflow}{if} (not existe) \{}
+\DoxyCodeLine{34                 c.insertar\_especie(e);}
+\DoxyCodeLine{35             \}}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"obtener\_gen"}) \{}
+\DoxyCodeLine{38             \textcolor{keywordtype}{string} s;}
+\DoxyCodeLine{39             \mbox{\hyperlink{classespecie}{especie}} e;}
+\DoxyCodeLine{40             \textcolor{keywordtype}{bool} existe;}
+\DoxyCodeLine{41             cin >> s;}
+\DoxyCodeLine{42             existe = c.existe\_especie(s);}
+\DoxyCodeLine{43             \textcolor{keywordflow}{if} (existe) \{}
+\DoxyCodeLine{44                 e = c.obtener\_especie(s);}
+\DoxyCodeLine{45                 cout << e.\mbox{\hyperlink{classespecie_a9a87ec1c1d3b50549e4a3ea580be5633}{consultar\_gen}}();}
+\DoxyCodeLine{46             \}}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"distancia"}) \{}
+\DoxyCodeLine{49             \textcolor{keywordtype}{string} id1,id2;}
+\DoxyCodeLine{50             \textcolor{keywordtype}{bool} existe, existe2;}
+\DoxyCodeLine{51             cin >> id1 >> id2;}
+\DoxyCodeLine{52             existe = c.existe\_especie(id1);}
+\DoxyCodeLine{53             existe2 = c.existe\_especie(id2);}
+\DoxyCodeLine{54             \textcolor{keywordflow}{if} (existe and existe2) \{}
+\DoxyCodeLine{55                cout << c.consultar\_distancia(id1,id2);}
+\DoxyCodeLine{56             \}}
+\DoxyCodeLine{57         \}}
+\DoxyCodeLine{58         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"elimina\_especie"}) \{}
+\DoxyCodeLine{59             \textcolor{keywordtype}{bool} existe;}
+\DoxyCodeLine{60             \textcolor{keywordtype}{string} id;}
+\DoxyCodeLine{61             cin >> id;}
+\DoxyCodeLine{62             existe = c.existe\_especie(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{63             \textcolor{keywordflow}{if} (existe) \{}
+\DoxyCodeLine{64                 c.eliminar\_especie(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{65             \}}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"existe\_especie"}) \{}
+\DoxyCodeLine{68             \textcolor{keywordtype}{string} id;}
+\DoxyCodeLine{69             cin >> id;}
+\DoxyCodeLine{70             \textcolor{keywordflow}{if} (c.existe\_especie(\textcolor{keywordtype}{id})) \{}
+\DoxyCodeLine{71                 cout << \textcolor{stringliteral}{"existe"} << endl;}
+\DoxyCodeLine{72             \}}
+\DoxyCodeLine{73         \}}
+\DoxyCodeLine{74         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"lee\_cjt\_especies"}) \{}
+\DoxyCodeLine{75             c.leer\_conjunto();}
+\DoxyCodeLine{76         \}}
+\DoxyCodeLine{77         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"imprime\_cjt\_especies"}) \{}
+\DoxyCodeLine{78             c.imprimir\_conjunto();}
+\DoxyCodeLine{79         \}}
+\DoxyCodeLine{80         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"tabla\_distancias"}) \{}
+\DoxyCodeLine{81             c.imprimir\_tabla\_distancias();}
+\DoxyCodeLine{82         \}}
+\DoxyCodeLine{83         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"inicializa\_clusters"}) \{}
+\DoxyCodeLine{84             clusters.inicialitza\_clusters(c.consultar\_tabla\_distancias());}
+\DoxyCodeLine{85             clusters.imprimir\_clusters();}
+\DoxyCodeLine{86             clusters.imprimir\_tabla\_distancias();}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"ejecuta\_paso\_wpgma"}) \{}
+\DoxyCodeLine{89             clusters.fusiona\_clusters();}
+\DoxyCodeLine{90             clusters.imprimir\_tabla\_distancias()}
+\DoxyCodeLine{91         \}}
+\DoxyCodeLine{92         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"imprime\_cluster"}) \{}
+\DoxyCodeLine{93             clusters.imprimir\_cluster() }
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"imprime\_arbol\_filogenetico"}) \{}
+\DoxyCodeLine{96             clusters.inicialitza\_clusters();}
+\DoxyCodeLine{97             clusters.imprimir}
+\DoxyCodeLine{98     }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100             c.inicializar\_distar();}
+\DoxyCodeLine{101             \textcolor{keywordtype}{int} n = c.clustmap\_size();}
+\DoxyCodeLine{102             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
+\DoxyCodeLine{103             c.actualizar\_distar();}
+\DoxyCodeLine{104             c.fusiona\_clusters();}
+\DoxyCodeLine{105             \}}
+\DoxyCodeLine{106             c.imprimir\_cluster();}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         \}}
+\DoxyCodeLine{109         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"fin"}) \{}
+\DoxyCodeLine{110             fin = \textcolor{keyword}{true};}
+\DoxyCodeLine{111         \}}
+\DoxyCodeLine{112     \}}
+\DoxyCodeLine{113 \}}
+
+\end{DoxyCode}

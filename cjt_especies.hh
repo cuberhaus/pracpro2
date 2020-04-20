@@ -1,6 +1,15 @@
 #ifndef cjt_especies_hh
 #define cjt_especies_hh
+#include "especie.hh"
 
+#ifndef NO_DIAGRAM
+#include <set>
+#include <map>
+#include <string>
+#endif
+/** @class cjt_especies
+ * @brief Contiene el conjunto de las especies
+ */
 class cjt_especies {
     private:
         set <string, especie> espset;

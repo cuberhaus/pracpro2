@@ -1,5 +1,9 @@
 #ifndef cluster_hh
 #define cluster_hh
+#ifndef NO_DIAGRAM
+#include <map>
+#include <string>
+#endif
 /** @class cluster
  * @brief Contiene un cluster
  */
