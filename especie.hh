@@ -30,7 +30,7 @@ class especie {
      * \pre True
      * \post Crea una especie con id y un gen 
      */
-    especie(string & id const, string & gen const);
+    especie(const string & id , const string & gen);
     /** @brief Añade y/o cambia el id y el gen del P.I. por dos strings del input
      * \pre True
      * \post El P.I. tiene id y gen = iguales a los strings de la entrada

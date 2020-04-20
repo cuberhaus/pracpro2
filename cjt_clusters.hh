@@ -1,13 +1,16 @@
 #ifndef cjt_clusters_hh
 #define cjt_clusters_hh
+
 #ifndef NO_DIAGRAM
 #include <iostream>
 #include <map>
 #include <string>
 #include "BinTree.hh"
 #endif
+
 #include "cluster.hh"
 using namespace std;
+
 /** @brief Cjt_clusters
  * @brief Contiene un conjunto de clusters
  */

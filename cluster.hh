@@ -1,11 +1,14 @@
 #ifndef cluster_hh
 #define cluster_hh
+
 #ifndef NO_DIAGRAM
 #include <iostream>
 #include <map>
 #include <string>
 #endif
+
 using namespace std;
+
 /** @class cluster
  * @brief Contiene un cluster
  */
