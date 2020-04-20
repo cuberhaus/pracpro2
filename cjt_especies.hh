@@ -15,7 +15,7 @@ using namespace std;
  */
 class cjt_especies {
     private:
-        set <string, especie> espset;
+        set <especie> espset;
         map <string, map<string, double >> distmap;
     public: 
         cjt_especies();
