@@ -1,18 +1,19 @@
 #ifndef cjt_clusters
 #define cjt_clusters
 #ifndef NO_DIAGRAM
+#include <iostream>
 #include <map>
 #include <string>
-#include "BinTree"
+#include "BinTree.hh"
 #endif
-#include "clusters.hh"
+#include "cluster.hh"
 using namespace std;
 /** @brief Cjt_clusters
  * @brief Contiene un conjunto de clusters
  */
 class cjt_clusters {
     private:
-        map <string, BinTree<clusters>> clustmap;
+        map <string, BinTree<cluster>> clustmap;
 
     public:
         cjt_clusters();
@@ -57,3 +58,4 @@ class cjt_clusters {
          */
         void fusiona_todos_los_clusters();
 };
+#endif

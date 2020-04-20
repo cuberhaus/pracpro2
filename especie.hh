@@ -1,6 +1,13 @@
 #ifndef especie_hh
 #define especie_hh
 
+#ifndef NO_DIAGRAM
+#include <iostream>
+#include <string>
+#include <map>
+#endif
+using namespace std;
+
 /** @class especie
  * @brief Contiene un id y un gen
  * El coste de las operaciones es constante

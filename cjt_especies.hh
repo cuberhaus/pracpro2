@@ -1,12 +1,14 @@
 #ifndef cjt_especies_hh
 #define cjt_especies_hh
-#include "especie.hh"
 
 #ifndef NO_DIAGRAM
+#include <iostream>
 #include <set>
 #include <map>
 #include <string>
 #endif
+
+#include "especie.hh"
 using namespace std;
 /** @class cjt_especies
  * @brief Contiene el conjunto de las especies
@@ -64,3 +66,4 @@ class cjt_especies {
         map<string, map<string, double>> consultar_tabla_distancias();
 
 };
+#endif

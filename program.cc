@@ -1,6 +1,9 @@
 #ifndef NO_DIAGRAM
 
 #include <iostream>
+#include <string>
+#include <map>
+#include "BinTree.hh"
 #include "cluster.hh"
 #include "especie.hh"
 #endif
