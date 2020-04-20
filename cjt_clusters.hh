@@ -50,4 +50,9 @@ class cjt_clusters {
          * \post Se ha imprimido la estructura arborescente en el output 
          */
         void imprimir_estructura() const;
+        /** @brief Fusiona todos los clusters hasta que solo queda uno
+         * \pre True
+         * \post Todos los clusters se han fusionado
+         */
+        void fusiona_todos_los_clusters();
 }

@@ -162,23 +162,14 @@ $(function() {
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (s == <span class="stringliteral">&quot;imprime_arbol_filogenetico&quot;</span>) {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            clusters.inicialitza_clusters();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            clusters.imprimir</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            c.inicializar_distar();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">int</span> n = c.clustmap_size();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            c.actualizar_distar();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            c.fusiona_clusters();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            c.imprimir_cluster();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (s == <span class="stringliteral">&quot;fin&quot;</span>) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            fin = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            clusters.<a class="code" href="classcjt__clusters.html#a385aaed7cbaf924f6e0f0f3a749d8383">fusiona_todos_los_clusters</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            clusters.<a class="code" href="classcjt__clusters.html#a5384376797bd89aa37220b9b4b77a0f9">imprimir_estructura</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (s == <span class="stringliteral">&quot;fin&quot;</span>) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            fin = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasscjt__especies_html_adec7740a8136dd9abb0cd82896260923"><div class="ttname"><a href="classcjt__especies.html#adec7740a8136dd9abb0cd82896260923">cjt_especies::consultar_tabla_distancias</a></div><div class="ttdeci">map&lt; string, map&lt; string, double &gt; &gt; consultar_tabla_distancias()</div><div class="ttdoc">Devuelve la tabla de distancias.</div></div>
 <div class="ttc" id="acjt__clusters_8hh_html"><div class="ttname"><a href="cjt__clusters_8hh.html">cjt_clusters.hh</a></div></div>
@@ -192,12 +183,14 @@ $(function() {
 <div class="ttc" id="aclasscjt__especies_html_a4ee577633ed9547a64bd12120397a121"><div class="ttname"><a href="classcjt__especies.html#a4ee577633ed9547a64bd12120397a121">cjt_especies::leer_conjunto</a></div><div class="ttdeci">void leer_conjunto()</div><div class="ttdoc">Borra las especies del conjunto anterior y se añaden de nuevas desde el input.</div></div>
 <div class="ttc" id="aclassespecie_html_af4ecb0292c711a24dde20653974f434b"><div class="ttname"><a href="classespecie.html#af4ecb0292c711a24dde20653974f434b">especie::leer_especie</a></div><div class="ttdeci">void leer_especie()</div><div class="ttdoc">Añade y/o cambia el id y el gen del P.I. por dos strings del input.</div></div>
 <div class="ttc" id="aclassespecie_html_a9a87ec1c1d3b50549e4a3ea580be5633"><div class="ttname"><a href="classespecie.html#a9a87ec1c1d3b50549e4a3ea580be5633">especie::consultar_gen</a></div><div class="ttdeci">string consultar_gen() const</div></div>
+<div class="ttc" id="aclasscjt__clusters_html_a385aaed7cbaf924f6e0f0f3a749d8383"><div class="ttname"><a href="classcjt__clusters.html#a385aaed7cbaf924f6e0f0f3a749d8383">cjt_clusters::fusiona_todos_los_clusters</a></div><div class="ttdeci">void fusiona_todos_los_clusters()</div><div class="ttdoc">Fusiona todos los clusters hasta que solo queda uno.</div></div>
 <div class="ttc" id="aclasscjt__clusters_html_a09941885773e2096da21389da23d26e4"><div class="ttname"><a href="classcjt__clusters.html#a09941885773e2096da21389da23d26e4">cjt_clusters::fusiona_clusters</a></div><div class="ttdeci">void fusiona_clusters()</div><div class="ttdoc">fusiona los dos clusters a menor distancia en uno nuevo</div></div>
 <div class="ttc" id="aespecie_8hh_html"><div class="ttname"><a href="especie_8hh.html">especie.hh</a></div></div>
 <div class="ttc" id="aclassespecie_html_ae57e78a90fc8da9e42319f0804fe6945"><div class="ttname"><a href="classespecie.html#ae57e78a90fc8da9e42319f0804fe6945">especie::leer_k</a></div><div class="ttdeci">void leer_k()</div><div class="ttdoc">Lee el parámetro k de la entrada.</div></div>
 <div class="ttc" id="aclasscjt__especies_html_a3cfb8a617d0236238a9793e6bf7c475c"><div class="ttname"><a href="classcjt__especies.html#a3cfb8a617d0236238a9793e6bf7c475c">cjt_especies::eliminar_especie</a></div><div class="ttdeci">void eliminar_especie(const string &amp;id)</div><div class="ttdoc">Se elimina una especie del conjunto.</div></div>
 <div class="ttc" id="aclasscjt__especies_html_a719283577ec3f24bec7ca59d0ed09375"><div class="ttname"><a href="classcjt__especies.html#a719283577ec3f24bec7ca59d0ed09375">cjt_especies::imprimir_conjunto</a></div><div class="ttdeci">void imprimir_conjunto() const</div><div class="ttdoc">Imprime el conjunto de especies.</div></div>
 <div class="ttc" id="acjt__especies_8hh_html"><div class="ttname"><a href="cjt__especies_8hh.html">cjt_especies.hh</a></div></div>
+<div class="ttc" id="aclasscjt__clusters_html_a5384376797bd89aa37220b9b4b77a0f9"><div class="ttname"><a href="classcjt__clusters.html#a5384376797bd89aa37220b9b4b77a0f9">cjt_clusters::imprimir_estructura</a></div><div class="ttdeci">void imprimir_estructura() const</div><div class="ttdoc">Imprime la estructura arborescente.</div></div>
 <div class="ttc" id="aclasscjt__clusters_html"><div class="ttname"><a href="classcjt__clusters.html">cjt_clusters</a></div><div class="ttdoc">Cjt_clusters.</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8hh_source.html#l00012">cjt_clusters.hh:12</a></div></div>
 <div class="ttc" id="aclasscjt__clusters_html_a07b56ded100ab1bf37255ad38da3e7f7"><div class="ttname"><a href="classcjt__clusters.html#a07b56ded100ab1bf37255ad38da3e7f7">cjt_clusters::imprimir_tabla_distancias</a></div><div class="ttdeci">void imprimir_tabla_distancias() const</div><div class="ttdoc">Imprime la tabla de distancias entre clusters.</div></div>
 <div class="ttc" id="aclasscjt__especies_html_a2cf2b8269a3a9aa904235b35ba0d70e6"><div class="ttname"><a href="classcjt__especies.html#a2cf2b8269a3a9aa904235b35ba0d70e6">cjt_especies::imprimir_tabla_distancias</a></div><div class="ttdeci">void imprimir_tabla_distancias()</div><div class="ttdoc">Imprime la tabla de distancias.</div></div>

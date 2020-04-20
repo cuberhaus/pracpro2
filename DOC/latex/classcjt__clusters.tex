@@ -23,7 +23,9 @@ void \mbox{\hyperlink{classcjt__clusters_a96c03b95281162ae25e29fde9636a4e9}{impr
 int \mbox{\hyperlink{classcjt__clusters_a194ea832fbe1ef251e261150bbbef6c6}{consultar\+\_\+size\+\_\+conjunto}} () const
 \begin{DoxyCompactList}\small\item\em Consulta el numero de elementos que hay en el conjunto. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcjt__clusters_a5384376797bd89aa37220b9b4b77a0f9}{imprimir\+\_\+estructura}} () const
-\begin{DoxyCompactList}\small\item\em Imprime la estructura arborescente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Imprime la estructura arborescente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcjt__clusters_a385aaed7cbaf924f6e0f0f3a749d8383}{fusiona\+\_\+todos\+\_\+los\+\_\+clusters}} ()
+\begin{DoxyCompactList}\small\item\em Fusiona todos los clusters hasta que solo queda uno. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
@@ -157,6 +159,22 @@ True
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
 Se ha imprimido la estructura arborescente en el output 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcjt__clusters_a385aaed7cbaf924f6e0f0f3a749d8383}\label{classcjt__clusters_a385aaed7cbaf924f6e0f0f3a749d8383}} 
+\index{cjt\_clusters@{cjt\_clusters}!fusiona\_todos\_los\_clusters@{fusiona\_todos\_los\_clusters}}
+\index{fusiona\_todos\_los\_clusters@{fusiona\_todos\_los\_clusters}!cjt\_clusters@{cjt\_clusters}}
+\doxysubsubsection{\texorpdfstring{fusiona\_todos\_los\_clusters()}{fusiona\_todos\_los\_clusters()}}
+{\footnotesize\ttfamily void cjt\+\_\+clusters\+::fusiona\+\_\+todos\+\_\+los\+\_\+clusters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fusiona todos los clusters hasta que solo queda uno. 
+
+\begin{DoxyPrecond}{Precondición}
+True 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Todos los clusters se han fusionado 
 \end{DoxyPostcond}
 
 

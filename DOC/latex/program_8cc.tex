@@ -111,22 +111,13 @@ Definición en la línea 13 del archivo program.\+cc.
 \DoxyCodeLine{94         \}}
 \DoxyCodeLine{95         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"imprime\_arbol\_filogenetico"}) \{}
 \DoxyCodeLine{96             clusters.inicialitza\_clusters();}
-\DoxyCodeLine{97             clusters.imprimir}
-\DoxyCodeLine{98     }
-\DoxyCodeLine{99 }
-\DoxyCodeLine{100             c.inicializar\_distar();}
-\DoxyCodeLine{101             \textcolor{keywordtype}{int} n = c.clustmap\_size();}
-\DoxyCodeLine{102             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
-\DoxyCodeLine{103             c.actualizar\_distar();}
-\DoxyCodeLine{104             c.fusiona\_clusters();}
-\DoxyCodeLine{105             \}}
-\DoxyCodeLine{106             c.imprimir\_cluster();}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108         \}}
-\DoxyCodeLine{109         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"fin"}) \{}
-\DoxyCodeLine{110             fin = \textcolor{keyword}{true};}
-\DoxyCodeLine{111         \}}
-\DoxyCodeLine{112     \}}
-\DoxyCodeLine{113 \}}
+\DoxyCodeLine{97             clusters.fusiona\_todos\_los\_clusters();}
+\DoxyCodeLine{98             clusters.imprimir\_estructura();}
+\DoxyCodeLine{99         \}}
+\DoxyCodeLine{100         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"fin"}) \{}
+\DoxyCodeLine{101             fin = \textcolor{keyword}{true};}
+\DoxyCodeLine{102         \}}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104 \}}
 
 \end{DoxyCode}

@@ -94,17 +94,8 @@ int main() {
         }
         else if (s == "imprime_arbol_filogenetico") {
             clusters.inicialitza_clusters();
-            clusters.imprimir
-    
-
-            c.inicializar_distar();
-            int n = c.clustmap_size();
-            for (int i = 0; i < n; ++i) {
-            c.actualizar_distar();
-            c.fusiona_clusters();
-            }
-            c.imprimir_cluster();
-
+            clusters.fusiona_todos_los_clusters();
+            clusters.imprimir_estructura();
         }
         else if (s == "fin") {
             fin = true;
