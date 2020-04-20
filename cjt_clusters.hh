@@ -18,7 +18,7 @@ class cjt_clusters {
     private:
         map <string, BinTree<cluster>> clustmap;
 
-    public:
+public:
         cjt_clusters();
         /** @brief fusiona los dos clusters a menor distancia en uno nuevo
          * \pre Hay almenos dos clusters guardados

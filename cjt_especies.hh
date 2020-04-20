@@ -23,17 +23,17 @@ class cjt_especies {
          * \pre id se encuentra dentro del set espset
          * \post especie con el id de entrada
          */
-        especie obtener_especie(const string &id) const; //espset.find(id)
+        especie obtener_especie(const string& id) const; //espset.find(id)
         /** @brief Te dice si existe la especie con ese id
          * \pre id
          * \post si existe una especie con ese id, true, sino false
          */
-        bool existe_especie (const string &id) const;
+        bool existe_especie (const string& id) const;
         /** @brief añade una especie al set de especies
          * \pre especie en la entrada
          * \post La especie se ha añadido al set espset i se ha añadido a la tabla de distancias
          */
-        void insertar_especie (const especie &e);
+        void insertar_especie (const especie& e);
         /** @brief Obtiene la distància dados dos id 
          * \pre Dos strings en la entrada  
          * \post El resultado es la distància entre las dos especies

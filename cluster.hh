@@ -26,12 +26,12 @@ class cluster {
         cluster();
         /** @brief Constructora
          * \pre True
-         * \post El resultado es un cluster con distancia dist y ID id
+         * \post El resultado es un cluster con sus distancia y ID
          */
         cluster(const double dist, const string id);
-        /** @brief Devuelve un map con las distancias a los demás clusters 
+        /** @brief Devuelve las distancias a los demás clusters 
          * \pre True
-         * \post El resultado es el mapa con las distancias a los clusters del P.I.
+         * \post El resultado son las distancias des de el cluster en el que estamos hasta los otros clusters del P.I.
          */
         map <string, double> obtener_dist_map();
         /** @brief Devuelve una distancia
