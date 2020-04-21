@@ -98,7 +98,7 @@ int main() {
             clusters.imprimir_cluster(id);
         }
         else if (s == "imprime_arbol_filogenetico") {
-            clusters.inicializa_clusters(c.consultar_tabla_distancias());
+            clusters.inicializa_clusters(c.consultar_tabla_distancias()); // passar directament el conjunt
             clusters.fusiona_todos_los_clusters();
             clusters.imprimir_estructura();
         }

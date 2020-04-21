@@ -18,6 +18,8 @@ class cjt_especies {
         set <especie> espset;
         map <string, map<string, double >> distmap;
     public: 
+        //posarme al principi demanar on estic
+        //index al principi anar al seguent i saber si arriba al final
         cjt_especies();
         /** @brief Devuelve una especie dado un string
          * \pre id se encuentra dentro del set espset
@@ -63,7 +65,7 @@ class cjt_especies {
          * \pre True
          * \post El resultado es la tabla de distancias
          */
-        map<string, map<string, double>> consultar_tabla_distancias();
+        map<string, map<string, double>> consultar_tabla_distancias();  // passar directament tot el conjunt
 
 };
 #endif

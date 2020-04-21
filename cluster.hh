@@ -33,7 +33,7 @@ class cluster {
          * \pre True
          * \post El resultado son las distancias des de el cluster en el que estamos hasta los otros clusters del P.I.
          */
-        map <string, double> obtener_dist_map();
+        map <string, double> obtener_dist_map(); // passar directament el cluster
         /** @brief Devuelve una distancia
          * \pre dist >= 0
          * \post El resultado es la distancia del P.I.

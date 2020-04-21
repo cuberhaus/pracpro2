@@ -18,7 +18,7 @@ class cjt_clusters {
     private:
         map <string, BinTree<cluster>> clustmap;
 
-public:
+    public:
         cjt_clusters();
         /** @brief fusiona los dos clusters a menor distancia en uno nuevo
          * \pre Hay almenos dos clusters guardados
@@ -29,7 +29,7 @@ public:
          * \pre En la entrada hay el mapa de distancias de las especies
          * \post Se ha iniciado el mapa de clusters 
          */
-        void inicializa_clusters(map<string, map<string, double >> distmap);
+        void inicializa_clusters(map<string, map<string, double >> distmap); // 
         /** @brief Imprime los clusters
          * \pre Hay almenos un cluster en el conjunto
          * \post Se han imprimido los clusters
