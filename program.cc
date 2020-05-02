@@ -74,16 +74,22 @@ int main() {
         }
         */
         if (s == "lee_cjt_especies") {
+            cout << "# lee_cjt_especies" << endl;
             int n;
             cin >> n;
             c.borrar_conjunto();
             for (int i = 0; i < n; ++i) {
+                string id, gen;
+                cin >> id >> gen;
+                especie e(id, gen);
                 c.insertar_especie(e);
             }
         }
-       /* else if (s == "imprime_cjt_especies") {
+        else if (s == "imprime_cjt_especies") {
+            cout << "# imprime_cjt_especies" << endl;;
             c.imprimir_conjunto();
         }
+        /*
         else if (s == "tabla_distancias") {
             c.imprimir_tabla_distancias();
         }

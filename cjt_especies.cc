@@ -22,6 +22,12 @@ void cjt_especies::borrar_conjunto() {
 void cjt_especies::insertar_especie(const especie &e) {
     espmap.insert(make_pair(e.consultar_id(),e));
 }
+void cjt_especies::imprimir_conjunto() const {
+    for(map <string, especie>::const_iterator it = espmap.begin(); it != espmap.end(); ++it) {
+        cout << it->second.consultar_id() << ' ' << it->second.consultar_gen();
+        cout << endl;
+    }
+}
 /*void cjt_especies::leer_conjunto() {
     int n; 
     string id,gen;
