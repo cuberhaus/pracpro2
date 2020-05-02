@@ -15,7 +15,7 @@ using namespace std;
  */
 class cjt_especies {
     private:
-        set <especie> espset;
+        map <string, especie> espmap;
         map <string, map<string, double >> distmap;
     public: 
         //posarme al principi demanar on estic
@@ -36,6 +36,11 @@ class cjt_especies {
          * \post La especie se ha añadido al set espset i se ha añadido a la tabla de distancias
          */
         void insertar_especie (const especie& e);
+        /** Borra el conjunto de especies
+         * \pre Hay un conjunto de especies
+         * \post Se ha eliminado ese conjunto de especies
+         */
+        void borrar_conjunto ();
         /** @brief Obtiene la distància dados dos id 
          * \pre Dos strings en la entrada  
          * \post El resultado es la distància entre las dos especies

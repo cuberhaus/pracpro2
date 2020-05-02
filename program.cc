@@ -20,18 +20,20 @@ int main() {
         
     string s; 
     bool fin = false;
-    cluster clu;
+    //cluster clu;
     cjt_especies c;
-    cjt_clusters clusters;
+    //cjt_clusters clusters;
     especie e;
-    e.leer_k();
+    //int k;
+    //cin >> k;
+    //e.añadir_k(k);
 
     while (cin >> s and not fin) {
 
-        if (s == "crea_especie") {
+      /*  if (s == "crea_especie") {
             bool existe;
-            especie e;
-            e.leer_especie();
+            string id, gen;
+            cin >> id >> gen;
             existe = c.existe_especie(e.consultar_id());
             if (not existe) {
                 c.insertar_especie(e);
@@ -74,16 +76,23 @@ int main() {
                 cout << "existe" << endl;
             }
         }
-        else if (s == "lee_cjt_especies") {
-            c.leer_conjunto();
+        */
+        if (s == "lee_cjt_especies") {
+            int n;
+            cin >> n;
+            c.borrar_conjunto();
+            for (int i = 0; i < n; ++i) {
+                c.insertar_especie(e);
+            }
         }
-        else if (s == "imprime_cjt_especies") {
+       /* else if (s == "imprime_cjt_especies") {
             c.imprimir_conjunto();
         }
         else if (s == "tabla_distancias") {
             c.imprimir_tabla_distancias();
         }
-        else if (s == "inicializa_clusters") {
+        */
+        /*else if (s == "inicializa_clusters") {
             clusters.inicializa_clusters(c.consultar_tabla_distancias());
             clusters.imprimir_clusters();
             clusters.imprimir_tabla_distancias();
@@ -102,6 +111,7 @@ int main() {
             clusters.fusiona_todos_los_clusters();
             clusters.imprimir_estructura();
         }
+        */
         else if (s == "fin") {
             fin = true;
         }

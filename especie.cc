@@ -5,7 +5,7 @@ especie::especie() {
     string id;
     string gen;
 }
-especie::especie(string & id const, string & gen const) {
+especie::especie(const string & id , const string & gen ) {
     this->id = id;
     this->gen = gen;
 }
@@ -18,5 +18,9 @@ string especie::consultar_id() const {
 }
 string especie::consultar_gen() const {
     return gen;
+}
+
+void especie::añadir_k(int k) {
+    especie::k = k;
 }
 
