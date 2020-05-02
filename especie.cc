@@ -19,8 +19,11 @@ string especie::consultar_id() const {
 string especie::consultar_gen() const {
     return gen;
 }
+
 int especie::k = 0;
+
 void especie::añadir_k(int k) {
     especie::k = k;
+    cout << especie::k;
 }
 

@@ -19,10 +19,9 @@ int main() {
     //cluster clu;
     cjt_especies c;
     //cjt_clusters clusters;
-    especie e;
-    //int k;
-    //cin >> k;
-    //e.añadir_k(k);
+    int k;
+    cin >> k;
+    especie::añadir_k(k);
 
     while (cin >> s and not fin) {
 
@@ -46,7 +45,9 @@ int main() {
                 cout << e.consultar_gen();
             }
         }
-        else if (s == "distancia") {
+        */
+        /*
+        if (s == "distancia") {
             string id1,id2;
             bool existe, existe2;
             cin >> id1 >> id2;
@@ -56,6 +57,8 @@ int main() {
                cout << c.consultar_distancia(id1,id2);
             }
         }
+        */
+        /*
         else if (s == "elimina_especie") {
             bool existe;
             string id;
@@ -72,6 +75,7 @@ int main() {
                 cout << "existe" << endl;
             }
         }
+
         */
         if (s == "lee_cjt_especies") {
             cout << "# lee_cjt_especies" << endl;

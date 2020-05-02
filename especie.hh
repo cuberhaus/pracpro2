@@ -50,7 +50,7 @@ class especie {
      *  \pre True
      *  \post El parámetro k ha sido actualizado
      */
-    void añadir_k(int k); // passar com a parametre
+    static void añadir_k(int k); // passar com a parametre
     /** @brief Genera los kmeros correspondientes al gen de la especie
      * \pre Gen esta inicializado
      * \post El mapa de kmeros se ha actualizado
