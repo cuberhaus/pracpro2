@@ -24,9 +24,8 @@ int main() {
     cjt_especies c;
     //cjt_clusters clusters;
     especie e;
-    //int k;
-    //cin >> k;
-    //e.añadir_k(k);
+    int k;
+    cin >> k;
 
     while (cin >> s and not fin) {
 

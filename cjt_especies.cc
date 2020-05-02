@@ -5,6 +5,8 @@ using namespace std;
 #include "cluster.hh"
 #include "cjt_especies.hh"
 
+int especie::k;
+
 cjt_especies::cjt_especies() {
    set <especie> espset; 
    map <string, map <string, double >> distmap;

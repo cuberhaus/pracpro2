@@ -20,6 +20,7 @@ string especie::consultar_gen() const {
     return gen;
 }
 
+int especie::k = 0;
 void especie::añadir_k(int k) {
     especie::k = k;
 }
