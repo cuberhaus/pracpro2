@@ -49,7 +49,7 @@ int main() {
                 cout << e.consultar_gen();
             }
         }
-        /*
+        
         if (s == "distancia") {
             string id1,id2;
             bool existe, existe2;
@@ -60,7 +60,7 @@ int main() {
                cout << c.consultar_distancia(id1,id2);
             }
         }
-        */
+       
         
         else if (s == "elimina_especie") {
             bool existe;
