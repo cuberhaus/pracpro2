@@ -18,6 +18,7 @@ class especie {
         string id;
         string gen;
         map <string, int> kmeros;
+        void generar_kmeros(); // privat 
         //map <string, double> d_esp();
         //static distancia
     public:
@@ -50,12 +51,12 @@ class especie {
      *  \pre True
      *  \post El parámetro k ha sido actualizado
      */
-    static void añadir_k(int k); // passar com a parametre
+    static void insertar_k(int k); // passar com a parametre
     /** @brief Genera los kmeros correspondientes al gen de la especie
      * \pre Gen esta inicializado
      * \post El mapa de kmeros se ha actualizado
      */
-    void generar_kmeros(); // privat 
+
     //distancia static
     //static distancia(especie e, especie a) {
     //e.meros

@@ -21,7 +21,7 @@ int main() {
     //cjt_clusters clusters;
     int k;
     cin >> k;
-    especie::añadir_k(k);
+    especie::insertar_k(k);
 
     while (cin >> s and not fin) {
 
