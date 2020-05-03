@@ -45,7 +45,7 @@ class cjt_especies {
          * \pre Dos strings en la entrada  
          * \post El resultado es la distància entre las dos especies
          */
-        double consultar_distancia(const string& id1, const string& id2) const; 
+        double consultar_distancia(const string id1,const string id2) const ;
         /** @brief Se elimina una especie del conjunto
          * \pre Tamaño del set es estrictamente > 0
          * \post La especie se ha eliminado y se ha actualizado la tabla de distancias
