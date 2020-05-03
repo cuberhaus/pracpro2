@@ -99,11 +99,11 @@ int main() {
             cout << "# imprime_cjt_especies" << endl;;
             c.imprimir_conjunto();
         }
-        /*
+        
         else if (s == "tabla_distancias") {
             c.imprimir_tabla_distancias();
         }
-        */
+       
         /*else if (s == "inicializa_clusters") {
             clusters.inicializa_clusters(c.consultar_tabla_distancias());
             clusters.imprimir_clusters();

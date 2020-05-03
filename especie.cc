@@ -43,6 +43,39 @@ void especie::insertar_k(int k) {
     especie::k = k;
 }
 double especie::distancia(const especie &e1, const especie &e2) {
-
+    map<string, int>::const_iterator it1, it2;
+    it1 = e1.kmeros.begin();
+    it2 = e2.kmeros.begin();
+    int uni, inter;
+    uni = 0;
+    inter = 0;
+    while (it1 != e1.kmeros.end() and it2 != e2.kmeros.end()) {
+        if (it1->first == it2->first) {
+            uni += max(it1->second, it2->second);
+            inter += min(it1->second, it2->second);
+            ++it1;
+            ++it2;
+        }
+        else if (it1->first > it2->first) {
+            uni += it1->second;
+            ++it1;
+        }
+        else {
+            uni += it2->second;
+            ++it2;
+        }
+    }
+    while (it1 != e1.kmeros.end()) {
+        uni += it1->second;
+        ++it1;
+    }
+    while (it2 != e2.kmeros.end()) {
+        uni += it2->second;
+        ++it2;
+    }
+    double resultat;
+    cout << uni << ' ' << inter << endl;
+    resultat = (1-(inter/uni))*100;
+    return resultat;
 }
 

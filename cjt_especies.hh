@@ -65,12 +65,12 @@ class cjt_especies {
          * \pre True
          * \post Se ha imprimido en el output la tabla de distancias
          */
-        void imprimir_tabla_distancias();
+        void imprimir_tabla_distancias() const;
         /** @brief Devuelve la tabla de distancias
          * \pre True
          * \post El resultado es la tabla de distancias
          */
-        map<string, map<string, double>> consultar_tabla_distancias();  // passar directament tot el conjunt
+        map<string, map<string, double>>consultar_tabla_distancias();  // passar directament tot el conjunt
 
 };
 #endif

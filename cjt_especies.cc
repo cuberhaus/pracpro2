@@ -25,8 +25,10 @@ void cjt_especies::insertar_especie(const especie &e) {
     espmap.insert(make_pair(e.consultar_id(),e));
     int n = distmap.size();
     for (map<string, map<string, double>>::iterator it = distmap.begin(); it != distmap.end() and n > 0; ++it) {
+        cout << it->first << endl;
         double dist;
         dist = especie::distancia(espmap[it->first], e);
+        cout << dist;
         it->second[e.consultar_id()] = dist;
         --n;
     }
@@ -44,6 +46,17 @@ void cjt_especies::eliminar_especie(const string &id) {
 void cjt_especies::imprimir_conjunto() const {
     for(map <string, especie>::const_iterator it = espmap.begin(); it != espmap.end(); ++it) {
         cout << it->second.consultar_id() << ' ' << it->second.consultar_gen();
+        cout << endl;
+    }
+}
+
+void cjt_especies::imprimir_tabla_distancias() const {
+    map <string, map<string, double >>::const_iterator it1;
+    map<string,double>::const_iterator it2;
+    for (it1 = distmap.begin(); it1 != distmap.end(); ++it1) {
+        for (it2 = it1->second.begin(); it2 != it1->second.begin(); ++it2) {
+            cout << it2->second << ' ' ;
+        }
         cout << endl;
     }
 }
