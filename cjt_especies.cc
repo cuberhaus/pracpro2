@@ -23,18 +23,36 @@ bool cjt_especies::existe_especie(const string &id) const {
 
 void cjt_especies::insertar_especie(const especie &e) {
     espmap.insert(make_pair(e.consultar_id(),e));
+    map<string, map<string, double>>::iterator it = distmap.begin();
     int n = distmap.size();
-    for (map<string, map<string, double>>::iterator it = distmap.begin(); it != distmap.end() and n > 0; ++it) {
-        //cout << it->first << endl;
-        double dist;
-        dist = especie::distancia(espmap[it->first], e);
-        //cout << dist;
-        it->second[e.consultar_id()] = dist;
-        --n;
+        for (it = distmap.begin(); it != distmap.end() and n > 0; ++it) {
+
+            if (e.consultar_id() > it->first ) {
+                //cout << it->first << endl;
+                double dist;
+                dist = especie::distancia(espmap[it->first], e);
+                //cout << dist;
+                it->second[e.consultar_id()] = dist;
+                --n;
+            }
+        }
+        distmap[e.consultar_id()];
     }
-    distmap[e.consultar_id()];
+    else if (e.consultar_id() < it->first) {
+        //int n = distmap.size();
+        distmap[e.consultar_id()];
+        //map<string, double>>::iterator it2;
+        for (; it != distmap.end(); ++it) {
+            cout << "hi" << endl;
+            double dist;
+            dist = especie::distancia(e,espmap[it->first]);
+            distmap[e.consultar_id()][it->first] = dist;
+        }
+    }
     
 }
+
+
 void cjt_especies::borrar_conjunto() {
     espmap.clear();
     distmap.clear();
@@ -50,6 +68,7 @@ void cjt_especies::eliminar_especie(const string &id) {
     map <string, especie>::iterator it = espmap.find(id);
     if (it != espmap.end()) espmap.erase(it);
 }
+
 void cjt_especies::imprimir_conjunto() const {
     for(map <string, especie>::const_iterator it = espmap.begin(); it != espmap.end(); ++it) {
         cout << it->second.consultar_id() << ' ' << it->second.consultar_gen();
