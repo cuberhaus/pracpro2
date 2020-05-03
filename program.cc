@@ -49,7 +49,6 @@ int main() {
                 cout << e.consultar_gen();
             }
         }
-        
         /*
         if (s == "distancia") {
             string id1,id2;
@@ -62,7 +61,7 @@ int main() {
             }
         }
         */
-       /* 
+        
         else if (s == "elimina_especie") {
             bool existe;
             string id;
@@ -71,8 +70,9 @@ int main() {
             if (existe) {
                 c.eliminar_especie(id);
             }
+            else cout << "ERROR: La especie " << id << " no existe." << endl;
         }
-       */ 
+        
         else if (s == "existe_especie") {
             string id;
             cin >> id;

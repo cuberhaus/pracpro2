@@ -42,4 +42,7 @@ int especie::k = 0;
 void especie::insertar_k(int k) {
     especie::k = k;
 }
+double especie::distancia(const especie &e1, const especie &e2) {
+
+}
 
