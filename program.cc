@@ -25,27 +25,31 @@ int main() {
 
     while (cin >> s and not fin) {
 
-      /*  if (s == "crea_especie") {
+        if (s == "crea_especie") {
             bool existe;
             string id, gen;
             cin >> id >> gen;
+            cout << "# crea_especie " << id << ' ' << gen << endl;
+            especie e(id,gen);
             existe = c.existe_especie(e.consultar_id());
             if (not existe) {
                 c.insertar_especie(e);
             }
+            else cout << "ERROR: La especie " << id << " ya existe." << endl;
         }
         else if (s == "obtener_gen") {
             string s;
             especie e;
             bool existe;
             cin >> s;
+            cout << "# obtener_gen " << s << endl;
             existe = c.existe_especie(s);
             if (existe) {
                 e = c.obtener_especie(s);
                 cout << e.consultar_gen();
             }
         }
-        */
+        
         /*
         if (s == "distancia") {
             string id1,id2;
@@ -58,7 +62,7 @@ int main() {
             }
         }
         */
-        /*
+       /* 
         else if (s == "elimina_especie") {
             bool existe;
             string id;
@@ -68,16 +72,18 @@ int main() {
                 c.eliminar_especie(id);
             }
         }
+       */ 
         else if (s == "existe_especie") {
             string id;
             cin >> id;
+            cout << "# existe_especie " << id << endl;
             if (c.existe_especie(id)) {
-                cout << "existe" << endl;
+                cout << "SI" << endl;
             }
+            else cout << "NO" << endl;
         }
-
-        */
-        if (s == "lee_cjt_especies") {
+        
+        else if (s == "lee_cjt_especies") {
             cout << "# lee_cjt_especies" << endl;
             int n;
             cin >> n;

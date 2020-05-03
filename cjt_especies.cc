@@ -14,6 +14,11 @@ especie cjt_especies::obtener_especie(const string& id) const {
     map <string, especie>::const_iterator it = espmap.find(id);
     return it->second; 
 }
+bool cjt_especies::existe_especie(const string &id) const {
+    map<string,especie>::const_iterator it = espmap.find(id);
+    if (it != espmap.end()) return true;
+    return false;
+}
 
 void cjt_especies::borrar_conjunto() {
     espmap.clear();

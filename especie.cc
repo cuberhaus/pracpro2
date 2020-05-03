@@ -4,17 +4,18 @@
 void especie::generar_kmeros() {
     int n = gen.size();
     string kmero;
-    for (int i = 0; i < n-k-1; ++i) {
+    for (int i = 0; i < n-(k-1); ++i) {
         kmero = gen.substr(i,k); 
         kmeros[kmero] += 1;
     }
-    /* DEBUG: imprimeix els kmeros
+    /* DEBUG
     for (map <string, int>::iterator it = kmeros.begin(); it != kmeros.end(); ++it) {
-        cout << it->first; 
+        cout << it->first << it->second;
         cout << ' ';
     }
     cout << endl;
     */
+    
 }
 especie::especie() {
     string id;
