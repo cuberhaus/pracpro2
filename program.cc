@@ -48,16 +48,29 @@ int main() {
                 e = c.obtener_especie(s);
                 cout << e.consultar_gen();
             }
+            else cout << "ERROR: La especie "<< s << " no existe." << endl;
         }
         
         if (s == "distancia") {
+
             string id1,id2;
             bool existe, existe2;
             cin >> id1 >> id2;
+            cout << "# distancia " << id1 << ' ' << id2 << endl;
             existe = c.existe_especie(id1);
             existe2 = c.existe_especie(id2);
-            if (existe and existe2) {
-               cout << c.consultar_distancia(id1,id2);
+            if (not existe and not existe) {
+                cout << "ERROR: La especie " << id1 << " y la especie " << id2 << " no existen." << endl;
+            }
+            else if (not existe) {
+                cout << "ERROR: La especie " << id1 << " no existe." << endl;
+            }
+            else if (not existe2) {
+
+                cout << "ERROR: La especie " << id2  << " no existe." << endl;
+            }
+            else {
+               cout << c.consultar_distancia(id1,id2) << endl;
             }
         }
        
@@ -66,6 +79,7 @@ int main() {
             bool existe;
             string id;
             cin >> id;
+            cout << "# elimina_especie " << id << endl;
             existe = c.existe_especie(id);
             if (existe) {
                 c.eliminar_especie(id);
@@ -101,6 +115,7 @@ int main() {
         }
         
         else if (s == "tabla_distancias") {
+            cout << "# tabla_distancias" << endl;
             c.imprimir_tabla_distancias();
         }
        
@@ -129,3 +144,4 @@ int main() {
         }
     }
 }
+

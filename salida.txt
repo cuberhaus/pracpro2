@@ -1,0 +1,12 @@
+# lee_cjt_especies
+# imprime_cjt_especies
+a AAAAGATGACCAGCGTAATG
+b GCAACCTTTGTGGGCGCAGT
+c ACGATTTGCGTAAGCTATGT
+d GCTCCTGTCCGTTTCAGCCG
+e TACACCATTAACCGGTGGGG
+# distancia a c
+71.4286# distancia x c
+# distancia a x
+# distancia x y
+# distancia c a

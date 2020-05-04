@@ -26,8 +26,12 @@ void cjt_especies::insertar_especie(const especie &e) {
     map<string, map<string, double>>::iterator it = distmap.begin();
     int n = distmap.size();
         for (it = distmap.begin(); it != distmap.end() and n > 0; ++it) {
-
-            if (e.consultar_id() > it->first ) {
+            if (it->first > e.consultar_id()) {
+                double dist;
+                dist = especie::distancia(espmap[it->first], e);
+                distmap[e.consultar_id()][it->first] = dist;
+            }
+            else { 
                 //cout << it->first << endl;
                 double dist;
                 dist = especie::distancia(espmap[it->first], e);
@@ -37,19 +41,6 @@ void cjt_especies::insertar_especie(const especie &e) {
             }
         }
         distmap[e.consultar_id()];
-    }
-    else if (e.consultar_id() < it->first) {
-        //int n = distmap.size();
-        distmap[e.consultar_id()];
-        //map<string, double>>::iterator it2;
-        for (; it != distmap.end(); ++it) {
-            cout << "hi" << endl;
-            double dist;
-            dist = especie::distancia(e,espmap[it->first]);
-            distmap[e.consultar_id()][it->first] = dist;
-        }
-    }
-    
 }
 
 
@@ -59,8 +50,13 @@ void cjt_especies::borrar_conjunto() {
 }
 
 double cjt_especies::consultar_distancia(const string id1, const string id2) const {
-    
-    double x = distmap.at(id1).at(id2);
+    double x;
+    if (id1 < id2) {
+        x = distmap.at(id1).at(id2);
+    }
+    else {
+        x = distmap.at(id2).at(id1);
+    }
     return x;
 }
 
@@ -80,9 +76,9 @@ void cjt_especies::imprimir_tabla_distancias() const {
     map <string, map<string, double >>::const_iterator it1;
     map<string,double>::const_iterator it2;
     for (it1 = distmap.begin(); it1 != distmap.end(); ++it1) {
-        cout << it1->first << ' ';
+        cout << it1->first << ':' << ' ';
         for (it2 = it1->second.begin(); it2 != it1->second.end(); ++it2) {
-            cout << it2->first << it2->second << ' ' ;
+            cout << it2->first << " (" << it2->second << ") ";
         }
         cout << endl;
     }
