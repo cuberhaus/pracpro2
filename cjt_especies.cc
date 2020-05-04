@@ -76,9 +76,9 @@ void cjt_especies::imprimir_tabla_distancias() const {
     map <string, map<string, double >>::const_iterator it1;
     map<string,double>::const_iterator it2;
     for (it1 = distmap.begin(); it1 != distmap.end(); ++it1) {
-        cout << it1->first << ':' << ' ';
+        cout << it1->first << ':' ;
         for (it2 = it1->second.begin(); it2 != it1->second.end(); ++it2) {
-            cout << it2->first << " (" << it2->second << ") ";
+            cout << ' ' << it2->first << " (" << it2->second << ")";
         }
         cout << endl;
     }

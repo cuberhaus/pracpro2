@@ -36,6 +36,7 @@ int main() {
                 c.insertar_especie(e);
             }
             else cout << "ERROR: La especie " << id << " ya existe." << endl;
+            cout << endl;
         }
         else if (s == "obtener_gen") {
             string s;
@@ -88,6 +89,7 @@ int main() {
                 c.eliminar_especie(id);
             }
             else cout << "ERROR: La especie " << id << " no existe." << endl;
+            cout << endl;
         }
         
         else if (s == "existe_especie") {
@@ -98,6 +100,7 @@ int main() {
                 cout << "SI" << endl;
             }
             else cout << "NO" << endl;
+            cout << endl;
         }
         
         else if (s == "lee_cjt_especies") {
@@ -121,6 +124,7 @@ int main() {
         else if (s == "tabla_distancias") {
             cout << "# tabla_distancias" << endl;
             c.imprimir_tabla_distancias();
+            cout << endl;
         }
        
         /*else if (s == "inicializa_clusters") {
