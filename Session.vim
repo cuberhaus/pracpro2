@@ -57,12 +57,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 102 - ((12 * winheight(0) + 10) / 20)
+let s:l = 36 - ((4 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-102
-normal! 025|
+36
+normal! 013|
 wincmd w
 argglobal
 if bufexists("cjt_especies.hh") | buffer cjt_especies.hh | else | edit cjt_especies.hh | endif
@@ -75,11 +75,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 24 - ((0 * winheight(0) + 10) / 20)
+let s:l = 16 - ((9 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-24
+16
 normal! 011|
 wincmd w
 argglobal
@@ -94,12 +94,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 82 - ((12 * winheight(0) + 10) / 21)
+let s:l = 53 - ((8 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-82
-normal! 09|
+53
+normal! 05|
 wincmd w
 argglobal
 if bufexists("especie.cc") | buffer especie.cc | else | edit especie.cc | endif
@@ -112,14 +112,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 14 - ((8 * winheight(0) + 10) / 21)
+let s:l = 3 - ((2 * winheight(0) + 10) / 21)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 09|
+3
+normal! 0
 wincmd w
-3wincmd w
 exe '1resize ' . ((&lines * 20 + 22) / 45)
 exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
 exe '2resize ' . ((&lines * 20 + 22) / 45)
@@ -129,7 +128,7 @@ exe 'vert 3resize ' . ((&columns * 79 + 79) / 158)
 exe '4resize ' . ((&lines * 21 + 22) / 45)
 exe 'vert 4resize ' . ((&columns * 78 + 79) / 158)
 tabnext 1
-badd +17 cjt_especies.cc
+badd +53 cjt_especies.cc
 badd +1 especie.cc
 badd +57 program.cc
 badd +1 BinTree.hh

@@ -11,10 +11,10 @@ using namespace std;
 
 int main() {
 
-   // cout.setf(ios::fixed);
+    // cout.setf(ios::fixed);
     //cout.precision(4);
-        
-    string s; 
+
+    string s;
     bool fin = false;
     //cluster clu;
     cjt_especies c;
@@ -53,7 +53,7 @@ int main() {
             cout << endl;
 
         }
-        
+
         if (s == "distancia") {
 
             string id1,id2;
@@ -73,12 +73,12 @@ int main() {
                 cout << "ERROR: La especie " << id2  << " no existe." << endl;
             }
             else {
-               cout << c.consultar_distancia(id1,id2) << endl;
+                cout << c.consultar_distancia(id1,id2) << endl;
             }
             cout << endl;
         }
-       
-        
+
+
         else if (s == "elimina_especie") {
             bool existe;
             string id;
@@ -91,7 +91,7 @@ int main() {
             else cout << "ERROR: La especie " << id << " no existe." << endl;
             cout << endl;
         }
-        
+
         else if (s == "existe_especie") {
             string id;
             cin >> id;
@@ -102,7 +102,7 @@ int main() {
             else cout << "NO" << endl;
             cout << endl;
         }
-        
+
         else if (s == "lee_cjt_especies") {
             cout << "# lee_cjt_especies" << endl << endl;
             int n;
@@ -120,33 +120,33 @@ int main() {
             c.imprimir_conjunto();
             cout << endl;
         }
-        
+
         else if (s == "tabla_distancias") {
             cout << "# tabla_distancias" << endl;
             c.imprimir_tabla_distancias();
             cout << endl;
         }
-       
+
         /*else if (s == "inicializa_clusters") {
-            clusters.inicializa_clusters(c.consultar_tabla_distancias());
-            clusters.imprimir_clusters();
-            clusters.imprimir_tabla_distancias();
-        }
-        else if (s == "ejecuta_paso_wpgma") {
-            clusters.fusiona_clusters();
-            clusters.imprimir_tabla_distancias();
-        }
-        else if (s == "imprime_cluster") {
-            string id;
-            cin >> id;
-            clusters.imprimir_cluster(id);
-        }
-        else if (s == "imprime_arbol_filogenetico") {
-            clusters.inicializa_clusters(c.consultar_tabla_distancias()); // passar directament el conjunt
-            clusters.fusiona_todos_los_clusters();
-            clusters.imprimir_estructura();
-        }
-        */
+          clusters.inicializa_clusters(c.consultar_tabla_distancias());
+          clusters.imprimir_clusters();
+          clusters.imprimir_tabla_distancias();
+          }
+          else if (s == "ejecuta_paso_wpgma") {
+          clusters.fusiona_clusters();
+          clusters.imprimir_tabla_distancias();
+          }
+          else if (s == "imprime_cluster") {
+          string id;
+          cin >> id;
+          clusters.imprimir_cluster(id);
+          }
+          else if (s == "imprime_arbol_filogenetico") {
+          clusters.inicializa_clusters(c.consultar_tabla_distancias()); // passar directament el conjunt
+          clusters.fusiona_todos_los_clusters();
+          clusters.imprimir_estructura();
+          }
+          */
         else if (s == "fin") {
             fin = true;
         }
