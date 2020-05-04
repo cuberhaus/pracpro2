@@ -46,9 +46,11 @@ int main() {
             existe = c.existe_especie(s);
             if (existe) {
                 e = c.obtener_especie(s);
-                cout << e.consultar_gen();
+                cout << e.consultar_gen() << endl;
             }
             else cout << "ERROR: La especie "<< s << " no existe." << endl;
+            cout << endl;
+
         }
         
         if (s == "distancia") {
@@ -59,7 +61,7 @@ int main() {
             cout << "# distancia " << id1 << ' ' << id2 << endl;
             existe = c.existe_especie(id1);
             existe2 = c.existe_especie(id2);
-            if (not existe and not existe) {
+            if (not existe and not existe2) {
                 cout << "ERROR: La especie " << id1 << " y la especie " << id2 << " no existen." << endl;
             }
             else if (not existe) {
@@ -72,6 +74,7 @@ int main() {
             else {
                cout << c.consultar_distancia(id1,id2) << endl;
             }
+            cout << endl;
         }
        
         
@@ -98,7 +101,7 @@ int main() {
         }
         
         else if (s == "lee_cjt_especies") {
-            cout << "# lee_cjt_especies" << endl;
+            cout << "# lee_cjt_especies" << endl << endl;
             int n;
             cin >> n;
             c.borrar_conjunto();
@@ -112,6 +115,7 @@ int main() {
         else if (s == "imprime_cjt_especies") {
             cout << "# imprime_cjt_especies" << endl;;
             c.imprimir_conjunto();
+            cout << endl;
         }
         
         else if (s == "tabla_distancias") {
