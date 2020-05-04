@@ -63,6 +63,11 @@ double cjt_especies::consultar_distancia(const string id1, const string id2) con
 void cjt_especies::eliminar_especie(const string &id) {
     map <string, especie>::iterator it = espmap.find(id);
     if (it != espmap.end()) espmap.erase(it);
+    distmap.erase(id);
+    map<string, map<string, double>>::iterator it2;
+    for (it2 = distmap.begin(); it2 != distmap.end(); ++it2) {
+        it2->second.erase(id); 
+    }
 }
 
 void cjt_especies::imprimir_conjunto() const {

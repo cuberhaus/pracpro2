@@ -57,12 +57,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 33 - ((15 * winheight(0) + 10) / 20)
+let s:l = 102 - ((12 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-33
-normal! 013|
+102
+normal! 025|
 wincmd w
 argglobal
 if bufexists("cjt_especies.hh") | buffer cjt_especies.hh | else | edit cjt_especies.hh | endif
@@ -119,6 +119,7 @@ normal! zt
 14
 normal! 09|
 wincmd w
+3wincmd w
 exe '1resize ' . ((&lines * 20 + 22) / 45)
 exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
 exe '2resize ' . ((&lines * 20 + 22) / 45)
