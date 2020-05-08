@@ -25,6 +25,13 @@ class cjt_especies {
          * \pre id se encuentra dentro del set espset
          * \post especie con el id de entrada
          */
+        //recorrer distmap
+        /*inicializaclusters() {
+            for () {
+                distmap cjtclusters::agregardistancia()
+            }
+        }
+        */
         especie obtener_especie(const string& id) const; //espset.find(id)
         /** @brief Te dice si existe la especie con ese id
          * \pre id

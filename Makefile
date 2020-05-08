@@ -8,7 +8,7 @@ program.o: program.cc especie.hh cjt_especies.hh
 	g++ -c program.cc especie.hh cjt_especies.hh $(OPCIONS)
 especie.o: especie.cc especie.hh
 	g++ -c especie.cc especie.hh $(OPCIONS)
-cjt_especies.o: cjt_especies.cc especie.hh cjt_especies.hh 
+cjt_especies.o: cjt_especies.cc especie.hh cjt_especies.hh
 	g++ -c cjt_especies.cc especie.hh cjt_especies.hh $(OPCIONS)
 
 clean:
