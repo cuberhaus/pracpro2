@@ -77,7 +77,7 @@ class cjt_especies {
          * \pre True
          * \post El resultado es la tabla de distancias
          */
-        map<string, map<string, double>>consultar_tabla_distancias();  // passar directament tot el conjunt
+        //map<string, map<string, double>>consultar_tabla_distancias();  // passar directament tot el conjunt
 
 };
 #endif
