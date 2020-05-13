@@ -3,15 +3,12 @@
 
 
 cluster::cluster() {
-    dist = 0;
 }
 
-cluster::cluster(const double dist, const string id) {
-   this -> dist = dist; //(*this).dist = dist
-   this -> id = id;
-}
+//cluster::cluster(const double dist, const string id) {
+//}
 
-cluster::obtener_distancia() { 
+/*cluster::obtener_distancia() { 
     assert(dist >= 0);
     return dist;
 }
@@ -19,3 +16,4 @@ cluster::obtener_distancia() {
 cluster::obtener_cluster() {
     return bindist;
 }
+*/

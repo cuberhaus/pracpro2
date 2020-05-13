@@ -1,17 +1,18 @@
-#ifndef NO_DIAGRAM
 
+#ifndef NO_DIAGRAM
 #include <iostream>
 #include <string>
-#include "especie.hh"
 #endif
 
+#include "especie.hh"
 #include "cjt_especies.hh"
-
+#include "cluster.hh"
+#include "cjt_clusters.hh"
 using namespace std;
 
 int main() {
 
-    // cout.setf(ios::fixed);
+    //cout.setf(ios::fixed);
     //cout.precision(4);
 
     string s;
@@ -22,7 +23,7 @@ int main() {
     int k;
     cin >> k;
     especie::insertar_k(k);
-
+    cjt_clusters clusters;
     while (cin >> s and not fin) {
 
         if (s == "crea_especie") {
@@ -127,11 +128,13 @@ int main() {
             cout << endl;
         }
 
-        /*else if (s == "inicializa_clusters") {
-          clusters.inicializa_clusters(c.consultar_tabla_distancias());
-          clusters.imprimir_clusters();
-          clusters.imprimir_tabla_distancias();
-          }
+        else if (s == "inicializa_clusters") {
+            c.inicializa_clusters(clusters);
+            //clusters.imprimir_clusters();
+            clusters.imprimir_tabla_distancias();
+                
+        }
+        /*  
           else if (s == "ejecuta_paso_wpgma") {
           clusters.fusiona_clusters();
           clusters.imprimir_tabla_distancias();

@@ -16,7 +16,9 @@ using namespace std;
  */
 class cjt_clusters {
     private:
-        map <string, BinTree<cluster>> clustmap;
+        //map <string, BinTree<cluster>> clustmap;
+        map <string, cluster> clustmap;
+        map <string, map<string, double>> clustdist; 
 
     public:
         cjt_clusters();
@@ -24,12 +26,14 @@ class cjt_clusters {
          * \pre Hay almenos dos clusters guardados
          * \post Se han juntado dos clusters en uno
          */
+        void insertar_especie(const string &id1, const string &id2, const double dist);
+
         void fusiona_clusters();
         /** @brief Se inicia el conjunto de clusters a partir de la tabla de distancias del conjunto de especies
          * \pre En la entrada hay el mapa de distancias de las especies
          * \post Se ha iniciado el mapa de clusters 
          */
-        void inicializa_clusters(map<string, map<string, double >> distmap); // 
+        void inicializa_clusters(); // 
         /** @brief Imprime los clusters
          * \pre Hay almenos un cluster en el conjunto
          * \post Se han imprimido los clusters

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include "BinTree.hh"
 #endif
 
 using namespace std;
@@ -15,9 +16,11 @@ using namespace std;
 class cluster {
 
     private:
-        double dist;
-        string id;
-        map <string, double> distmap;
+        pair <string,double> raiz;
+        //double dist;
+        //string id;
+        BinTree <pair<string,double>> c_tree;
+        //map <string, double> distmap;
     public: 
         /** @brief Constructora 
          * \pre True
@@ -33,11 +36,11 @@ class cluster {
          * \pre True
          * \post El resultado son las distancias des de el cluster en el que estamos hasta los otros clusters del P.I.
          */
-        map <string, double> obtener_dist_map(); // passar directament el cluster
+//         map <string, double> obtener_dist_map(); // passar directament el cluster
         /** @brief Devuelve una distancia
          * \pre dist >= 0
          * \post El resultado es la distancia del P.I.
          */
-        double obtener_distancia();
+        //double obtener_distancia();
 };
 #endif
