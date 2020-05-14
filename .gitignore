@@ -1,6 +1,5 @@
 .DS_Store
 *.gch
-Session.vim
 cjt_clusters.o
 cjt_especies.o
 cluster.o

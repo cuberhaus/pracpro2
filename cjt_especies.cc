@@ -50,10 +50,8 @@ void cjt_especies::insertar_especie(const especie &e) {
             distmap[e.consultar_id()][it->first] = dist;
         }
         else {
-            //cout << it->first << endl;
             double dist;
             dist = especie::distancia(espmap[it->first], e);
-            //cout << dist;
             it->second[e.consultar_id()] = dist;
             --n;
         }

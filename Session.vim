@@ -79,12 +79,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 10) / 20)
+let s:l = 65 - ((14 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+65
+normal! 09|
 wincmd w
 argglobal
 if bufexists("cjt_clusters.hh") | buffer cjt_clusters.hh | else | edit cjt_clusters.hh | endif
@@ -115,14 +115,14 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 10) / 20)
+let s:l = 101 - ((11 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+101
 normal! 0
 wincmd w
-4wincmd w
+2wincmd w
 exe '1resize ' . ((&lines * 21 + 22) / 45)
 exe 'vert 1resize ' . ((&columns * 78 + 79) / 158)
 exe '2resize ' . ((&lines * 20 + 22) / 45)

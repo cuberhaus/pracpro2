@@ -50,11 +50,6 @@ class cjt_especies {
          * \post La especie se ha eliminado y se ha actualizado la tabla de distancias
          */
         void eliminar_especie(const string& id); 
-        /** @brief Borra las especies del conjunto anterior y se añaden de nuevas desde  el input
-         * \pre n especies en el input y el numero n
-         * \post N especies en el conjunto
-         */
-        void leer_conjunto();
         /** @brief Imprime el conjunto de especies
          * \pre El conjunto no es vacio
          * \post Se escriben en el output el conjunto de especies
@@ -65,9 +60,5 @@ class cjt_especies {
          * \post Se ha imprimido en el output la tabla de distancias
          */
         void imprimir_tabla_distancias() const;
-        /** @brief Devuelve la tabla de distancias
-         * \pre True
-         * \post El resultado es la tabla de distancias
-         */
 };
 #endif
