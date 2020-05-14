@@ -13,9 +13,7 @@ using namespace std;
 int main() {
     string s;
     bool fin = false;
-    //cluster clu;
     cjt_especies c;
-    //cjt_clusters clusters;
     int k;
     cin >> k;
     especie::insertar_k(k);
