@@ -1,3 +1,4 @@
+*.gch
 Session.vim
 cjt_clusters.o
 cjt_especies.o
