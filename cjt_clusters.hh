@@ -25,15 +25,15 @@ class cjt_clusters {
          */
         cjt_clusters();
 
-        /** @brief 
-         * \pre
-         * \post
+        /** @brief Inserta la distancia de una especie en el conjunto
+         * \pre id1, id2 son strings i dist es un double
+         * \post Las distancias se han añadido al conjunto
          */
         void insertar_especie_dist(const string &id1, const string &id2, const double dist);
 
-        /** @brief
-         * \pre
-         * \post
+        /** @brief Inserta un cluster al conjunto
+         * \pre El id no està en el conjunto
+         * \post El cluster se ha añadido al conjunto
          */
         void insertar_cluster(const string &id);
         /** @brief Imprime la tabla de distancias entre clusters
@@ -41,6 +41,13 @@ class cjt_clusters {
          * \post Se ha imprimido la tabla de distancias en el output
          */
         void imprimir_tabla_distancias() const;
+
+        /** @brief Dado un id imprime el cluster correspondiente
+         * \pre El id dado corresponde a un cluster del conjunto   
+         * \post Imprime el cluster correspondiente al id en el output
+         */
+        void imprimir_cluster(const string &id) const;
+
         /** @brief fusiona los dos clusters a menor distancia en uno nuevo
          * \pre Hay almenos dos clusters guardados
          * \post Se han juntado dos clusters en uno
@@ -51,11 +58,6 @@ class cjt_clusters {
          * \post Se han imprimido los clusters
          */
         void imprimir_clusters() const;
-        /** @brief Dado un id imprime el cluster correspondiente
-         * \pre El id dado corresponde a un cluster del conjunto   
-         * \post Imprime el cluster correspondiente al id en el output
-         */
-        void imprimir_cluster(const string &id) const;
         /** @brief Consulta el numero de elementos que hay en el conjunto
          * \pre True
          * \post El resultado es el numero de elementos en el conjunto

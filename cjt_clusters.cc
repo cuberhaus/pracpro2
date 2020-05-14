@@ -23,10 +23,6 @@ void cjt_clusters::insertar_cluster(const string &id) {
     clustmap [id] = c; 
 }
 
-void cjt_clusters::imprimir_cluster(const string &id) const {
-    clustmap.at(id).imprimir_cluster();
-}
-
 void cjt_clusters::imprimir_tabla_distancias() const {
     map <string, map<string, double >>::const_iterator it1;
     map<string,double>::const_iterator it2;
@@ -37,4 +33,8 @@ void cjt_clusters::imprimir_tabla_distancias() const {
         }
         cout << endl;
     }
+}
+
+void cjt_clusters::imprimir_cluster(const string &id) const {
+    clustmap.at(id).imprimir_cluster();
 }
