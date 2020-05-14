@@ -15,30 +15,42 @@ using namespace std;
  */
 class cjt_clusters {
     private:
-        //map <string, BinTree<cluster>> clustmap;
         map <string, cluster> clustmap;
         map <string, map<string, double>> clustdist; 
 
     public:
+        /** @brief Constructora
+         * \pre True
+         * \post Crea un conjunto de clusters
+         */
         cjt_clusters();
+
+        /** @brief 
+         * \pre
+         * \post
+         */
+        void insertar_especie_dist(const string &id1, const string &id2, const double dist);
+
+        /** @brief
+         * \pre
+         * \post
+         */
+        void insertar_cluster(const string &id);
+        /** @brief Imprime la tabla de distancias entre clusters
+         * \pre Se han inicializado previamente los clusters
+         * \post Se ha imprimido la tabla de distancias en el output
+         */
+        void imprimir_tabla_distancias() const;
         /** @brief fusiona los dos clusters a menor distancia en uno nuevo
          * \pre Hay almenos dos clusters guardados
          * \post Se han juntado dos clusters en uno
          */
-        void insertar_especie_dist(const string &id1, const string &id2, const double dist);
-        
-        void insertar_cluster(const string &id);
         void fusiona_clusters();
         /** @brief Imprime los clusters
          * \pre Hay almenos un cluster en el conjunto
          * \post Se han imprimido los clusters
          */
         void imprimir_clusters() const;
-        /** @brief Imprime la tabla de distancias entre clusters
-         * \pre Se han inicializado previamente los clusters
-         * \post Se ha imprimido la tabla de distancias en el output
-         */
-        void imprimir_tabla_distancias() const;
         /** @brief Dado un id imprime el cluster correspondiente
          * \pre El id dado corresponde a un cluster del conjunto   
          * \post Imprime el cluster correspondiente al id en el output

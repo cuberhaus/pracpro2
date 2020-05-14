@@ -20,25 +20,9 @@ class cjt_especies {
     public: 
         //posarme al principi demanar on estic
         //index al principi anar al seguent i saber si arriba al final
-        cjt_especies();
         //recorrer distmap
-
-        /* 
-        int mida_files();
-        ** @brief Dada una j devuelve el número de columnas de esa fila
-         * \pre i < mida_files 
-         * \post El numero de columnas en el output
-         /
         
-        int mida_columnes(int i);
-        string consultar_id(int i);
-        */ 
-
-        /** @brief Devuelve una especie dado un string
-         * \pre id se encuentra dentro del set espset
-         * \post especie con el id de entrada
-         */
-        
+        cjt_especies();
         void inicializa_clusters(cjt_clusters &clusters);
         especie obtener_especie(const string& id) const; 
         /** @brief Te dice si existe la especie con ese id
@@ -85,7 +69,5 @@ class cjt_especies {
          * \pre True
          * \post El resultado es la tabla de distancias
          */
-        //map<string, map<string, double>>consultar_tabla_distancias();  // passar directament tot el conjunt
-
 };
 #endif

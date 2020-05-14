@@ -16,33 +16,25 @@ using namespace std;
 class cluster {
 
     private:
-        //pair <string,double> raiz;
-        //double dist;
-        //string id;
         BinTree <pair<string,double>> c_tree;
-        //map <string, double> distmap;
+
     public: 
         /** @brief Constructora 
          * \pre True
          * \post El resultado es un cluster con distancia 0
          */
         cluster();
+
         /** @brief Constructora
          * \pre True
          * \post El resultado es un cluster con sus distancia y ID
          */
         cluster(BinTree<pair<string,double>> &c_tree);
 
-        void imprimir_cluster() const;
-        /** @brief Devuelve las distancias a los demás clusters 
+        /** @brief Imprime la estructura del cluster 
          * \pre True
-         * \post El resultado son las distancias des de el cluster en el que estamos hasta los otros clusters del P.I.
+         * \post Imprime en el output la estructura del cluster 
          */
-//         map <string, double> obtener_dist_map(); // passar directament el cluster
-        /** @brief Devuelve una distancia
-         * \pre dist >= 0
-         * \post El resultado es la distancia del P.I.
-         */
-        //double obtener_distancia();
+        void imprimir_cluster() const;
 };
 #endif

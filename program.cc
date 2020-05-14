@@ -11,10 +11,6 @@
 using namespace std;
 
 int main() {
-
-    //cout.setf(ios::fixed);
-    //cout.precision(4);
-
     string s;
     bool fin = false;
     //cluster clu;
@@ -133,24 +129,24 @@ int main() {
             c.inicializa_clusters(clusters);
             clusters.imprimir_tabla_distancias();
         }
-         
+
         //  else if (s == "ejecuta_paso_wpgma") {
-         // clusters.fusiona_clusters();
-          //clusters.imprimir_tabla_distancias();
-          //}
-          else if (s == "imprime_cluster") {
-              string id;
-              cin >> id;
-              cout << "# imprime_cluster " << id << endl;
-              clusters.imprimir_cluster(id);
-          }
-          /*
-          else if (s == "imprime_arbol_filogenetico") {
-          clusters.inicializa_clusters(c.consultar_tabla_distancias()); // passar directament el conjunt
-          clusters.fusiona_todos_los_clusters();
-          clusters.imprimir_estructura();
-          }
-          */
+        // clusters.fusiona_clusters();
+        //clusters.imprimir_tabla_distancias();
+        //}
+        else if (s == "imprime_cluster") {
+            string id;
+            cin >> id;
+            cout << "# imprime_cluster " << id << endl;
+            clusters.imprimir_cluster(id);
+        }
+        /*
+           else if (s == "imprime_arbol_filogenetico") {
+           clusters.inicializa_clusters(c.consultar_tabla_distancias()); // passar directament el conjunt
+           clusters.fusiona_todos_los_clusters();
+           clusters.imprimir_estructura();
+           }
+           */
         else if (s == "fin") {
             fin = true;
         }
