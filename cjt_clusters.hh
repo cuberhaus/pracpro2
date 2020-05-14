@@ -7,7 +7,6 @@
 #include <string>
 #include "BinTree.hh"
 #endif
-
 #include "cluster.hh"
 using namespace std;
 
@@ -26,14 +25,10 @@ class cjt_clusters {
          * \pre Hay almenos dos clusters guardados
          * \post Se han juntado dos clusters en uno
          */
-        void insertar_especie(const string &id1, const string &id2, const double dist);
-
+        void insertar_especie_dist(const string &id1, const string &id2, const double dist);
+        
+        void insertar_cluster(const string &id);
         void fusiona_clusters();
-        /** @brief Se inicia el conjunto de clusters a partir de la tabla de distancias del conjunto de especies
-         * \pre En la entrada hay el mapa de distancias de las especies
-         * \post Se ha iniciado el mapa de clusters 
-         */
-        void inicializa_clusters(); // 
         /** @brief Imprime los clusters
          * \pre Hay almenos un cluster en el conjunto
          * \post Se han imprimido los clusters

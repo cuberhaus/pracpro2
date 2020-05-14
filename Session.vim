@@ -42,14 +42,14 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 21 + 22) / 45)
-exe 'vert 1resize ' . ((&columns * 78 + 79) / 158)
-exe '2resize ' . ((&lines * 20 + 22) / 45)
-exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
+exe '1resize ' . ((&lines * 20 + 22) / 45)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe '2resize ' . ((&lines * 21 + 22) / 45)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
 exe '3resize ' . ((&lines * 21 + 22) / 45)
-exe 'vert 3resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 exe '4resize ' . ((&lines * 20 + 22) / 45)
-exe 'vert 4resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 4resize ' . ((&columns * 78 + 79) / 158)
 argglobal
 if bufexists("program.cc") | buffer program.cc | else | edit program.cc | endif
 setlocal fdm=manual
@@ -61,12 +61,48 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 133 - ((10 * winheight(0) + 10) / 21)
+let s:l = 145 - ((9 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-133
-normal! 042|
+145
+normal! 0
+wincmd w
+argglobal
+if bufexists("cluster.cc") | buffer cluster.cc | else | edit cluster.cc | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 5 - ((3 * winheight(0) + 10) / 21)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+5
+normal! 05|
+wincmd w
+argglobal
+if bufexists("BinTree.hh") | buffer BinTree.hh | else | edit BinTree.hh | endif
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let s:l = 61 - ((15 * winheight(0) + 10) / 21)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+61
+normal! 0
 wincmd w
 argglobal
 if bufexists("cjt_clusters.cc") | buffer cjt_clusters.cc | else | edit cjt_clusters.cc | endif
@@ -79,69 +115,33 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 24 - ((14 * winheight(0) + 10) / 20)
+let s:l = 12 - ((9 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-24
-normal! 0
-wincmd w
-argglobal
-if bufexists("cjt_especies.hh") | buffer cjt_especies.hh | else | edit cjt_especies.hh | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 42 - ((10 * winheight(0) + 10) / 21)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-42
-normal! 0
-wincmd w
-argglobal
-if bufexists("cjt_especies.cc") | buffer cjt_especies.cc | else | edit cjt_especies.cc | endif
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 28 - ((11 * winheight(0) + 10) / 20)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-28
-normal! 017|
+12
+normal! 05|
 wincmd w
 2wincmd w
-exe '1resize ' . ((&lines * 21 + 22) / 45)
-exe 'vert 1resize ' . ((&columns * 78 + 79) / 158)
-exe '2resize ' . ((&lines * 20 + 22) / 45)
-exe 'vert 2resize ' . ((&columns * 78 + 79) / 158)
+exe '1resize ' . ((&lines * 20 + 22) / 45)
+exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
+exe '2resize ' . ((&lines * 21 + 22) / 45)
+exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
 exe '3resize ' . ((&lines * 21 + 22) / 45)
-exe 'vert 3resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
 exe '4resize ' . ((&lines * 20 + 22) / 45)
-exe 'vert 4resize ' . ((&columns * 79 + 79) / 158)
+exe 'vert 4resize ' . ((&columns * 78 + 79) / 158)
 tabnext 1
-badd +3 BinTree.hh
-badd +19 cjt_clusters.hh
-badd +40 cjt_especies.hh
-badd +20 cluster.hh
-badd +1 especie.hh
-badd +24 cjt_clusters.cc
-badd +15 cjt_especies.cc
-badd +11 cluster.cc
-badd +2 especie.cc
-badd +137 program.cc
+badd +48 BinTree.hh
+badd +8 cjt_clusters.hh
+badd +17 cjt_especies.hh
+badd +30 cluster.hh
+badd +57 especie.hh
+badd +28 cjt_clusters.cc
+badd +52 cjt_especies.cc
+badd +5 cluster.cc
+badd +40 especie.cc
+badd +145 program.cc
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

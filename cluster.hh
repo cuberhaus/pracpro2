@@ -16,7 +16,7 @@ using namespace std;
 class cluster {
 
     private:
-        pair <string,double> raiz;
+        //pair <string,double> raiz;
         //double dist;
         //string id;
         BinTree <pair<string,double>> c_tree;
@@ -31,7 +31,9 @@ class cluster {
          * \pre True
          * \post El resultado es un cluster con sus distancia y ID
          */
-        cluster(const double dist, const string id);
+        cluster(BinTree<pair<string,double>> &c_tree);
+
+        void imprimir_cluster() const;
         /** @brief Devuelve las distancias a los demás clusters 
          * \pre True
          * \post El resultado son las distancias des de el cluster en el que estamos hasta los otros clusters del P.I.

@@ -129,21 +129,22 @@ int main() {
         }
 
         else if (s == "inicializa_clusters") {
+            cout << "# inicializa_clusters" << endl;
             c.inicializa_clusters(clusters);
-            //clusters.imprimir_clusters();
             clusters.imprimir_tabla_distancias();
-                
         }
-        /*  
-          else if (s == "ejecuta_paso_wpgma") {
-          clusters.fusiona_clusters();
-          clusters.imprimir_tabla_distancias();
-          }
+         
+        //  else if (s == "ejecuta_paso_wpgma") {
+         // clusters.fusiona_clusters();
+          //clusters.imprimir_tabla_distancias();
+          //}
           else if (s == "imprime_cluster") {
-          string id;
-          cin >> id;
-          clusters.imprimir_cluster(id);
+              string id;
+              cin >> id;
+              cout << "# imprime_cluster " << id << endl;
+              clusters.imprimir_cluster(id);
           }
+          /*
           else if (s == "imprime_arbol_filogenetico") {
           clusters.inicializa_clusters(c.consultar_tabla_distancias()); // passar directament el conjunt
           clusters.fusiona_todos_los_clusters();

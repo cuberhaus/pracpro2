@@ -15,19 +15,23 @@ void cjt_especies::inicializa_clusters(cjt_clusters &clusters) {
     map <string,double>::iterator it2;
     for (it1 = distmap.begin(); it1 != distmap.end(); ++it1) {
         string id1 = it1->first;
+        clusters.insertar_cluster(it1->first);
         for (it2 = it1->second.begin(); it2 != it1->second.end(); ++it2) {
             string id2 = it2->first;
             double dist = it2->second;
-            clusters.insertar_especie(id1,id2,dist);
+            clusters.insertar_especie_dist(id1,id2,dist);
         }
     }
-    
     it1 = distmap.end(); 
     --it1;
-    it2 = it1->second.begin();
     double d = -1;
-    clusters.insertar_especie(it1->first, it2->first, d);
+    string s;
+    clusters.insertar_especie_dist(it1->first, s, d);
     
+    //map<string, especie>::iterator it3;
+    //for (it3 = espmap.begin(); != espmap.end(), ) {
+    //}
+     
 }
 especie cjt_especies::obtener_especie(const string& id) const {
     map <string, especie>::const_iterator it = espmap.find(id);

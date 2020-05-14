@@ -55,7 +55,6 @@ class especie {
      *  \post El parámetro k ha sido actualizado
      */
     static void insertar_k(int k); // passar com a parametre
-        
     static double distancia(const especie &e1, const especie &e2);
 
     //distancia static
