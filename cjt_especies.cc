@@ -21,11 +21,13 @@ void cjt_especies::inicializa_clusters(cjt_clusters &clusters) {
             clusters.insertar_especie_dist(id1,id2,dist);
         }
     }
-    it1 = distmap.end(); 
-    --it1;
-    double d = -1;
-    string s;
-    clusters.insertar_especie_dist(it1->first, s, d);
+    if (espmap.size() != 0) {
+        it1 = distmap.end(); 
+        --it1;
+        double d = -1;
+        string s;
+        clusters.insertar_especie_dist(it1->first, s, d);
+    }
 }
 
 especie cjt_especies::obtener_especie(const string& id) const {
@@ -42,8 +44,8 @@ bool cjt_especies::existe_especie(const string &id) const {
 void cjt_especies::insertar_especie(const especie &e) {
     espmap.insert(make_pair(e.consultar_id(),e));
     map<string, map<string, double>>::iterator it = distmap.begin();
-    int n = distmap.size();
-    for (it = distmap.begin(); it != distmap.end() and n > 0; ++it) {
+    //int n = distmap.size();
+    for (it = distmap.begin(); it != distmap.end()/* and n > 0*/; ++it) {
         if (it->first > e.consultar_id()) {
             double dist;
             dist = especie::distancia(espmap[it->first], e);
@@ -53,7 +55,7 @@ void cjt_especies::insertar_especie(const especie &e) {
             double dist;
             dist = especie::distancia(espmap[it->first], e);
             it->second[e.consultar_id()] = dist;
-            --n;
+            //--n;
         }
     }
     distmap[e.consultar_id()];
