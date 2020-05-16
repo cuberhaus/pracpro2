@@ -65,43 +65,42 @@ pair <double, pair<string, string>> cjt_clusters::distancia_minima() const {
 void cjt_clusters::fusiona_clusters() {
     pair <double, pair<string, string>> ids_min;
     ids_min = distancia_minima();
+    string id1 = ids_min.second.first;
+    string id2 = ids_min.second.second;
     string fus;
     fus = ids_min.second.first + ids_min.second.second;
     clustdist[fus]; 
-    map<string, map<string,double>>::iterator it;
+    map<string, map<string,double>>::iterator it, it2;
+    it2 = clustdist.end();
+    --it2; 
+    --it2;
+   cout << "hi" << endl; 
+   int x = 0;
+    for (it = clustdist.begin(); it != clustdist.end() and it != it2; ++it) {
+        cout << it->first;
+        if (fus > it->first) {
+            clustdist[it->first][fus] = (clustdist.at(it->first).at(id1)+clustdist.at(it->first).at(id2)) / 2;
+        }
+        else if (fus < it->first) {
+            ++x; 
+            cout << x << endl;
+            if (id1 < it->first and id2 < it->first) {
+                clustdist[fus][it->first] = (clustdist.at(id1).at(it->first) + clustdist.at(id2).at(it->first)) / 2;
+            }
+            if (id1 < it->first and id2 > it->first) {
+                clustdist[fus][it->first] = (clustdist.at(id1).at(it->first) + clustdist.at(it->first).at(id2)) / 2;
+            }
+            if (id1 > it->first and id2 < it->first) {
+                clustdist[fus][it->first] = (clustdist.at(it->first).at(id1) + clustdist.at(id2).at(it->first)) / 2;
+            }
+            if (id1 > it->first and id2 > it->first) {
+                clustdist[fus][it->first] = (clustdist.at(it->first).at(id1) + clustdist.at(it->first).at(id2)) / 2;
+            }
+        }
+    }
+    cout << "we did it";
+    clustdist.erase(id1);
+    clustdist.erase(id2);
 
-    for (it = clustdist.begin(); it != clustdist.end(); ++it) {
-        cout << it->first << ' ';
-        if (fus > it->first) {
-            
-            it->second[fus] =(it->second[ids_min.second.first] + it->second[ids_min.second.second]) / 2;
-        }
-        else if (fus < it->first){
-            cout << it->first << ' ';
-            cout << clustdist.at(ids_min.second.first).first;
-            cout << clustdist.at(ids_min.second.first).at(it->first) << endl;
-            double sum1 = clustdist.at(ids_min.second.first).at(it->first);
-            double sum2 = clustdist.at(ids_min.second.second).at(it->first);
-             
-            clustdist[fus][it->first] = (sum1+sum2)/2;
-            
-        }
-    }
-    cout << "hi";
-    for (it = clustdist.begin(); it != clustdist.end(); ++it) {
-        if (fus > it->first) {
-            
-            it->second.erase(ids_min.second.first);
-            it->second.erase(ids_min.second.second);
-            
-        }
-        else if (fus < it->first){
-            it->second.erase(ids_min.second.first);
-            it->second.erase(ids_min.second.second);
-        }
-    }
-    clustdist[fus].erase(ids_min.second.first);
-    clustdist[fus].erase(ids_min.second.second);
-    clustdist.erase(ids_min.second.first);
-    clustdist.erase(ids_min.second.second);
+
 }
