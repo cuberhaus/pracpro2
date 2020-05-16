@@ -42,14 +42,14 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 21 + 22) / 45)
-exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
-exe '2resize ' . ((&lines * 20 + 22) / 45)
-exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
-exe '3resize ' . ((&lines * 21 + 22) / 45)
-exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
-exe '4resize ' . ((&lines * 20 + 22) / 45)
-exe 'vert 4resize ' . ((&columns * 78 + 79) / 158)
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 76 + 79) / 158)
+exe '2resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 76 + 79) / 158)
+exe '3resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 81 + 79) / 158)
+exe '4resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 4resize ' . ((&columns * 81 + 79) / 158)
 argglobal
 if bufexists("program.cc") | buffer program.cc | else | edit program.cc | endif
 setlocal fdm=manual
@@ -61,15 +61,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 129 - ((12 * winheight(0) + 10) / 21)
+let s:l = 128 - ((5 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-129
-normal! 013|
+128
+normal! 09|
 wincmd w
 argglobal
-if bufexists("cjt_especies.cc") | buffer cjt_especies.cc | else | edit cjt_especies.cc | endif
+if bufexists("cluster.hh") | buffer cluster.hh | else | edit cluster.hh | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -79,12 +79,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 54 - ((10 * winheight(0) + 10) / 20)
+let s:l = 34 - ((11 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-54
-normal! 06|
+34
+normal! 0
 wincmd w
 argglobal
 if bufexists("cjt_clusters.hh") | buffer cjt_clusters.hh | else | edit cjt_clusters.hh | endif
@@ -97,11 +97,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((12 * winheight(0) + 10) / 21)
+let s:l = 27 - ((12 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
+27
 normal! 0
 wincmd w
 argglobal
@@ -115,30 +115,30 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 68 - ((4 * winheight(0) + 10) / 20)
+let s:l = 79 - ((6 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-68
-normal! 041|
+79
+normal! 0167|
 wincmd w
 4wincmd w
-exe '1resize ' . ((&lines * 21 + 22) / 45)
-exe 'vert 1resize ' . ((&columns * 79 + 79) / 158)
-exe '2resize ' . ((&lines * 20 + 22) / 45)
-exe 'vert 2resize ' . ((&columns * 79 + 79) / 158)
-exe '3resize ' . ((&lines * 21 + 22) / 45)
-exe 'vert 3resize ' . ((&columns * 78 + 79) / 158)
-exe '4resize ' . ((&lines * 20 + 22) / 45)
-exe 'vert 4resize ' . ((&columns * 78 + 79) / 158)
+exe '1resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 1resize ' . ((&columns * 76 + 79) / 158)
+exe '2resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 2resize ' . ((&columns * 76 + 79) / 158)
+exe '3resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 3resize ' . ((&columns * 81 + 79) / 158)
+exe '4resize ' . ((&lines * 18 + 20) / 40)
+exe 'vert 4resize ' . ((&columns * 81 + 79) / 158)
 tabnext 1
 badd +9 BinTree.hh
-badd +16 cjt_clusters.hh
+badd +20 cjt_clusters.hh
 badd +14 cjt_especies.hh
 badd +35 cluster.hh
-badd +57 especie.hh
-badd +18 cjt_clusters.cc
-badd +27 cjt_especies.cc
+badd +27 especie.hh
+badd +89 cjt_clusters.cc
+badd +54 cjt_especies.cc
 badd +9 cluster.cc
 badd +40 especie.cc
 badd +145 program.cc

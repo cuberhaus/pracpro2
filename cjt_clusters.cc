@@ -39,7 +39,7 @@ void cjt_clusters::imprimir_cluster(const string &id) const {
     clustmap.at(id).imprimir_cluster();
 }
 
-pair <string, string> cjt_clusters::distancia_minima() const {
+pair <double, pair<string, string>> cjt_clusters::distancia_minima() const {
     map <string, map<string,double>>::const_iterator it1;
     map <string,double>::const_iterator it2;
     it1 = clustdist.begin();
@@ -56,31 +56,52 @@ pair <string, string> cjt_clusters::distancia_minima() const {
             }
         }
     }
-    pair <string,string> ids;
-    ids.first = id1;
-    ids.second = id2;
+    pair <double, pair<string,string>> ids;
+    ids.first = minim;
+    ids.second.first = id1;
+    ids.second.second = id2;
     return ids;
 }
 void cjt_clusters::fusiona_clusters() {
-    pair <string, string> ids_min;
+    pair <double, pair<string, string>> ids_min;
     ids_min = distancia_minima();
     string fus;
-    fus = ids_min.first + ids_min.second;
+    fus = ids_min.second.first + ids_min.second.second;
     clustdist[fus]; 
     map<string, map<string,double>>::iterator it;
 
     for (it = clustdist.begin(); it != clustdist.end(); ++it) {
+        cout << it->first << ' ';
         if (fus > it->first) {
-
-            it->second[fus] =(it->second[ids_min.first] + it->second[ids_min.second]) / 2;
-            it->second.erase(ids_min.first);
-            it->second.erase(ids_min.second);
-        }
-        else if (fus <= it->first){
-            double sum1 = clustdist[ids_min.first][it->first];
-            double sum2 = clustdist[ids_min.second][it->first];
             
+            it->second[fus] =(it->second[ids_min.second.first] + it->second[ids_min.second.second]) / 2;
+        }
+        else if (fus < it->first){
+            cout << it->first << ' ';
+            cout << clustdist.at(ids_min.second.first).first;
+            cout << clustdist.at(ids_min.second.first).at(it->first) << endl;
+            double sum1 = clustdist.at(ids_min.second.first).at(it->first);
+            double sum2 = clustdist.at(ids_min.second.second).at(it->first);
+             
             clustdist[fus][it->first] = (sum1+sum2)/2;
+            
         }
     }
+    cout << "hi";
+    for (it = clustdist.begin(); it != clustdist.end(); ++it) {
+        if (fus > it->first) {
+            
+            it->second.erase(ids_min.second.first);
+            it->second.erase(ids_min.second.second);
+            
+        }
+        else if (fus < it->first){
+            it->second.erase(ids_min.second.first);
+            it->second.erase(ids_min.second.second);
+        }
+    }
+    clustdist[fus].erase(ids_min.second.first);
+    clustdist[fus].erase(ids_min.second.second);
+    clustdist.erase(ids_min.second.first);
+    clustdist.erase(ids_min.second.second);
 }

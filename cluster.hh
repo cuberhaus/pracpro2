@@ -30,6 +30,7 @@ class cluster {
          * \post El resultado es un cluster con sus distancia y ID
          */
         cluster(BinTree<pair<string,double>> &c_tree);
+        cluster(int value, const string & right, const string& left);
 
         /** @brief Imprime la estructura del cluster 
          * \pre True

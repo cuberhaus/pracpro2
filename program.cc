@@ -126,13 +126,11 @@ int main() {
             cout << "# inicializa_clusters" << endl;
             c.inicializa_clusters(clusters);
             clusters.imprimir_tabla_distancias();
-            clusters.fusiona_clusters();
         }
-
-        //  else if (s == "ejecuta_paso_wpgma") {
-        // clusters.fusiona_clusters();
-        //clusters.imprimir_tabla_distancias();
-        //}
+        else if (s == "ejecuta_paso_wpgma") {
+            clusters.fusiona_clusters();
+            clusters.imprimir_tabla_distancias();
+        }
         else if (s == "imprime_cluster") {
             string id;
             cin >> id;

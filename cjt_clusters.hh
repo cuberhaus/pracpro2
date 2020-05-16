@@ -17,7 +17,7 @@ class cjt_clusters {
     private:
         map <string, cluster> clustmap;
         map <string, map<string, double>> clustdist; 
-        pair <string, string> distancia_minima() const;
+        pair <double, pair<string, string>> distancia_minima() const;
     public:
         /** @brief Constructora
          * \pre True
