@@ -64,6 +64,7 @@ pair <double, pair<string, string>> cjt_clusters::distancia_minima() const {
 }
 void cjt_clusters::fusiona_clusters() {
     pair <double, pair<string, string>> ids_min;
+    double dist = ids_min.first;
     ids_min = distancia_minima();
     string id1 = ids_min.second.first;
     string id2 = ids_min.second.second;
@@ -98,8 +99,13 @@ void cjt_clusters::fusiona_clusters() {
         clustdist[it->first].erase(id1);
         clustdist[it->first].erase(id2);
     }
+    pair <string, double> newclust;
+    newclust.second = dist;
+    newclust.first = fus;
     clustdist.erase(id1);
     clustdist.erase(id2);
-
-
+    cluster clust (newclust, clustmap[id1], clustmap[id2]);
+    clustmap.erase(id1);
+    clustmap.erase(id2);
+    clustmap[fus] = clust;
 }

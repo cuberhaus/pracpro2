@@ -8,15 +8,21 @@ cluster::cluster(BinTree<pair<string,double>> &c_tree) {
     this -> c_tree = c_tree;
 }
 
+cluster::cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right) {
+
+    BinTree <pair<string,double>> c_tree(newclust, left.c_tree, right.c_tree);
+    this -> c_tree  = c_tree;
+}
+
 void imprimir_cluster_aux(const BinTree <pair<string,double>> &c_tree)  {
     if (not c_tree.empty() and c_tree.left().empty() and c_tree.right().empty()) {
         cout << '[' << c_tree.value().first << ']';
     }
     else if (not c_tree.empty()) {
         cout << "[";
-        cout << '(' << c_tree.value().first << ", " << c_tree.value().second;
+        cout << '(' << c_tree.value().first << ", " << c_tree.value().second << ") ";
         imprimir_cluster_aux(c_tree.left());
-        cout << ']';
+        //cout << ']';
         imprimir_cluster_aux(c_tree.right());
         cout << ']';
     }
@@ -25,3 +31,5 @@ void imprimir_cluster_aux(const BinTree <pair<string,double>> &c_tree)  {
 void cluster::imprimir_cluster() const {
     imprimir_cluster_aux(c_tree);
 }
+
+
