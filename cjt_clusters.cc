@@ -64,8 +64,8 @@ pair <double, pair<string, string>> cjt_clusters::distancia_minima() const {
 }
 void cjt_clusters::fusiona_clusters() {
     pair <double, pair<string, string>> ids_min;
-    double dist = ids_min.first;
     ids_min = distancia_minima();
+    double dist = ids_min.first/2;
     string id1 = ids_min.second.first;
     string id2 = ids_min.second.second;
     string fus;
