@@ -126,33 +126,48 @@ int main() {
             cout << "# inicializa_clusters" << endl;
             c.inicializa_clusters(clusters);
             clusters.imprimir_tabla_distancias();
+            cout << endl;
         }
         else if (s == "ejecuta_paso_wpgma") {
+            cout << "# ejecuta_paso_wpgma" << endl;
             if (clusters.size() > 1) {
                 clusters.fusiona_clusters();
                 clusters.imprimir_tabla_distancias();
+                cout << endl;
             }
+            else cout << "ERROR: num_clusters <= 1" << endl << endl; 
         }
         else if (s == "imprime_cluster") {
             string id;
             cin >> id;
             cout << "# imprime_cluster " << id << endl;
-            clusters.imprimir_cluster(id);
+
+            if (clusters.existe_cluster(id)){
+                clusters.imprimir_cluster(id);
+                cout << endl;
+                cout << endl;
+            }
+            else cout << "ERROR: El cluster "<< id << " no existe." << endl << endl;
         }
 
         else if (s == "imprime_arbol_filogenetico") {
+            cout << "# imprime_arbol_filogenetico" << endl; 
             c.inicializa_clusters(clusters);
             if (clusters.size() > 1) {
                 while (clusters.size() > 1) {
                     clusters.fusiona_clusters();
                 }
                 clusters.imprimir_arbol_filogenetico();
+                cout << endl;
+                cout << endl;
             }
             else if (clusters.size() == 1) {
                 clusters.imprimir_arbol_filogenetico();  
+                cout << endl;
+                cout << endl;
             }
             else if (clusters.size() == 0) {
-                cout << "ERROR: El conjunto de clusters es vacio." << endl;
+                cout << "ERROR: El conjunto de clusters es vacio." << endl << endl;
             }
         }
 

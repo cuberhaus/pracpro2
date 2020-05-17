@@ -61,12 +61,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 153 - ((11 * winheight(0) + 9) / 18)
+let s:l = 1 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-153
-normal! 016|
+1
+normal! 0
 wincmd w
 argglobal
 if bufexists("cjt_clusters.hh") | buffer cjt_clusters.hh | else | edit cjt_clusters.hh | endif
@@ -79,15 +79,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 44 - ((4 * winheight(0) + 9) / 18)
+let s:l = 1 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-44
+1
 normal! 0
 wincmd w
 argglobal
-if bufexists("cluster.cc") | buffer cluster.cc | else | edit cluster.cc | endif
+if bufexists("cjt_especies.cc") | buffer cjt_especies.cc | else | edit cjt_especies.cc | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -97,12 +97,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 23 - ((6 * winheight(0) + 9) / 18)
+let s:l = 13 - ((4 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 089|
+13
+normal! 031|
 wincmd w
 argglobal
 if bufexists("cjt_clusters.cc") | buffer cjt_clusters.cc | else | edit cjt_clusters.cc | endif
@@ -115,12 +115,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 117 - ((13 * winheight(0) + 9) / 18)
+let s:l = 46 - ((13 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-117
-normal! 0
+46
+normal! 017|
 wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 76 + 79) / 158)
@@ -138,9 +138,9 @@ badd +25 cluster.hh
 badd +27 especie.hh
 badd +92 cjt_clusters.cc
 badd +24 cjt_especies.cc
-badd +18 cluster.cc
+badd +23 cluster.cc
 badd +40 especie.cc
-badd +135 program.cc
+badd +125 program.cc
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

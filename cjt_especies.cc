@@ -10,6 +10,7 @@ cjt_especies::cjt_especies() {
 }
 
 void cjt_especies::inicializa_clusters(cjt_clusters &clusters) {
+    clusters.borrar_conjunto();
     map <string, map<string, double>>::iterator it1;
     map <string,double>::iterator it2;
     for (it1 = distmap.begin(); it1 != distmap.end(); ++it1) {

@@ -39,6 +39,13 @@ void cjt_clusters::imprimir_cluster(const string &id) const {
     clustmap.at(id).imprimir_cluster();
 }
 
+bool cjt_clusters::existe_cluster(const string &id) const {
+    map <string,cluster>::const_iterator it;
+    it = clustmap.find(id);
+    if (it != clustmap.end()) return true;
+    return false;
+}
+
 pair <double, pair<string, string>> cjt_clusters::distancia_minima() const {
     map <string, map<string,double>>::const_iterator it1;
     map <string,double>::const_iterator it2;
@@ -112,6 +119,11 @@ void cjt_clusters::fusiona_clusters() {
 
 int cjt_clusters::size() const {
     return clustmap.size();
+}
+
+void cjt_clusters::borrar_conjunto() {
+    clustmap.clear();
+    clustdist.clear();
 }
 
 void cjt_clusters::imprimir_arbol_filogenetico() const {

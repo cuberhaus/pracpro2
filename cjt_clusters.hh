@@ -47,6 +47,7 @@ class cjt_clusters {
          * \post Imprime el cluster correspondiente al id en el output
          */
         void imprimir_cluster(const string &id) const;
+        bool existe_cluster(const string &id) const;
 
         /** @brief fusiona los dos clusters a menor distancia en uno nuevo
          * \pre Hay almenos dos clusters guardados
@@ -67,6 +68,7 @@ class cjt_clusters {
          * \pre True
          * \post Se ha imprimido la estructura arborescente en el output 
          */
+        void borrar_conjunto();
         void imprimir_arbol_filogenetico() const;
         /** @brief Fusiona todos los clusters hasta que solo queda uno
          * \pre True
