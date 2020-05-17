@@ -115,12 +115,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 79 - ((6 * winheight(0) + 9) / 18)
+let s:l = 1 - ((0 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-79
-normal! 0167|
+1
+normal! 0
 wincmd w
 4wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
@@ -133,11 +133,11 @@ exe '4resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 4resize ' . ((&columns * 81 + 79) / 158)
 tabnext 1
 badd +9 BinTree.hh
-badd +20 cjt_clusters.hh
+badd +27 cjt_clusters.hh
 badd +14 cjt_especies.hh
 badd +35 cluster.hh
 badd +27 especie.hh
-badd +89 cjt_clusters.cc
+badd +92 cjt_clusters.cc
 badd +54 cjt_especies.cc
 badd +9 cluster.cc
 badd +40 especie.cc

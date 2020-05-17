@@ -71,34 +71,33 @@ void cjt_clusters::fusiona_clusters() {
     fus = ids_min.second.first + ids_min.second.second;
     clustdist[fus]; 
     map<string, map<string,double>>::iterator it, it2;
-    it2 = clustdist.end();
-    --it2; 
-    --it2;
-   cout << "hi" << endl; 
-   int x = 0;
-    for (it = clustdist.begin(); it != clustdist.end() and it != it2; ++it) {
-        cout << it->first;
-        if (fus > it->first) {
+    //it2 = clustdist.end();
+    //cout << "hi" << endl; 
+    for (it = clustdist.begin(); it != clustdist.end(); ++it) {
+        //cout << it->first;
+        if (fus > it->first and it->first != id1 and it->first != id2) {
             clustdist[it->first][fus] = (clustdist.at(it->first).at(id1)+clustdist.at(it->first).at(id2)) / 2;
         }
         else if (fus < it->first) {
-            ++x; 
-            cout << x << endl;
             if (id1 < it->first and id2 < it->first) {
                 clustdist[fus][it->first] = (clustdist.at(id1).at(it->first) + clustdist.at(id2).at(it->first)) / 2;
             }
-            if (id1 < it->first and id2 > it->first) {
+            else if (id1 < it->first and id2 > it->first) {
                 clustdist[fus][it->first] = (clustdist.at(id1).at(it->first) + clustdist.at(it->first).at(id2)) / 2;
             }
-            if (id1 > it->first and id2 < it->first) {
+            else if (id1 > it->first and id2 < it->first) {
                 clustdist[fus][it->first] = (clustdist.at(it->first).at(id1) + clustdist.at(id2).at(it->first)) / 2;
             }
-            if (id1 > it->first and id2 > it->first) {
+            else if (id1 > it->first and id2 > it->first) {
                 clustdist[fus][it->first] = (clustdist.at(it->first).at(id1) + clustdist.at(it->first).at(id2)) / 2;
             }
         }
     }
-    cout << "we did it";
+
+    for (it = clustdist.begin(); it != clustdist.end(); ++it) {
+        clustdist[it->first].erase(id1);
+        clustdist[it->first].erase(id2);
+    }
     clustdist.erase(id1);
     clustdist.erase(id2);
 
