@@ -109,3 +109,13 @@ void cjt_clusters::fusiona_clusters() {
     clustmap.erase(id2);
     clustmap[fus] = clust;
 }
+
+int cjt_clusters::size() const {
+    return clustmap.size();
+}
+
+void cjt_clusters::imprimir_arbol_filogenetico() const {
+    map <string, cluster>::const_iterator it;
+    it = clustmap.begin();
+    imprimir_cluster(it->first);
+}

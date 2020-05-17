@@ -62,12 +62,12 @@ class cjt_clusters {
          * \pre True
          * \post El resultado es el numero de elementos en el conjunto
          */
-        int consultar_size_conjunto() const;
+        int size() const;
         /** @brief Imprime la estructura arborescente
          * \pre True
          * \post Se ha imprimido la estructura arborescente en el output 
          */
-        void imprimir_estructura() const;
+        void imprimir_arbol_filogenetico() const;
         /** @brief Fusiona todos los clusters hasta que solo queda uno
          * \pre True
          * \post Todos los clusters se han fusionado

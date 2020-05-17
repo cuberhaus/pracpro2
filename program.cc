@@ -128,8 +128,10 @@ int main() {
             clusters.imprimir_tabla_distancias();
         }
         else if (s == "ejecuta_paso_wpgma") {
-            clusters.fusiona_clusters();
-            clusters.imprimir_tabla_distancias();
+            if (clusters.size() > 1) {
+                clusters.fusiona_clusters();
+                clusters.imprimir_tabla_distancias();
+            }
         }
         else if (s == "imprime_cluster") {
             string id;
@@ -137,13 +139,23 @@ int main() {
             cout << "# imprime_cluster " << id << endl;
             clusters.imprimir_cluster(id);
         }
-        /*
-           else if (s == "imprime_arbol_filogenetico") {
-           clusters.inicializa_clusters(c.consultar_tabla_distancias()); // passar directament el conjunt
-           clusters.fusiona_todos_los_clusters();
-           clusters.imprimir_estructura();
-           }
-           */
+
+        else if (s == "imprime_arbol_filogenetico") {
+            c.inicializa_clusters(clusters);
+            if (clusters.size() > 1) {
+                while (clusters.size() > 1) {
+                    clusters.fusiona_clusters();
+                }
+                clusters.imprimir_arbol_filogenetico();
+            }
+            else if (clusters.size() == 1) {
+                clusters.imprimir_arbol_filogenetico();  
+            }
+            else if (clusters.size() == 0) {
+                cout << "ERROR: El conjunto de clusters es vacio." << endl;
+            }
+        }
+
         else if (s == "fin") {
             fin = true;
         }

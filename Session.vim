@@ -61,15 +61,15 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 9) / 18)
+let s:l = 153 - ((11 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+153
+normal! 016|
 wincmd w
 argglobal
-if bufexists("cluster.hh") | buffer cluster.hh | else | edit cluster.hh | endif
+if bufexists("cjt_clusters.hh") | buffer cjt_clusters.hh | else | edit cjt_clusters.hh | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -79,12 +79,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 28 - ((7 * winheight(0) + 9) / 18)
+let s:l = 44 - ((4 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-28
-normal! 031|
+44
+normal! 0
 wincmd w
 argglobal
 if bufexists("cluster.cc") | buffer cluster.cc | else | edit cluster.cc | endif
@@ -102,7 +102,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 23
-normal! 087|
+normal! 089|
 wincmd w
 argglobal
 if bufexists("cjt_clusters.cc") | buffer cjt_clusters.cc | else | edit cjt_clusters.cc | endif
@@ -115,12 +115,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 68 - ((0 * winheight(0) + 9) / 18)
+let s:l = 117 - ((13 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-68
-normal! 0-4|
+117
+normal! 0
 wincmd w
 exe '1resize ' . ((&lines * 18 + 20) / 40)
 exe 'vert 1resize ' . ((&columns * 76 + 79) / 158)
@@ -134,7 +134,7 @@ tabnext 1
 badd +51 BinTree.hh
 badd +27 cjt_clusters.hh
 badd +14 cjt_especies.hh
-badd +35 cluster.hh
+badd +25 cluster.hh
 badd +27 especie.hh
 badd +92 cjt_clusters.cc
 badd +24 cjt_especies.cc
