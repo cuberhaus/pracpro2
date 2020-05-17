@@ -7,27 +7,6 @@ c ACGATTTGCGTAAGCTATGT
 d GCTCCTGTCCGTTTCAGCCG
 e TACACCATTAACCGGTGGGG
 
-# distancia a c
-71.4286
-
-# distancia x c
-ERROR: La especie x no existe.
-
-# distancia a x
-ERROR: La especie x no existe.
-
-# distancia x y
-ERROR: La especie x y la especie y no existen.
-
-# distancia c a
-71.4286
-
-# obtener_gen c
-ACGATTTGCGTAAGCTATGT
-
-# obtener_gen x
-ERROR: La especie x no existe.
-
 # tabla_distancias
 a: b (90.9091) c (71.4286) d (90.9091) e (90.9091)
 b: c (87.5) d (87.5) e (83.871)
@@ -35,45 +14,12 @@ c: d (83.871) e (94.1176)
 d: e (97.1429)
 e:
 
+# imprime_arbol_filogenetico
+[(acdbe, 45.7951) [(acd, 43.695) [(ac, 35.7143) [a][c]][d]][(be, 41.9355) [b][e]]]
+
 # crea_especie f GAAAAAAAAAAAAAAAAAAAAA
 
-# crea_especie f TCGATACCAGAGAAACTGTT
-ERROR: La especie f ya existe.
-
 # crea_especie g AAAAAAAAAAAAAAAAAAAAAA
-
-# crea_especie h AAAAAAAAAAAAAAAAAAAAAG
-
-# imprime_cjt_especies
-a AAAAGATGACCAGCGTAATG
-b GCAACCTTTGTGGGCGCAGT
-c ACGATTTGCGTAAGCTATGT
-d GCTCCTGTCCGTTTCAGCCG
-e TACACCATTAACCGGTGGGG
-f GAAAAAAAAAAAAAAAAAAAAA
-g AAAAAAAAAAAAAAAAAAAAAA
-h AAAAAAAAAAAAAAAAAAAAAG
-
-# tabla_distancias
-a: b (90.9091) c (71.4286) d (90.9091) e (90.9091) f (94.4444) g (94.4444) h (91.4286)
-b: c (87.5) d (87.5) e (83.871) f (100) g (100) h (100)
-c: d (83.871) e (94.1176) f (100) g (100) h (97.2973)
-d: e (97.1429) f (100) g (100) h (100)
-e: f (100) g (100) h (100)
-f: g (9.52381) h (9.52381)
-g: h (9.52381)
-h:
-
-# elimina_especie h
-
-# elimina_especie h
-ERROR: La especie h no existe.
-
-# existe_especie f
-SI
-
-# existe_especie h
-NO
 
 # imprime_cjt_especies
 a AAAAGATGACCAGCGTAATG
@@ -93,11 +39,130 @@ e: f (100) g (100)
 f: g (9.52381)
 g:
 
+# imprime_arbol_filogenetico
+[(acdbefg, 49.6528) [(acdbe, 45.7951) [(acd, 43.695) [(ac, 35.7143) [a][c]][d]][(be, 41.9355) [b][e]]][(fg, 4.7619) [f][g]]]
+
+# elimina_especie nuevo1
+ERROR: La especie nuevo1 no existe.
+
+# crea_especie nuevo1 TTTAAACCCGGG
+
+# inicializa_clusters
+a: b (90.9091) c (71.4286) d (90.9091) e (90.9091) f (94.4444) g (94.4444) nuevo1 (88)
+b: c (87.5) d (87.5) e (83.871) f (100) g (100) nuevo1 (83.3333)
+c: d (83.871) e (94.1176) f (100) g (100) nuevo1 (92.3077)
+d: e (97.1429) f (100) g (100) nuevo1 (92.3077)
+e: f (100) g (100) nuevo1 (66.6667)
+f: g (9.52381) nuevo1 (96.5517)
+g: nuevo1 (96.5517)
+nuevo1:
+
+# elimina_especie a
+
+# imprime_cjt_especies
+b GCAACCTTTGTGGGCGCAGT
+c ACGATTTGCGTAAGCTATGT
+d GCTCCTGTCCGTTTCAGCCG
+e TACACCATTAACCGGTGGGG
+f GAAAAAAAAAAAAAAAAAAAAA
+g AAAAAAAAAAAAAAAAAAAAAA
+nuevo1 TTTAAACCCGGG
+
+# tabla_distancias
+b: c (87.5) d (87.5) e (83.871) f (100) g (100) nuevo1 (83.3333)
+c: d (83.871) e (94.1176) f (100) g (100) nuevo1 (92.3077)
+d: e (97.1429) f (100) g (100) nuevo1 (92.3077)
+e: f (100) g (100) nuevo1 (66.6667)
+f: g (9.52381) nuevo1 (96.5517)
+g: nuevo1 (96.5517)
+nuevo1:
+
+# ejecuta_paso_wpgma
+a: b (90.9091) c (71.4286) d (90.9091) e (90.9091) fg (94.4444) nuevo1 (88)
+b: c (87.5) d (87.5) e (83.871) fg (100) nuevo1 (83.3333)
+c: d (83.871) e (94.1176) fg (100) nuevo1 (92.3077)
+d: e (97.1429) fg (100) nuevo1 (92.3077)
+e: fg (100) nuevo1 (66.6667)
+fg: nuevo1 (96.5517)
+nuevo1:
+
+# imprime_cluster c
+[c]
+
+# ejecuta_paso_wpgma
+a: b (90.9091) c (71.4286) d (90.9091) enuevo1 (89.4545) fg (94.4444)
+b: c (87.5) d (87.5) enuevo1 (83.6022) fg (100)
+c: d (83.871) enuevo1 (93.2127) fg (100)
+d: enuevo1 (94.7253) fg (100)
+enuevo1: fg (98.2759)
+fg:
+
+# imprime_cluster ac
+ERROR: El cluster ac no existe.
+
+# imprime_cluster eg
+ERROR: El cluster eg no existe.
+
+# imprime_cluster enuevo1
+[(enuevo1, 33.3333) [e][nuevo1]]
+
+# ejecuta_paso_wpgma
+ac: b (89.2045) d (87.39) enuevo1 (91.3336) fg (97.2222)
+b: d (87.5) enuevo1 (83.6022) fg (100)
+d: enuevo1 (94.7253) fg (100)
+enuevo1: fg (98.2759)
+fg:
+
+# ejecuta_paso_wpgma
+ac: benuevo1 (90.2691) d (87.39) fg (97.2222)
+benuevo1: d (91.1126) fg (99.1379)
+d: fg (100)
+fg:
+
+# imprime_cluster ac
+[(ac, 35.7143) [a][c]]
+
+# crea_especie nuevo2 AATCTGGCTCTGAATAAGACCCAGTATCAAGCCTTACCA
+
+# ejecuta_paso_wpgma
+acd: benuevo1 (90.6909) fg (98.6111)
+benuevo1: fg (99.1379)
+fg:
+
+# ejecuta_paso_wpgma
+acdbenuevo1: fg (98.8745)
+fg:
+
+# imprime_cluster ac
+ERROR: El cluster ac no existe.
+
+# inicializa_clusters
+b: c (87.5) d (87.5) e (83.871) f (100) g (100) nuevo1 (83.3333) nuevo2 (82.9787)
+c: d (83.871) e (94.1176) f (100) g (100) nuevo1 (92.3077) nuevo2 (87.7551)
+d: e (97.1429) f (100) g (100) nuevo1 (92.3077) nuevo2 (82.9787)
+e: f (100) g (100) nuevo1 (66.6667) nuevo2 (85.4167)
+f: g (9.52381) nuevo1 (96.5517) nuevo2 (98.2143)
+g: nuevo1 (96.5517) nuevo2 (100)
+nuevo1: nuevo2 (90.6977)
+nuevo2:
+
+# crea_especie nuevo2 AAA
+ERROR: La especie nuevo2 ya existe.
+
+# imprime_arbol_filogenetico
+[(bnuevo2enuevo1cdfg, 49.7287) [(bnuevo2enuevo1cd, 45.1006) [(bnuevo2enuevo1, 42.9148) [(bnuevo2, 41.4894) [b][nuevo2]][(enuevo1, 33.3333) [e][nuevo1]]][(cd, 41.9355) [c][d]]][(fg, 4.7619) [f][g]]]
+
 # lee_cjt_especies
 
 # imprime_cjt_especies
 
 # tabla_distancias
+
+# imprime_arbol_filogenetico
+ERROR: El conjunto de clusters es vacio.
+
+# ejecuta_paso_wpgma
+ERROR: num_clusters <= 1
 
 # crea_especie pangolin AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
@@ -109,4 +174,10 @@ pangolin:
 
 # obtener_gen pangolin
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+# imprime_arbol_filogenetico
+[pangolin]
+
+# ejecuta_paso_wpgma
+ERROR: num_clusters <= 1
 

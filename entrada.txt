@@ -1,0 +1,90 @@
+3
+lee_cjt_especies
+5
+d    GCTCCTGTCCGTTTCAGCCG
+e    TACACCATTAACCGGTGGGG
+a    AAAAGATGACCAGCGTAATG
+b    GCAACCTTTGTGGGCGCAGT
+c    ACGATTTGCGTAAGCTATGT
+
+imprime_cjt_especies
+tabla_distancias
+
+imprime_arbol_filogenetico
+
+crea_especie f    GAAAAAAAAAAAAAAAAAAAAA
+crea_especie g    AAAAAAAAAAAAAAAAAAAAAA
+
+imprime_cjt_especies
+tabla_distancias
+
+imprime_arbol_filogenetico
+
+elimina_especie nuevo1
+crea_especie nuevo1 TTTAAACCCGGG
+
+inicializa_clusters
+
+elimina_especie a
+
+imprime_cjt_especies
+tabla_distancias
+
+ejecuta_paso_wpgma
+
+imprime_cluster c
+
+ejecuta_paso_wpgma
+
+imprime_cluster ac
+
+imprime_cluster eg
+
+imprime_cluster enuevo1
+
+ejecuta_paso_wpgma
+
+ejecuta_paso_wpgma
+
+imprime_cluster ac
+
+crea_especie nuevo2 AATCTGGCTCTGAATAAGACCCAGTATCAAGCCTTACCA
+
+ejecuta_paso_wpgma
+
+ejecuta_paso_wpgma
+
+imprime_cluster ac
+
+inicializa_clusters
+
+crea_especie nuevo2 AAA
+
+imprime_arbol_filogenetico
+
+
+lee_cjt_especies
+
+0
+
+imprime_cjt_especies
+
+tabla_distancias
+
+imprime_arbol_filogenetico
+
+ejecuta_paso_wpgma
+
+crea_especie pangolin AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+imprime_cjt_especies
+
+tabla_distancias
+
+obtener_gen pangolin
+
+imprime_arbol_filogenetico
+
+ejecuta_paso_wpgma
+
+fin
