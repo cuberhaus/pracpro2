@@ -79,10 +79,7 @@ void cjt_clusters::fusiona_clusters() {
     fus = ids_min.second.first + ids_min.second.second;
     clustdist[fus]; 
     map<string, map<string,double>>::iterator it, it2;
-    //it2 = clustdist.end();
-    //cout << "hi" << endl; 
     for (it = clustdist.begin(); it != clustdist.end(); ++it) {
-        //cout << it->first;
         if (fus > it->first and it->first != id1 and it->first != id2) {
             clustdist[it->first][fus] = (clustdist.at(it->first).at(id1)+clustdist.at(it->first).at(id2)) / 2;
         }

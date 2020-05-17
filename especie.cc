@@ -7,20 +7,14 @@ void especie::generar_kmeros() {
     for (int i = 0; i < n-(k-1); ++i) {
         kmero = gen.substr(i,k); 
         kmeros[kmero] += 1;
-    }
-    /* DEBUG
-    for (map <string, int>::iterator it = kmeros.begin(); it != kmeros.end(); ++it) {
-        cout << it->first << it->second;
-        cout << ' ';
-    }
-    cout << endl;
-    */
-    
+   }
 }
+
 especie::especie() {
     string id;
     string gen;
 }
+
 especie::especie(const string & id , const string & gen ) {
     this->id = id;
     this->gen = gen;
@@ -30,9 +24,11 @@ especie::especie(const string & id , const string & gen ) {
 void especie::leer_especie() {
     cin >> id >> gen;
 }
+
 string especie::consultar_id() const {
     return id;
 }
+
 string especie::consultar_gen() const {
     return gen;
 }
@@ -42,6 +38,7 @@ int especie::k = 0;
 void especie::insertar_k(int k) {
     especie::k = k;
 }
+
 double especie::distancia(const especie &e1, const especie &e2) {
     map<string, int>::const_iterator it1, it2;
     it1 = e1.kmeros.begin();

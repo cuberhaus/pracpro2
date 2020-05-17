@@ -22,7 +22,6 @@ void imprimir_cluster_aux(const BinTree <pair<string,double>> &c_tree)  {
         cout << "[";
         cout << '(' << c_tree.value().first << ", " << c_tree.value().second << ") ";
         imprimir_cluster_aux(c_tree.left());
-        //cout << ']';
         imprimir_cluster_aux(c_tree.right());
         cout << ']';
     }
