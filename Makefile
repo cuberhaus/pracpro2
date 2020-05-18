@@ -18,5 +18,7 @@ cluster.o: cluster.cc cluster.hh BinTree.hh
 	g++ -c cluster.cc cluster.hh BinTree.hh $(OPCIONS)
 clean:
 	rm *.o
+	rm -r html
+	rm -r latex
 	rm *.exe
 	rm practica.tar

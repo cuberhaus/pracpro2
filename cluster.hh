@@ -23,6 +23,7 @@ class cluster {
         BinTree <pair<string,double>> c_tree;
 
     public:
+        // Constructoras
         /** @brief Constructora
          * \pre True
          * \post El resultado es un cluster con distancia 0
@@ -36,6 +37,7 @@ class cluster {
         cluster(BinTree<pair<string,double>> &c_tree);
         cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right);
 
+        // Entrada / Salida
         /** @brief Imprime la estructura del cluster
          * \pre True
          * \post Imprime en el output la estructura del cluster

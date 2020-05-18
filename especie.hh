@@ -10,6 +10,7 @@
 #include <string>
 #include <map>
 #endif
+
 using namespace std;
 
 /** @class especie
