@@ -14,7 +14,7 @@
 using namespace std;
 
 /** @class especie
- * @brief Contiene un id y un gen
+ * @brief Contiene un identificador y un gen
  */
 class especie {
     private:

@@ -4,8 +4,8 @@
 #include "cjt_especies.hh"
 
 cjt_especies::cjt_especies() {
-    set <especie> espset;
-    map <string, map <string, double >> distmap;
+    espmap = map <string,especie>();
+    distmap = map <string, map <string, double >>();
 }
 
 void cjt_especies::inicializa_clusters(cjt_clusters &clusters) {

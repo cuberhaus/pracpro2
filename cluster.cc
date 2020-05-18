@@ -4,6 +4,7 @@
 #include "cluster.hh"
 
 cluster::cluster() {
+    c_tree = BinTree <pair<string,double>> (); 
 }
 
 cluster::cluster(pair <string,double> info) {

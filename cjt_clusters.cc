@@ -3,9 +3,9 @@
 */
 #include "cjt_clusters.hh"
 
-
-
 cjt_clusters::cjt_clusters() {
+    clustmap = map <string, cluster> (); 
+    clustdist = map <string, map<string, double>> ();
 }
 
 void cjt_clusters::insertar_especie_dist(const string &id1, const string &id2, const double dist) {
