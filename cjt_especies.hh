@@ -15,80 +15,87 @@
 #include "cjt_clusters.hh"
 #include "especie.hh"
 using namespace std;
+
 /** @class cjt_especies
  * @brief Contiene el conjunto de las especies
  */
 class cjt_especies {
+
     private:
+
+        /** @brief Conjunto de especies */
         map <string, especie> espmap;
+
+        /** @brief Tabla de distancias entre especies */
         map <string, map<string, double >> distmap;
+
     public:
 
         // Constructora
 
         /** @brief Constructora
          * \pre True
-         * \post Crea un conjunt d'especies buit
+         * \post Crea un conjunto de especies vacío
          */
         cjt_especies();
         
         // Modificadores
         
-        /** @brief Inicialitza els clusters a partir del Conjunt d'especies
+        /** @brief Modificadora del Conjunto de clusters
          * \pre True
-         * \post El conjunt de clusters s'ha inicialitzat
+         * \post Dado un conjunto de clusters lo inicializa con las distancias i las especies del conjunto de espécies   
          */
         void inicializa_clusters(cjt_clusters &clusters);
         
-        /** @brief añade una especie al set de especies
-         * \pre especie en la entrada
-         * \post La especie se ha añadido al set espset i se ha añadido a la tabla de distancias
+        /** @brief Modificadora añade una especie al set de especies
+         * \pre especie e
+         * \post La especie se ha añadido al parámetro implícito 
          */
         void insertar_especie (const especie& e);
 
-        /** Borra el conjunto de especies
-         * \pre Hay un conjunto de especies
-         * \post Se ha eliminado ese conjunto de especies
+        /** Modificadora borra el conjunto de especies
+         * \pre True 
+         * \post Se ha eliminado el conjunto de especies del P.I.
          */
         void borrar_conjunto ();
 
         /** @brief Se elimina una especie del conjunto
-         * \pre Tamaño del set es estrictamente > 0
-         * \post La especie se ha eliminado y se ha actualizado la tabla de distancias
+         * \pre Tamaño del set es estrictamente > 0, existe una especie en el P.I. con el identificador id
+         * \post La especie con identificador id se ha eliminado y se han actualizado las distancias
          */
         void eliminar_especie(const string& id);
 
         // Consultores
         
-        /** @brief A partir de un id, devuelve la especie correspondiente
-         * \pre Existe una especie con el id del parametro
-         * \post Se obtiene la especie con ese id
+        /** @brief Consultora que a partir de un identificador, devuelve la especie correspondiente
+         * \pre Existe una especie con el identificador id en el P.I.
+         * \post El resultado es la especie con ese identificador 
          */
         especie obtener_especie(const string& id) const;
 
-        /** @brief Te dice si existe la especie con ese id
+        /** @brief Consultora de la existencia de una especie con identificador id
          * \pre id
-         * \post si existe una especie con ese id, true, sino false
+         * \post El resultado es true si existe una especie con ese id sino false
          */
         bool existe_especie (const string& id) const;
 
-        /** @brief Obtiene la distància dados dos id
-         * \pre Dos strings en la entrada
+        /** @brief Consultora de la distància entre especies dados dos identificadores
+         * \pre id1, id2
          * \post El resultado es la distància entre las dos especies
          */
         double consultar_distancia(const string id1,const string id2) const ;
 
         // Entrada / Salida
         
-        /** @brief Imprime el conjunto de especies
-         * \pre El conjunto no es vacio
-         * \post Se escriben en el output el conjunto de especies
+        /** @brief Operación de escritura del conjunto de especies
+         * \pre True 
+         * \post Se ha escrito por el canal de salida estándard el conjunto de especies
          */
         void imprimir_conjunto() const;
 
-        /** @brief Imprime la tabla de distancias
+        /** @brief Operación de escritura de las distancias entre especies 
          * \pre True
-         * \post Se ha imprimido en el output la tabla de distancias
+         * \post Se han escrito por el canal de salida estándard las distancias entre especies 
          */
         void imprimir_tabla_distancias() const;
 };

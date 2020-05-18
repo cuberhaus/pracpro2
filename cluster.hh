@@ -15,15 +15,21 @@
 using namespace std;
 
 /** @class cluster
- * @brief Contiene un cluster
+ * @brief Contiene una estructura arborescente
  */
 class cluster {
-
+    
+    // Descripción: Contiene una estructura arborescente
+    
     private:
+
+        /** @brief Estructura del cluster*/
         BinTree <pair<string,double>> c_tree;
 
     public:
+
         // Constructoras
+        
         /** @brief Constructora
          * \pre True
          * \post El resultado es un cluster con distancia 0

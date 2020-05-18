@@ -20,9 +20,20 @@ using namespace std;
  */
 class cjt_clusters {
     private:
+
+        /** @brief Contiene el conjunto de clusters */
         map <string, cluster> clustmap;
+
+        /** @brief Contiene la tabla de distancias entre clusters */
         map <string, map<string, double>> clustdist;
+
+        /** @brief Calcula la distancia mínima entre clusters
+         * \pre True
+         * \post El resultado es la distancia mínima entre clusters
+         * \coste Lineal
+         */
         pair <double, pair<string, string>> distancia_minima() const;
+
     public:
         
         // Constructora
