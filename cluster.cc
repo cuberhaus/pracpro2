@@ -6,8 +6,9 @@
 cluster::cluster() {
 }
 
-cluster::cluster(BinTree<pair<string,double>> &c_tree) {
-    this -> c_tree = c_tree;
+cluster::cluster(pair <string,double> info) {
+    BinTree <pair<string,double>> c_tree (info);
+    this->c_tree = c_tree;
 }
 
 cluster::cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right) {

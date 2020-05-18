@@ -19,8 +19,7 @@ void cjt_clusters::insertar_cluster(const string &id) {
     pair <string,double> p_esp;
     p_esp.first = id;
     p_esp.second = 0;
-    BinTree <pair<string,double>> c_tree (p_esp) ;
-    cluster c (c_tree);
+    cluster c(p_esp);
     clustmap [id] = c;
 }
 

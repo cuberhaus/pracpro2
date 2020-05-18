@@ -18,51 +18,68 @@ using namespace std;
  */
 class especie {
     private:
+
+        /** @brief Parámetro k para el cálculo de los kmeros */
         static int k;
+
+        /** @brief Identificador de la espécie */
         string id;
+
+        /** @brief Gen de la espécie */
         string gen;
+
+        /** @brief Kmeros para el cálculo de las distancias*/ 
         map <string, int> kmeros;
+
         /** @brief Genera los kmeros correspondientes al gen de la especie
          * \pre Gen esta inicializado
          * \post El mapa de kmeros se ha actualizado
          */
-        void generar_kmeros(); // privat
-        //map <string, double> d_esp();
+        void generar_kmeros();
+
     public:
+
+    // Constructoras
+    
     /** @brief Constructora
      * \pre True
      * \post El resultado es una especie nueva
      */
     especie();
+
     /** @brief Crea una especie dado un id y un gen
      * \pre True
      * \post Crea una especie con id y un gen
      */
     especie(const string & id , const string & gen);
-    /** @brief Añade y/o cambia el id y el gen del P.I. por dos strings del input
-     * \pre True
-     * \post El P.I. tiene id y gen = iguales a los strings de la entrada
-     */
-    void leer_especie();
-    /** @brief Consulta el id del P.I.
-     * \pre True
-     * \post El resultado es el id del P.I.
-     */
+
+    // Modificadoras
+
+    // Consultoras
+
     string consultar_id() const;
     /** @brief
      * \pre True
      * \post El resultado es el gen del P.I.
      */
+    
     string consultar_gen() const;
     /** @brief Lee el parámetro k de la entrada
      *  \pre True
      *  \post El parámetro k ha sido actualizado
      */
+
     static void insertar_k(int k); // passar com a parametre
+
     static double distancia(const especie &e1, const especie &e2);
 
-    //distancia static
-    //static distancia(especie e, especie a) {
-    //e.meros
+
+    // Entrada / Salida
+    
+    void leer_especie();
+    /** @brief Consulta el id del P.I.
+     * \pre True
+     * \post El resultado es el id del P.I.
+     */
 };
 #endif

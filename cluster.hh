@@ -15,38 +15,42 @@
 using namespace std;
 
 /** @class cluster
- * @brief Contiene una estructura arborescente
+ * @brief Contiene un cluster
  */
 class cluster {
     
-    // Descripción: Contiene una estructura arborescente
-    
     private:
 
-        /** @brief Estructura del cluster*/
+        /** @brief Estructura del cluster */
         BinTree <pair<string,double>> c_tree;
 
     public:
 
         // Constructoras
         
-        /** @brief Constructora
+        /** @brief Constructora por defecto
          * \pre True
          * \post El resultado es un cluster con distancia 0
          */
         cluster();
 
-        /** @brief Constructora
+        /** @brief Constructora dado un pair
          * \pre True
-         * \post El resultado es un cluster con sus distancia y ID
+         * \post El resultado es un cluster con distancia info.second y identificador info.first
          */
-        cluster(BinTree<pair<string,double>> &c_tree);
+        cluster(pair <string, double> info);
+
+        /**  @brief Constructora dado un pair y dos clusters
+         * \pre True
+         * \post El resultado es la fusión de un cluster con otros dos clusters y con el identificador y la distancia del par 
+         */
         cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right);
 
         // Entrada / Salida
-        /** @brief Imprime la estructura del cluster
+        
+        /** @brief Operación de escritura, imprime la estructura del cluster
          * \pre True
-         * \post Imprime en el output la estructura del cluster
+         * \post Se ha escrito en el canal de salida estándard la estructura del cluster
          */
         void imprimir_cluster() const;
 };

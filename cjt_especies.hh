@@ -39,7 +39,7 @@ class cjt_especies {
          */
         cjt_especies();
         
-        // Modificadores
+        // Modificadoras
         
         /** @brief Modificadora del Conjunto de clusters
          * \pre True
@@ -79,9 +79,9 @@ class cjt_especies {
          */
         bool existe_especie (const string& id) const;
 
-        /** @brief Consultora de la distància entre especies dados dos identificadores
+        /** @brief Consultora de la distáncia entre especies dados dos identificadores
          * \pre id1, id2
-         * \post El resultado es la distància entre las dos especies
+         * \post El resultado es la distáncia entre las dos especies
          */
         double consultar_distancia(const string id1,const string id2) const ;
 
