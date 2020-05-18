@@ -9,18 +9,18 @@ Contiene un cluster.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classcluster_aa4e5f899744fa668e2dadc188013e562}{cluster}} ()
-\begin{DoxyCompactList}\small\item\em Constructora. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classcluster_a5a7a6523f824720c07ac25a565828277}{cluster}} (Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\+\_\+tree}})
-\begin{DoxyCompactList}\small\item\em Constructora. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructora por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcluster_aaf73b780245d4bfdc0f2712aea6165eb}{cluster}} (pair$<$ string, double $>$ info)
+\begin{DoxyCompactList}\small\item\em Constructora dado un pair. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classcluster_a24dc436f4620f71ae36b098cd1ecba1f}{cluster}} (const pair$<$ string, double $>$ \&newclust, const \mbox{\hyperlink{classcluster}{cluster}} \&left, const \mbox{\hyperlink{classcluster}{cluster}} \&right)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructora dado un pair y dos clusters. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcluster_a8066fb892f8decb3842c34242bcc2f55}{imprimir\+\_\+cluster}} () const
-\begin{DoxyCompactList}\small\item\em Imprime la estructura del cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Operación de escritura, imprime la estructura del cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Atributos privados}
 \begin{DoxyCompactItemize}
 \item 
 Bin\+Tree$<$ pair$<$ string, double $>$ $>$ \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\+\_\+tree}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Estructura del cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
@@ -39,7 +39,7 @@ Definición en la línea 20 del archivo cluster.\+hh.
 
 
 
-Constructora. 
+Constructora por defecto. 
 
 \begin{DoxyPrecond}{Precondición}
 True 
@@ -57,21 +57,21 @@ Definición en la línea 6 del archivo cluster.\+cc.
 \DoxyCodeLine{7 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classcluster_a5a7a6523f824720c07ac25a565828277}\label{classcluster_a5a7a6523f824720c07ac25a565828277}} 
+\mbox{\Hypertarget{classcluster_aaf73b780245d4bfdc0f2712aea6165eb}\label{classcluster_aaf73b780245d4bfdc0f2712aea6165eb}} 
 \index{cluster@{cluster}!cluster@{cluster}}
 \index{cluster@{cluster}!cluster@{cluster}}
 \doxysubsubsection{\texorpdfstring{cluster()}{cluster()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily cluster\+::cluster (\begin{DoxyParamCaption}\item[{Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&}]{c\+\_\+tree }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily cluster\+::cluster (\begin{DoxyParamCaption}\item[{pair$<$ string, double $>$}]{info }\end{DoxyParamCaption})}
 
 
 
-Constructora. 
+Constructora dado un pair. 
 
 \begin{DoxyPrecond}{Precondición}
 True 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-El resultado es un cluster con sus distancia y ID 
+El resultado es un cluster con distancia info.\+second y identificador info.\+first 
 \end{DoxyPostcond}
 
 
@@ -79,9 +79,10 @@ Definición en la línea 9 del archivo cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{9                                                      \{}
-\DoxyCodeLine{10     \textcolor{keyword}{this} -\/> \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}} = \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}};}
-\DoxyCodeLine{11 \}}
+\DoxyCodeLine{9                                           \{}
+\DoxyCodeLine{10     BinTree <pair<string,double>> \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}} (info);}
+\DoxyCodeLine{11     this-\/>\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}} = \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}};}
+\DoxyCodeLine{12 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classcluster_a24dc436f4620f71ae36b098cd1ecba1f}\label{classcluster_a24dc436f4620f71ae36b098cd1ecba1f}} 
@@ -92,15 +93,25 @@ Definición en la línea 9 del archivo cluster.\+cc.
 
 
 
-Definición en la línea 13 del archivo cluster.\+cc.
+Constructora dado un pair y dos clusters. 
+
+\begin{DoxyPrecond}{Precondición}
+True 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es la fusión de un cluster con otros dos clusters y con el identificador y la distancia del par 
+\end{DoxyPostcond}
+
+
+Definición en la línea 14 del archivo cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{13                                                                                                  \{}
-\DoxyCodeLine{14 }
-\DoxyCodeLine{15     BinTree <pair<string,double>> \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}}(newclust, left.\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}}, right.\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}});}
-\DoxyCodeLine{16     \textcolor{keyword}{this} -\/> \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}}  = \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}};}
-\DoxyCodeLine{17 \}}
+\DoxyCodeLine{14                                                                                                  \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     BinTree <pair<string,double>> \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}}(newclust, left.\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}}, right.\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}});}
+\DoxyCodeLine{17     \textcolor{keyword}{this} -\/> \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}}  = \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}};}
+\DoxyCodeLine{18 \}}
 
 \end{DoxyCode}
 
@@ -114,23 +125,23 @@ Definición en la línea 13 del archivo cluster.\+cc.
 
 
 
-Imprime la estructura del cluster. 
+Operación de escritura, imprime la estructura del cluster. 
 
 \begin{DoxyPrecond}{Precondición}
 True 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Imprime en el output la estructura del cluster 
+Se ha escrito en el canal de salida estándard la estructura del cluster 
 \end{DoxyPostcond}
 
 
-Definición en la línea 32 del archivo cluster.\+cc.
+Definición en la línea 33 del archivo cluster.\+cc.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{32                                      \{}
-\DoxyCodeLine{33     \mbox{\hyperlink{cluster_8cc_ae51b406880d55e6f7e2d5483482024d4}{imprimir\_cluster\_aux}}(\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}});}
-\DoxyCodeLine{34 \}}
+\DoxyCodeLine{33                                      \{}
+\DoxyCodeLine{34     \mbox{\hyperlink{cluster_8cc_ae51b406880d55e6f7e2d5483482024d4}{imprimir\_cluster\_aux}}(\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}});}
+\DoxyCodeLine{35 \}}
 
 \end{DoxyCode}
 
@@ -144,7 +155,11 @@ Definición en la línea 32 del archivo cluster.\+cc.
 
 
 
-Definición en la línea 23 del archivo cluster.\+hh.
+Estructura del cluster. 
+
+
+
+Definición en la línea 25 del archivo cluster.\+hh.
 
 
 

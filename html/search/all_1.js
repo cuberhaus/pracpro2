@@ -8,7 +8,7 @@ var searchData=
   ['cjt_5fespecies_2ecc_6',['cjt_especies.cc',['../cjt__especies_8cc.html',1,'']]],
   ['cjt_5fespecies_2ehh_7',['cjt_especies.hh',['../cjt__especies_8hh.html',1,'']]],
   ['clustdist_8',['clustdist',['../classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a',1,'cjt_clusters']]],
-  ['cluster_9',['cluster',['../classcluster.html',1,'cluster'],['../classcluster.html#aa4e5f899744fa668e2dadc188013e562',1,'cluster::cluster()'],['../classcluster.html#a5a7a6523f824720c07ac25a565828277',1,'cluster::cluster(BinTree&lt; pair&lt; string, double &gt;&gt; &amp;c_tree)'],['../classcluster.html#a24dc436f4620f71ae36b098cd1ecba1f',1,'cluster::cluster(const pair&lt; string, double &gt; &amp;newclust, const cluster &amp;left, const cluster &amp;right)']]],
+  ['cluster_9',['cluster',['../classcluster.html',1,'cluster'],['../classcluster.html#aa4e5f899744fa668e2dadc188013e562',1,'cluster::cluster()'],['../classcluster.html#aaf73b780245d4bfdc0f2712aea6165eb',1,'cluster::cluster(pair&lt; string, double &gt; info)'],['../classcluster.html#a24dc436f4620f71ae36b098cd1ecba1f',1,'cluster::cluster(const pair&lt; string, double &gt; &amp;newclust, const cluster &amp;left, const cluster &amp;right)']]],
   ['cluster_2ecc_10',['cluster.cc',['../cluster_8cc.html',1,'']]],
   ['cluster_2ehh_11',['cluster.hh',['../cluster_8hh.html',1,'']]],
   ['clustmap_12',['clustmap',['../classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a',1,'cjt_clusters']]],

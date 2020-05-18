@@ -93,10 +93,10 @@ Métodos públicos</h2></td></tr>
 <tr class="memdesc:a41c74c62d7cf27bc30b56b00dc05b816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modificadora del conjunto de clusters y sus distancias, borra el conjunto de clusters.  <a href="classcjt__clusters.html#a41c74c62d7cf27bc30b56b00dc05b816">Más...</a><br /></td></tr>
 <tr class="separator:a41c74c62d7cf27bc30b56b00dc05b816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1733d062bcc1a3a5e2778328ba24d18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcjt__clusters.html#ad1733d062bcc1a3a5e2778328ba24d18">existe_cluster</a> (const string &amp;id) const</td></tr>
-<tr class="memdesc:ad1733d062bcc1a3a5e2778328ba24d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Si el el identificador corresponde con un cluster del conjunto devuelve true.  <a href="classcjt__clusters.html#ad1733d062bcc1a3a5e2778328ba24d18">Más...</a><br /></td></tr>
+<tr class="memdesc:ad1733d062bcc1a3a5e2778328ba24d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consultora, si el identificador corresponde con un cluster del conjunto devuelve True.  <a href="classcjt__clusters.html#ad1733d062bcc1a3a5e2778328ba24d18">Más...</a><br /></td></tr>
 <tr class="separator:ad1733d062bcc1a3a5e2778328ba24d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a400e6d129b40f5dd8be83a19b09eb088"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcjt__clusters.html#a400e6d129b40f5dd8be83a19b09eb088">size</a> () const</td></tr>
-<tr class="memdesc:a400e6d129b40f5dd8be83a19b09eb088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consulta el numero de elementos que hay en el conjunto.  <a href="classcjt__clusters.html#a400e6d129b40f5dd8be83a19b09eb088">Más...</a><br /></td></tr>
+<tr class="memdesc:a400e6d129b40f5dd8be83a19b09eb088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consultora del numero de elementos que hay en el conjunto.  <a href="classcjt__clusters.html#a400e6d129b40f5dd8be83a19b09eb088">Más...</a><br /></td></tr>
 <tr class="separator:a400e6d129b40f5dd8be83a19b09eb088"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07b56ded100ab1bf37255ad38da3e7f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcjt__clusters.html#a07b56ded100ab1bf37255ad38da3e7f7">imprimir_tabla_distancias</a> () const</td></tr>
 <tr class="memdesc:a07b56ded100ab1bf37255ad38da3e7f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operación de escritura de la tabla de distancias entre clusters.  <a href="classcjt__clusters.html#a07b56ded100ab1bf37255ad38da3e7f7">Más...</a><br /></td></tr>
@@ -111,13 +111,16 @@ Métodos públicos</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Métodos privados</h2></td></tr>
 <tr class="memitem:a2d448fac129f03f1e21cfbda9e64c1f1"><td class="memItemLeft" align="right" valign="top">pair&lt; double, pair&lt; string, string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcjt__clusters.html#a2d448fac129f03f1e21cfbda9e64c1f1">distancia_minima</a> () const</td></tr>
+<tr class="memdesc:a2d448fac129f03f1e21cfbda9e64c1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula la distancia mínima entre clusters.  <a href="classcjt__clusters.html#a2d448fac129f03f1e21cfbda9e64c1f1">Más...</a><br /></td></tr>
 <tr class="separator:a2d448fac129f03f1e21cfbda9e64c1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atributos privados</h2></td></tr>
 <tr class="memitem:a8bbb860fb412474da9af5d0da057b59a"><td class="memItemLeft" align="right" valign="top">map&lt; string, <a class="el" href="classcluster.html">cluster</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a></td></tr>
+<tr class="memdesc:a8bbb860fb412474da9af5d0da057b59a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contiene el conjunto de clusters.  <a href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">Más...</a><br /></td></tr>
 <tr class="separator:a8bbb860fb412474da9af5d0da057b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0fadd265338dc823762a46abaee018a"><td class="memItemLeft" align="right" valign="top">map&lt; string, map&lt; string, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a></td></tr>
+<tr class="memdesc:ae0fadd265338dc823762a46abaee018a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contiene la tabla de distancias entre clusters.  <a href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">Más...</a><br /></td></tr>
 <tr class="separator:ae0fadd265338dc823762a46abaee018a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
@@ -175,30 +178,35 @@ Atributos privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00050">50</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                                         {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    map &lt;string, map&lt;string,double&gt;&gt;::const_iterator it1;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    map &lt;string,double&gt;::const_iterator it2;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    it1 = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    it2 = it1-&gt;second.begin();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">double</span> minim = it2-&gt;second;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">string</span> id1 = it1-&gt;first;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">string</span> id2 = it2-&gt;first;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">for</span> (it1 = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin(); it1 != <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.end(); ++it1) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">for</span> (it2 = it1-&gt;second.begin(); it2 != it1-&gt;second.end(); ++it2) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">if</span> (it2-&gt;second &lt; minim) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                minim = it2-&gt;second;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                id1 = it1-&gt;first;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                id2 = it2-&gt;first;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    pair &lt;double, pair&lt;string,string&gt;&gt; ids;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ids.first = minim;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ids.second.first = id1;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ids.second.second = id2;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> ids;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<p>Calcula la distancia mínima entre clusters. </p>
+<dl class="section pre"><dt>Precondición</dt><dd>True </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>El resultado es la distancia mínima entre clusters </dd></dl>
+<dl class="section user"><dt>Coste\n Lineal</dt><dd></dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00049">49</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    map &lt;string, map&lt;string,double&gt;&gt;::const_iterator it1;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    map &lt;string,double&gt;::const_iterator it2;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    it1 = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    it2 = it1-&gt;second.begin();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">double</span> minim = it2-&gt;second;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">string</span> id1 = it1-&gt;first;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">string</span> id2 = it2-&gt;first;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (it1 = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin(); it1 != <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.end(); ++it1) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span> (it2 = it1-&gt;second.begin(); it2 != it1-&gt;second.end(); ++it2) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (it2-&gt;second &lt; minim) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                minim = it2-&gt;second;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                id1 = it1-&gt;first;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                id2 = it2-&gt;first;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    pair &lt;double, pair&lt;string,string&gt;&gt; ids;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ids.first = minim;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ids.second.first = id1;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ids.second.second = id2;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> ids;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -273,10 +281,9 @@ Atributos privados</h2></td></tr>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    pair &lt;string,double&gt; p_esp;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    p_esp.first = id;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    p_esp.second = 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    BinTree &lt;pair&lt;string,double&gt;&gt; c_tree (p_esp) ;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classcluster.html">cluster</a> c (c_tree);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a> [id] = c;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classcluster.html">cluster</a> c(p_esp);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a> [id] = c;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -299,51 +306,51 @@ Atributos privados</h2></td></tr>
 <dl class="section pre"><dt>Precondición</dt><dd>Hay almenos dos clusters guardados </dd></dl>
 <dl class="section post"><dt>Postcondición</dt><dd>Se han juntado dos clusters en uno </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00073">73</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                    {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    pair &lt;double, pair&lt;string, string&gt;&gt; ids_min;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    ids_min = <a class="code" href="classcjt__clusters.html#a2d448fac129f03f1e21cfbda9e64c1f1">distancia_minima</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">double</span> dist = ids_min.first/2;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">string</span> id1 = ids_min.second.first;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">string</span> id2 = ids_min.second.second;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">string</span> fus;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    fus = ids_min.second.first + ids_min.second.second;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus];</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    map&lt;string, map&lt;string,double&gt;&gt;::iterator it, it2;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (it = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin(); it != <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.end(); ++it) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (fus &gt; it-&gt;first and it-&gt;first != id1 and it-&gt;first != id2) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[it-&gt;first][fus] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id1)+<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id2)) / 2;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fus &lt; it-&gt;first) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">if</span> (id1 &lt; it-&gt;first and id2 &lt; it-&gt;first) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus][it-&gt;first] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(id1).at(it-&gt;first) + <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(id2).at(it-&gt;first)) / 2;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (id1 &lt; it-&gt;first and id2 &gt; it-&gt;first) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus][it-&gt;first] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(id1).at(it-&gt;first) + <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id2)) / 2;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (id1 &gt; it-&gt;first and id2 &lt; it-&gt;first) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus][it-&gt;first] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id1) + <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(id2).at(it-&gt;first)) / 2;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (id1 &gt; it-&gt;first and id2 &gt; it-&gt;first) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus][it-&gt;first] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id1) + <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id2)) / 2;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (it = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin(); it != <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.end(); ++it) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[it-&gt;first].erase(id1);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[it-&gt;first].erase(id2);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    pair &lt;string, double&gt; newclust;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    newclust.second = dist;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    newclust.first = fus;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.erase(id1);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.erase(id2);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="classcluster.html">cluster</a> clust (newclust, <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>[id1], <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>[id2]);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.erase(id1);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.erase(id2);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>[fus] = clust;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00072">72</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    pair &lt;double, pair&lt;string, string&gt;&gt; ids_min;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ids_min = <a class="code" href="classcjt__clusters.html#a2d448fac129f03f1e21cfbda9e64c1f1">distancia_minima</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">double</span> dist = ids_min.first/2;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">string</span> id1 = ids_min.second.first;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">string</span> id2 = ids_min.second.second;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">string</span> fus;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    fus = ids_min.second.first + ids_min.second.second;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus];</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    map&lt;string, map&lt;string,double&gt;&gt;::iterator it, it2;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (it = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin(); it != <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.end(); ++it) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (fus &gt; it-&gt;first and it-&gt;first != id1 and it-&gt;first != id2) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[it-&gt;first][fus] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id1)+<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id2)) / 2;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fus &lt; it-&gt;first) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (id1 &lt; it-&gt;first and id2 &lt; it-&gt;first) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus][it-&gt;first] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(id1).at(it-&gt;first) + <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(id2).at(it-&gt;first)) / 2;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (id1 &lt; it-&gt;first and id2 &gt; it-&gt;first) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus][it-&gt;first] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(id1).at(it-&gt;first) + <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id2)) / 2;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (id1 &gt; it-&gt;first and id2 &lt; it-&gt;first) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus][it-&gt;first] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id1) + <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(id2).at(it-&gt;first)) / 2;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (id1 &gt; it-&gt;first and id2 &gt; it-&gt;first) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[fus][it-&gt;first] = (<a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id1) + <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.at(it-&gt;first).at(id2)) / 2;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">for</span> (it = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin(); it != <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.end(); ++it) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[it-&gt;first].erase(id1);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>[it-&gt;first].erase(id2);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    pair &lt;string, double&gt; newclust;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    newclust.second = dist;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    newclust.first = fus;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.erase(id1);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.erase(id2);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="classcluster.html">cluster</a> clust (newclust, <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>[id1], <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>[id2]);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.erase(id1);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.erase(id2);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>[fus] = clust;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -364,13 +371,13 @@ Atributos privados</h2></td></tr>
 
 <p>Modificadora del conjunto de clusters y sus distancias, borra el conjunto de clusters. </p>
 <dl class="section pre"><dt>Precondición</dt><dd>True </dd></dl>
-<dl class="section post"><dt>Postcondición</dt><dd>El cjt de clusters está vacio </dd></dl>
+<dl class="section post"><dt>Postcondición</dt><dd>El conjunto de clusters está vacio </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00122">122</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                   {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.clear();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.clear();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00121">121</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                   {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.clear();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.clear();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -390,17 +397,17 @@ Atributos privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Si el el identificador corresponde con un cluster del conjunto devuelve true. </p>
+<p>Consultora, si el identificador corresponde con un cluster del conjunto devuelve True. </p>
 <dl class="section pre"><dt>Precondición</dt><dd>True </dd></dl>
 <dl class="section post"><dt>Postcondición</dt><dd>El resultado es True si existe el cluster con el identificador dado, sino False </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00043">43</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                                        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    map &lt;string,cluster&gt;::const_iterator it;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    it = <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.find(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (it != <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.end()) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00042">42</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    map &lt;string,cluster&gt;::const_iterator it;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    it = <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.find(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (it != <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.end()) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -419,14 +426,14 @@ Atributos privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Consulta el numero de elementos que hay en el conjunto. </p>
+<p>Consultora del numero de elementos que hay en el conjunto. </p>
 <dl class="section pre"><dt>Precondición</dt><dd>True </dd></dl>
 <dl class="section post"><dt>Postcondición</dt><dd>El resultado es el numero de elementos en el conjunto </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00118">118</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                             {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.size();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00117">117</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                             {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.size();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -449,18 +456,18 @@ Atributos privados</h2></td></tr>
 <dl class="section pre"><dt>Precondición</dt><dd>True </dd></dl>
 <dl class="section post"><dt>Postcondición</dt><dd>Se ha escrito la tabla de distancias entre clusters por el canal de salida estándard </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00027">27</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                   {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    map &lt;string, map&lt;string, double &gt;&gt;::const_iterator it1;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    map&lt;string,double&gt;::const_iterator it2;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span> (it1 = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin(); it1 != <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.end(); ++it1) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        cout &lt;&lt; it1-&gt;first &lt;&lt; <span class="charliteral">&#39;:&#39;</span> ;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span> (it2 = it1-&gt;second.begin(); it2 != it1-&gt;second.end(); ++it2) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            cout &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; it2-&gt;first &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; it2-&gt;second &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        cout &lt;&lt; endl;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00026">26</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                   {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    map &lt;string, map&lt;string, double &gt;&gt;::const_iterator it1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    map&lt;string,double&gt;::const_iterator it2;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">for</span> (it1 = <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.begin(); it1 != <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>.end(); ++it1) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        cout &lt;&lt; it1-&gt;first &lt;&lt; <span class="charliteral">&#39;:&#39;</span> ;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span> (it2 = it1-&gt;second.begin(); it2 != it1-&gt;second.end(); ++it2) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            cout &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; it2-&gt;first &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; it2-&gt;second &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -484,10 +491,10 @@ Atributos privados</h2></td></tr>
 <dl class="section pre"><dt>Precondición</dt><dd>El id dado corresponde a un cluster del conjunto </dd></dl>
 <dl class="section post"><dt>Postcondición</dt><dd>Se ha escrito el cluster correspondiente al id por el canal de salida estándard </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00039">39</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                          {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.at(<span class="keywordtype">id</span>).imprimir_cluster();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00038">38</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                          {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.at(<span class="keywordtype">id</span>).imprimir_cluster();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -510,12 +517,12 @@ Atributos privados</h2></td></tr>
 <dl class="section pre"><dt>Precondición</dt><dd>El tamaño del cluster es igual a 1 </dd></dl>
 <dl class="section post"><dt>Postcondición</dt><dd>Se ha escrito la estructura del árbol por el canal de salida estándard </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00127">127</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                     {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    map &lt;string, cluster&gt;::const_iterator it;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    it = <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.begin();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classcjt__clusters.html#a96c03b95281162ae25e29fde9636a4e9">imprimir_cluster</a>(it-&gt;first);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8cc_source.html#l00126">126</a> del archivo <a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                                     {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    map &lt;string, cluster&gt;::const_iterator it;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    it = <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>.begin();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="classcjt__clusters.html#a96c03b95281162ae25e29fde9636a4e9">imprimir_cluster</a>(it-&gt;first);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -540,7 +547,9 @@ Atributos privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8hh_source.html#l00023">23</a> del archivo <a class="el" href="cjt__clusters_8hh_source.html">cjt_clusters.hh</a>.</p>
+<p>Contiene el conjunto de clusters. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8hh_source.html#l00025">25</a> del archivo <a class="el" href="cjt__clusters_8hh_source.html">cjt_clusters.hh</a>.</p>
 
 </div>
 </div>
@@ -564,7 +573,9 @@ Atributos privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8hh_source.html#l00024">24</a> del archivo <a class="el" href="cjt__clusters_8hh_source.html">cjt_clusters.hh</a>.</p>
+<p>Contiene la tabla de distancias entre clusters. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="cjt__clusters_8hh_source.html#l00028">28</a> del archivo <a class="el" href="cjt__clusters_8hh_source.html">cjt_clusters.hh</a>.</p>
 
 </div>
 </div>
@@ -573,10 +584,10 @@ Atributos privados</h2></td></tr>
 <li><a class="el" href="cjt__clusters_8cc_source.html">cjt_clusters.cc</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclasscjt__clusters_html_a2d448fac129f03f1e21cfbda9e64c1f1"><div class="ttname"><a href="classcjt__clusters.html#a2d448fac129f03f1e21cfbda9e64c1f1">cjt_clusters::distancia_minima</a></div><div class="ttdeci">pair&lt; double, pair&lt; string, string &gt; &gt; distancia_minima() const</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8cc_source.html#l00050">cjt_clusters.cc:50</a></div></div>
-<div class="ttc" id="aclasscjt__clusters_html_ae0fadd265338dc823762a46abaee018a"><div class="ttname"><a href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">cjt_clusters::clustdist</a></div><div class="ttdeci">map&lt; string, map&lt; string, double &gt; &gt; clustdist</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8hh_source.html#l00024">cjt_clusters.hh:24</a></div></div>
-<div class="ttc" id="aclasscjt__clusters_html_a96c03b95281162ae25e29fde9636a4e9"><div class="ttname"><a href="classcjt__clusters.html#a96c03b95281162ae25e29fde9636a4e9">cjt_clusters::imprimir_cluster</a></div><div class="ttdeci">void imprimir_cluster(const string &amp;id) const</div><div class="ttdoc">Operación de escritura que dado un id imprime el cluster correspondiente.</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8cc_source.html#l00039">cjt_clusters.cc:39</a></div></div>
-<div class="ttc" id="aclasscjt__clusters_html_a8bbb860fb412474da9af5d0da057b59a"><div class="ttname"><a href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">cjt_clusters::clustmap</a></div><div class="ttdeci">map&lt; string, cluster &gt; clustmap</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8hh_source.html#l00023">cjt_clusters.hh:23</a></div></div>
+<div class="ttc" id="aclasscjt__clusters_html_a2d448fac129f03f1e21cfbda9e64c1f1"><div class="ttname"><a href="classcjt__clusters.html#a2d448fac129f03f1e21cfbda9e64c1f1">cjt_clusters::distancia_minima</a></div><div class="ttdeci">pair&lt; double, pair&lt; string, string &gt; &gt; distancia_minima() const</div><div class="ttdoc">Calcula la distancia mínima entre clusters.</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8cc_source.html#l00049">cjt_clusters.cc:49</a></div></div>
+<div class="ttc" id="aclasscjt__clusters_html_ae0fadd265338dc823762a46abaee018a"><div class="ttname"><a href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">cjt_clusters::clustdist</a></div><div class="ttdeci">map&lt; string, map&lt; string, double &gt; &gt; clustdist</div><div class="ttdoc">Contiene la tabla de distancias entre clusters.</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8hh_source.html#l00028">cjt_clusters.hh:28</a></div></div>
+<div class="ttc" id="aclasscjt__clusters_html_a96c03b95281162ae25e29fde9636a4e9"><div class="ttname"><a href="classcjt__clusters.html#a96c03b95281162ae25e29fde9636a4e9">cjt_clusters::imprimir_cluster</a></div><div class="ttdeci">void imprimir_cluster(const string &amp;id) const</div><div class="ttdoc">Operación de escritura que dado un id imprime el cluster correspondiente.</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8cc_source.html#l00038">cjt_clusters.cc:38</a></div></div>
+<div class="ttc" id="aclasscjt__clusters_html_a8bbb860fb412474da9af5d0da057b59a"><div class="ttname"><a href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">cjt_clusters::clustmap</a></div><div class="ttdeci">map&lt; string, cluster &gt; clustmap</div><div class="ttdoc">Contiene el conjunto de clusters.</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8hh_source.html#l00025">cjt_clusters.hh:25</a></div></div>
 <div class="ttc" id="aclasscluster_html"><div class="ttname"><a href="classcluster.html">cluster</a></div><div class="ttdoc">Contiene un cluster.</div><div class="ttdef"><b>Definition:</b> <a href="cluster_8hh_source.html#l00020">cluster.hh:20</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

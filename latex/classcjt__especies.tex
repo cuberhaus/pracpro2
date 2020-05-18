@@ -11,36 +11,36 @@ Contiene el conjunto de las especies.
 \mbox{\hyperlink{classcjt__especies_a7b7d59f2e553fd3135f6477c7ff64907}{cjt\+\_\+especies}} ()
 \begin{DoxyCompactList}\small\item\em Constructora. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcjt__especies_a87b5acf459eb12a21f876d3c37e8cd82}{inicializa\+\_\+clusters}} (\mbox{\hyperlink{classcjt__clusters}{cjt\+\_\+clusters}} \&clusters)
-\begin{DoxyCompactList}\small\item\em Inicialitza els clusters a partir del Conjunt d\textquotesingle{}especies. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classespecie}{especie}} \mbox{\hyperlink{classcjt__especies_a1a1aa0bfb43dcc48c52250568c48e0c5}{obtener\+\_\+especie}} (const string \&id) const
-\begin{DoxyCompactList}\small\item\em A partir de un id, devuelve la especie correspondiente. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{existe\+\_\+especie}} (const string \&id) const
-\begin{DoxyCompactList}\small\item\em Te dice si existe la especie con ese id. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Modificadora del Conjunto de clusters. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcjt__especies_a760a5da25737c5844b63b155a21e0dbc}{insertar\+\_\+especie}} (const \mbox{\hyperlink{classespecie}{especie}} \&e)
-\begin{DoxyCompactList}\small\item\em añade una especie al set de especies \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Modificadora añade una especie al set de especies. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcjt__especies_a65d9816cfb742671f38d6e31309f78bd}{borrar\+\_\+conjunto}} ()
 \item 
-double \mbox{\hyperlink{classcjt__especies_a8e4a90d62fc2085d521bed73b39a0332}{consultar\+\_\+distancia}} (const string id1, const string id2) const
-\begin{DoxyCompactList}\small\item\em Obtiene la distància dados dos id. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcjt__especies_a3cfb8a617d0236238a9793e6bf7c475c}{eliminar\+\_\+especie}} (const string \&id)
 \begin{DoxyCompactList}\small\item\em Se elimina una especie del conjunto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classespecie}{especie}} \mbox{\hyperlink{classcjt__especies_a1a1aa0bfb43dcc48c52250568c48e0c5}{obtener\+\_\+especie}} (const string \&id) const
+\begin{DoxyCompactList}\small\item\em Consultora que a partir de un identificador, devuelve la especie correspondiente. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{existe\+\_\+especie}} (const string \&id) const
+\begin{DoxyCompactList}\small\item\em Consultora de la existencia de una especie con identificador id. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcjt__especies_a8e4a90d62fc2085d521bed73b39a0332}{consultar\+\_\+distancia}} (const string id1, const string id2) const
+\begin{DoxyCompactList}\small\item\em Consultora de la distáncia entre especies dados dos identificadores. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcjt__especies_a719283577ec3f24bec7ca59d0ed09375}{imprimir\+\_\+conjunto}} () const
-\begin{DoxyCompactList}\small\item\em Imprime el conjunto de especies. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Operación de escritura del conjunto de especies. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcjt__especies_ab8fba19e9fb70722959b9c564d518fc7}{imprimir\+\_\+tabla\+\_\+distancias}} () const
-\begin{DoxyCompactList}\small\item\em Imprime la tabla de distancias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Operación de escritura de las distancias entre especies. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Atributos privados}
 \begin{DoxyCompactItemize}
 \item 
 map$<$ string, \mbox{\hyperlink{classespecie}{especie}} $>$ \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}
-\item 
+\begin{DoxyCompactList}\small\item\em Conjunto de especies. \end{DoxyCompactList}\item 
 map$<$ string, map$<$ string, double $>$ $>$ \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Tabla de distancias entre especies. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
 Contiene el conjunto de las especies. 
 
-Definición en la línea 21 del archivo cjt\+\_\+especies.\+hh.
+Definición en la línea 22 del archivo cjt\+\_\+especies.\+hh.
 
 
 
@@ -59,7 +59,7 @@ Constructora.
 True 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Crea un conjunt d\textquotesingle{}especies buit 
+Crea un conjunto de especies vacío 
 \end{DoxyPostcond}
 
 
@@ -84,13 +84,14 @@ Definición en la línea 6 del archivo cjt\+\_\+especies.\+cc.
 
 
 
-Inicialitza els clusters a partir del Conjunt d\textquotesingle{}especies. 
+Modificadora del Conjunto de clusters. 
 
 \begin{DoxyPrecond}{Precondición}
 True 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-El conjunt de clusters s\textquotesingle{}ha inicialitzat 
+Dado un conjunto de clusters lo inicializa con las distancias i las especies del conjunto de espécies ~\newline
+ 
 \end{DoxyPostcond}
 
 
@@ -121,63 +122,6 @@ Definición en la línea 11 del archivo cjt\+\_\+especies.\+cc.
 \DoxyCodeLine{31 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classcjt__especies_a1a1aa0bfb43dcc48c52250568c48e0c5}\label{classcjt__especies_a1a1aa0bfb43dcc48c52250568c48e0c5}} 
-\index{cjt\_especies@{cjt\_especies}!obtener\_especie@{obtener\_especie}}
-\index{obtener\_especie@{obtener\_especie}!cjt\_especies@{cjt\_especies}}
-\doxysubsubsection{\texorpdfstring{obtener\_especie()}{obtener\_especie()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classespecie}{especie}} cjt\+\_\+especies\+::obtener\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption}) const}
-
-
-
-A partir de un id, devuelve la especie correspondiente. 
-
-\begin{DoxyPrecond}{Precondición}
-Existe una especie con el id del parametro 
-\end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
-Se obtiene la especie con ese id 
-\end{DoxyPostcond}
-
-
-Definición en la línea 33 del archivo cjt\+\_\+especies.\+cc.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{33                                                             \{}
-\DoxyCodeLine{34     map <string, especie>::const\_iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{35     \textcolor{keywordflow}{return} it-\/>second;}
-\DoxyCodeLine{36 \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}\label{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}} 
-\index{cjt\_especies@{cjt\_especies}!existe\_especie@{existe\_especie}}
-\index{existe\_especie@{existe\_especie}!cjt\_especies@{cjt\_especies}}
-\doxysubsubsection{\texorpdfstring{existe\_especie()}{existe\_especie()}}
-{\footnotesize\ttfamily bool cjt\+\_\+especies\+::existe\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption}) const}
-
-
-
-Te dice si existe la especie con ese id. 
-
-\begin{DoxyPrecond}{Precondición}
-id 
-\end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
-si existe una especie con ese id, true, sino false 
-\end{DoxyPostcond}
-
-
-Definición en la línea 38 del archivo cjt\+\_\+especies.\+cc.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{38                                                         \{}
-\DoxyCodeLine{39     map<string,especie>::const\_iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{40     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{41     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{42 \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{classcjt__especies_a760a5da25737c5844b63b155a21e0dbc}\label{classcjt__especies_a760a5da25737c5844b63b155a21e0dbc}} 
 \index{cjt\_especies@{cjt\_especies}!insertar\_especie@{insertar\_especie}}
 \index{insertar\_especie@{insertar\_especie}!cjt\_especies@{cjt\_especies}}
@@ -186,13 +130,13 @@ Definición en la línea 38 del archivo cjt\+\_\+especies.\+cc.
 
 
 
-añade una especie al set de especies 
+Modificadora añade una especie al set de especies. 
 
 \begin{DoxyPrecond}{Precondición}
-especie en la entrada 
+especie e 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-La especie se ha añadido al set espset i se ha añadido a la tabla de distancias 
+La especie se ha añadido al parámetro implícito 
 \end{DoxyPostcond}
 
 
@@ -225,11 +169,11 @@ Definición en la línea 44 del archivo cjt\+\_\+especies.\+cc.
 \doxysubsubsection{\texorpdfstring{borrar\_conjunto()}{borrar\_conjunto()}}
 {\footnotesize\ttfamily void cjt\+\_\+especies\+::borrar\+\_\+conjunto (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Borra el conjunto de especies \begin{DoxyPrecond}{Precondición}
-Hay un conjunto de especies 
+Modificadora borra el conjunto de especies \begin{DoxyPrecond}{Precondición}
+True 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Se ha eliminado ese conjunto de especies 
+Se ha eliminado el conjunto de especies del P.\+I. 
 \end{DoxyPostcond}
 
 
@@ -243,6 +187,96 @@ Definición en la línea 63 del archivo cjt\+\_\+especies.\+cc.
 \DoxyCodeLine{66 \}}
 
 \end{DoxyCode}
+\mbox{\Hypertarget{classcjt__especies_a3cfb8a617d0236238a9793e6bf7c475c}\label{classcjt__especies_a3cfb8a617d0236238a9793e6bf7c475c}} 
+\index{cjt\_especies@{cjt\_especies}!eliminar\_especie@{eliminar\_especie}}
+\index{eliminar\_especie@{eliminar\_especie}!cjt\_especies@{cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{eliminar\_especie()}{eliminar\_especie()}}
+{\footnotesize\ttfamily void cjt\+\_\+especies\+::eliminar\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Se elimina una especie del conjunto. 
+
+\begin{DoxyPrecond}{Precondición}
+Tamaño del set es estrictamente $>$ 0, existe una especie en el P.\+I. con el identificador id 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+La especie con identificador id se ha eliminado y se han actualizado las distancias 
+\end{DoxyPostcond}
+
+
+Definición en la línea 79 del archivo cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{79                                                     \{}
+\DoxyCodeLine{80     map <string, especie>::iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{81     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.end()) \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.erase(it);}
+\DoxyCodeLine{82     \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.erase(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{83     map<string, map<string, double>>::iterator it2;}
+\DoxyCodeLine{84     \textcolor{keywordflow}{for} (it2 = \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.begin(); it2 != \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.end(); ++it2) \{}
+\DoxyCodeLine{85         it2-\/>second.erase(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classcjt__especies_a1a1aa0bfb43dcc48c52250568c48e0c5}\label{classcjt__especies_a1a1aa0bfb43dcc48c52250568c48e0c5}} 
+\index{cjt\_especies@{cjt\_especies}!obtener\_especie@{obtener\_especie}}
+\index{obtener\_especie@{obtener\_especie}!cjt\_especies@{cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{obtener\_especie()}{obtener\_especie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classespecie}{especie}} cjt\+\_\+especies\+::obtener\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Consultora que a partir de un identificador, devuelve la especie correspondiente. 
+
+\begin{DoxyPrecond}{Precondición}
+Existe una especie con el identificador id en el P.\+I. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es la especie con ese identificador 
+\end{DoxyPostcond}
+
+
+Definición en la línea 33 del archivo cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33                                                             \{}
+\DoxyCodeLine{34     map <string, especie>::const\_iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{35     \textcolor{keywordflow}{return} it-\/>second;}
+\DoxyCodeLine{36 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}\label{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}} 
+\index{cjt\_especies@{cjt\_especies}!existe\_especie@{existe\_especie}}
+\index{existe\_especie@{existe\_especie}!cjt\_especies@{cjt\_especies}}
+\doxysubsubsection{\texorpdfstring{existe\_especie()}{existe\_especie()}}
+{\footnotesize\ttfamily bool cjt\+\_\+especies\+::existe\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Consultora de la existencia de una especie con identificador id. 
+
+\begin{DoxyPrecond}{Precondición}
+id 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es true si existe una especie con ese id sino false 
+\end{DoxyPostcond}
+
+
+Definición en la línea 38 del archivo cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38                                                         \{}
+\DoxyCodeLine{39     map<string,especie>::const\_iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{41     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classcjt__especies_a8e4a90d62fc2085d521bed73b39a0332}\label{classcjt__especies_a8e4a90d62fc2085d521bed73b39a0332}} 
 \index{cjt\_especies@{cjt\_especies}!consultar\_distancia@{consultar\_distancia}}
 \index{consultar\_distancia@{consultar\_distancia}!cjt\_especies@{cjt\_especies}}
@@ -251,13 +285,13 @@ Definición en la línea 63 del archivo cjt\+\_\+especies.\+cc.
 
 
 
-Obtiene la distància dados dos id. 
+Consultora de la distáncia entre especies dados dos identificadores. 
 
 \begin{DoxyPrecond}{Precondición}
-Dos strings en la entrada 
+id1, id2 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-El resultado es la distància entre las dos especies 
+El resultado es la distáncia entre las dos especies 
 \end{DoxyPostcond}
 
 
@@ -277,39 +311,6 @@ Definición en la línea 68 del archivo cjt\+\_\+especies.\+cc.
 \DoxyCodeLine{77 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classcjt__especies_a3cfb8a617d0236238a9793e6bf7c475c}\label{classcjt__especies_a3cfb8a617d0236238a9793e6bf7c475c}} 
-\index{cjt\_especies@{cjt\_especies}!eliminar\_especie@{eliminar\_especie}}
-\index{eliminar\_especie@{eliminar\_especie}!cjt\_especies@{cjt\_especies}}
-\doxysubsubsection{\texorpdfstring{eliminar\_especie()}{eliminar\_especie()}}
-{\footnotesize\ttfamily void cjt\+\_\+especies\+::eliminar\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption})}
-
-
-
-Se elimina una especie del conjunto. 
-
-\begin{DoxyPrecond}{Precondición}
-Tamaño del set es estrictamente $>$ 0 
-\end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondición}
-La especie se ha eliminado y se ha actualizado la tabla de distancias 
-\end{DoxyPostcond}
-
-
-Definición en la línea 79 del archivo cjt\+\_\+especies.\+cc.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{79                                                     \{}
-\DoxyCodeLine{80     map <string, especie>::iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.find(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{81     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.end()) \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.erase(it);}
-\DoxyCodeLine{82     \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.erase(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{83     map<string, map<string, double>>::iterator it2;}
-\DoxyCodeLine{84     \textcolor{keywordflow}{for} (it2 = \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.begin(); it2 != \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.end(); ++it2) \{}
-\DoxyCodeLine{85         it2-\/>second.erase(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{86     \}}
-\DoxyCodeLine{87 \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{classcjt__especies_a719283577ec3f24bec7ca59d0ed09375}\label{classcjt__especies_a719283577ec3f24bec7ca59d0ed09375}} 
 \index{cjt\_especies@{cjt\_especies}!imprimir\_conjunto@{imprimir\_conjunto}}
 \index{imprimir\_conjunto@{imprimir\_conjunto}!cjt\_especies@{cjt\_especies}}
@@ -318,13 +319,13 @@ Definición en la línea 79 del archivo cjt\+\_\+especies.\+cc.
 
 
 
-Imprime el conjunto de especies. 
+Operación de escritura del conjunto de especies. 
 
 ~\begin{DoxyPrecond}{Precondición}
-El conjunto no es vacio 
+True 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Se escriben en el output el conjunto de especies 
+Se ha escrito por el canal de salida estándard el conjunto de especies 
 \end{DoxyPostcond}
 
 
@@ -348,13 +349,13 @@ Definición en la línea 89 del archivo cjt\+\_\+especies.\+cc.
 
 
 
-Imprime la tabla de distancias. 
+Operación de escritura de las distancias entre especies. 
 
 \begin{DoxyPrecond}{Precondición}
 True 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondición}
-Se ha imprimido en el output la tabla de distancias 
+Se han escrito por el canal de salida estándard las distancias entre especies 
 \end{DoxyPostcond}
 
 
@@ -386,7 +387,11 @@ Definición en la línea 96 del archivo cjt\+\_\+especies.\+cc.
 
 
 
-Definición en la línea 23 del archivo cjt\+\_\+especies.\+hh.
+Conjunto de especies. 
+
+
+
+Definición en la línea 27 del archivo cjt\+\_\+especies.\+hh.
 
 \mbox{\Hypertarget{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}\label{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}} 
 \index{cjt\_especies@{cjt\_especies}!distmap@{distmap}}
@@ -396,7 +401,11 @@ Definición en la línea 23 del archivo cjt\+\_\+especies.\+hh.
 
 
 
-Definición en la línea 24 del archivo cjt\+\_\+especies.\+hh.
+Tabla de distancias entre especies. 
+
+
+
+Definición en la línea 30 del archivo cjt\+\_\+especies.\+hh.
 
 
 

@@ -22,10 +22,10 @@ class especie {
         /** @brief Parámetro k para el cálculo de los kmeros */
         static int k;
 
-        /** @brief Identificador de la espécie */
+        /** @brief Identificador de la especie */
         string id;
 
-        /** @brief Gen de la espécie */
+        /** @brief Gen de la especie */
         string gen;
 
         /** @brief Kmeros para el cálculo de las distancias*/ 
@@ -47,39 +47,38 @@ class especie {
      */
     especie();
 
-    /** @brief Crea una especie dado un id y un gen
+    /** @brief Constructora dado un id y un gen
      * \pre True
      * \post Crea una especie con id y un gen
      */
     especie(const string & id , const string & gen);
 
     // Modificadoras
+    
+    /** @brief Modificadora del parámetro k
+     *  \pre True
+     *  \post El parámetro k toma el nuevo valor
+     */
+    static void insertar_k(int k); 
 
     // Consultoras
 
-    string consultar_id() const;
-    /** @brief
-     * \pre True
-     * \post El resultado es el gen del P.I.
-     */
-    
-    string consultar_gen() const;
-    /** @brief Lee el parámetro k de la entrada
-     *  \pre True
-     *  \post El parámetro k ha sido actualizado
-     */
-
-    static void insertar_k(int k); // passar com a parametre
-
-    static double distancia(const especie &e1, const especie &e2);
-
-
-    // Entrada / Salida
-    
-    void leer_especie();
-    /** @brief Consulta el id del P.I.
+    /** @brief Consultora del identificador
      * \pre True
      * \post El resultado es el id del P.I.
      */
+    string consultar_id() const;
+
+    /** @brief Consultora del gen
+     * \pre True
+     * \post El resultado es el gen del P.I.
+     */
+    string consultar_gen() const;
+
+    /** @brief Consultora, calcula la distancia entre dos especies
+     * \pre e1 y e2 contienen id y gen
+     * \post El resultado es la distancia entre las especies
+     */
+    static double distancia(const especie &e1, const especie &e2);
 };
 #endif

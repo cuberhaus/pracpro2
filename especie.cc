@@ -23,9 +23,6 @@ especie::especie(const string & id , const string & gen ) {
     generar_kmeros();
 }
 
-void especie::leer_especie() {
-    cin >> id >> gen;
-}
 
 string especie::consultar_id() const {
     return id;
