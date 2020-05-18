@@ -1,7 +1,8 @@
-#include <iostream>
-#include "cjt_especies.hh"
+/** @file cjt_clusters.cc
+    @brief Código de la clase cjt_clusters
+*/
 #include "cjt_clusters.hh"
-#include "cluster.hh"
+
 
 
 cjt_clusters::cjt_clusters() {
@@ -16,11 +17,11 @@ void cjt_clusters::insertar_especie_dist(const string &id1, const string &id2, c
 
 void cjt_clusters::insertar_cluster(const string &id) {
     pair <string,double> p_esp;
-    p_esp.first = id; 
+    p_esp.first = id;
     p_esp.second = 0;
     BinTree <pair<string,double>> c_tree (p_esp) ;
     cluster c (c_tree);
-    clustmap [id] = c; 
+    clustmap [id] = c;
 }
 
 void cjt_clusters::imprimir_tabla_distancias() const {
@@ -77,7 +78,7 @@ void cjt_clusters::fusiona_clusters() {
     string id2 = ids_min.second.second;
     string fus;
     fus = ids_min.second.first + ids_min.second.second;
-    clustdist[fus]; 
+    clustdist[fus];
     map<string, map<string,double>>::iterator it, it2;
     for (it = clustdist.begin(); it != clustdist.end(); ++it) {
         if (fus > it->first and it->first != id1 and it->first != id2) {

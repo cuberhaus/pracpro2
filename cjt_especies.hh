@@ -1,3 +1,7 @@
+/** @file cjt_especies.hh
+    @brief Especificación de la clase cjt_especies
+*/
+
 #ifndef cjt_especies_hh
 #define cjt_especies_hh
 
@@ -17,11 +21,11 @@ class cjt_especies {
     private:
         map <string, especie> espmap;
         map <string, map<string, double >> distmap;
-    public: 
+    public:
         //posarme al principi demanar on estic
         //index al principi anar al seguent i saber si arriba al final
         //recorrer distmap
-        
+
         /** @brief Constructora
          * \pre True
          * \post Crea un conjunt d'especies buit
@@ -38,7 +42,7 @@ class cjt_especies {
          * \pre Existe una especie con el id del parametro
          * \post Se obtiene la especie con ese id
          */
-        especie obtener_especie(const string& id) const; 
+        especie obtener_especie(const string& id) const;
 
         /** @brief Te dice si existe la especie con ese id
          * \pre id
@@ -58,8 +62,8 @@ class cjt_especies {
          */
         void borrar_conjunto ();
 
-        /** @brief Obtiene la distància dados dos id 
-         * \pre Dos strings en la entrada  
+        /** @brief Obtiene la distància dados dos id
+         * \pre Dos strings en la entrada
          * \post El resultado es la distància entre las dos especies
          */
         double consultar_distancia(const string id1,const string id2) const ;
@@ -67,7 +71,7 @@ class cjt_especies {
          * \pre Tamaño del set es estrictamente > 0
          * \post La especie se ha eliminado y se ha actualizado la tabla de distancias
          */
-        void eliminar_especie(const string& id); 
+        void eliminar_especie(const string& id);
 
         /** @brief Imprime el conjunto de especies
          * \pre El conjunto no es vacio

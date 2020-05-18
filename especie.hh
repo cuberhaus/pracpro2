@@ -1,3 +1,7 @@
+/** @file especie.hh
+    @brief Especificación de la clase especie
+*/
+
 #ifndef especie_hh
 #define especie_hh
 
@@ -22,7 +26,7 @@ class especie {
          * \pre Gen esta inicializado
          * \post El mapa de kmeros se ha actualizado
          */
-        void generar_kmeros(); // privat 
+        void generar_kmeros(); // privat
         //map <string, double> d_esp();
     public:
     /** @brief Constructora
@@ -30,9 +34,9 @@ class especie {
      * \post El resultado es una especie nueva
      */
     especie();
-    /** @brief Crea una especie dado un id y un gen 
+    /** @brief Crea una especie dado un id y un gen
      * \pre True
-     * \post Crea una especie con id y un gen 
+     * \post Crea una especie con id y un gen
      */
     especie(const string & id , const string & gen);
     /** @brief Añade y/o cambia el id y el gen del P.I. por dos strings del input
@@ -45,7 +49,7 @@ class especie {
      * \post El resultado es el id del P.I.
      */
     string consultar_id() const;
-    /** @brief 
+    /** @brief
      * \pre True
      * \post El resultado es el gen del P.I.
      */

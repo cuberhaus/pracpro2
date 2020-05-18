@@ -1,11 +1,13 @@
-#include <iostream>
+/** @file especie.cc
+    @brief Código de la clase Celula 
+*/
 #include "especie.hh"
 
 void especie::generar_kmeros() {
     int n = gen.size();
     string kmero;
     for (int i = 0; i < n-(k-1); ++i) {
-        kmero = gen.substr(i,k); 
+        kmero = gen.substr(i,k);
         kmeros[kmero] += 1;
    }
 }
@@ -74,4 +76,3 @@ double especie::distancia(const especie &e1, const especie &e2) {
     resultat = (1-(inter/uni))*100;
     return resultat;
 }
-

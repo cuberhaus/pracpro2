@@ -1,7 +1,6 @@
-#include <iostream>
-#include <set>
-using namespace std;
-#include "especie.hh"
+/** @file cjt_especies.cc
+    @brief Código de la clase cjt_especies
+*/
 #include "cjt_especies.hh"
 
 cjt_especies::cjt_especies() {
@@ -23,7 +22,7 @@ void cjt_especies::inicializa_clusters(cjt_clusters &clusters) {
         }
     }
     if (espmap.size() != 0) {
-        it1 = distmap.end(); 
+        it1 = distmap.end();
         --it1;
         double d = -1;
         string s;

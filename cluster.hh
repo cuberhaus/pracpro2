@@ -1,3 +1,7 @@
+/** @file cluster.hh
+    @brief Especificación de la clase cluster
+*/
+
 #ifndef cluster_hh
 #define cluster_hh
 
@@ -18,8 +22,8 @@ class cluster {
     private:
         BinTree <pair<string,double>> c_tree;
 
-    public: 
-        /** @brief Constructora 
+    public:
+        /** @brief Constructora
          * \pre True
          * \post El resultado es un cluster con distancia 0
          */
@@ -32,9 +36,9 @@ class cluster {
         cluster(BinTree<pair<string,double>> &c_tree);
         cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right);
 
-        /** @brief Imprime la estructura del cluster 
+        /** @brief Imprime la estructura del cluster
          * \pre True
-         * \post Imprime en el output la estructura del cluster 
+         * \post Imprime en el output la estructura del cluster
          */
         void imprimir_cluster() const;
 };

@@ -1,3 +1,7 @@
+/** @file program.cc
+    @brief Programa principal
+*/
+
 #ifndef NO_DIAGRAM
 #include <iostream>
 #include <string>
@@ -134,7 +138,7 @@ int main() {
                 clusters.imprimir_tabla_distancias();
                 cout << endl;
             }
-            else cout << "ERROR: num_clusters <= 1" << endl << endl; 
+            else cout << "ERROR: num_clusters <= 1" << endl << endl;
         }
         else if (s == "imprime_cluster") {
             string id;
@@ -150,7 +154,7 @@ int main() {
         }
 
         else if (s == "imprime_arbol_filogenetico") {
-            cout << "# imprime_arbol_filogenetico" << endl; 
+            cout << "# imprime_arbol_filogenetico" << endl;
             c.inicializa_clusters(clusters);
             if (clusters.size() > 1) {
                 while (clusters.size() > 1) {
@@ -161,7 +165,7 @@ int main() {
                 cout << endl;
             }
             else if (clusters.size() == 1) {
-                clusters.imprimir_arbol_filogenetico();  
+                clusters.imprimir_arbol_filogenetico();
                 cout << endl;
                 cout << endl;
             }
@@ -175,4 +179,3 @@ int main() {
         }
     }
 }
-

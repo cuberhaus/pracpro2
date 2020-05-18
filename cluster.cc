@@ -1,4 +1,6 @@
-#include "BinTree.hh"
+/** @file cluster.cc
+    @brief Código de la clase cluster
+*/
 #include "cluster.hh"
 
 cluster::cluster() {
@@ -30,5 +32,3 @@ void imprimir_cluster_aux(const BinTree <pair<string,double>> &c_tree)  {
 void cluster::imprimir_cluster() const {
     imprimir_cluster_aux(c_tree);
 }
-
-
