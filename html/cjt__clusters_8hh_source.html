@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica de PRO2 - Primavera 2020 - Entrega final definitiva: Fichero Fuente cjt_clusters.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica de PRO2 - Primavera 2020 - Entrega final definitiva
+   &#160;<span id="projectnumber">Pol Casacuberta Gil</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">cjt_clusters.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="cjt__clusters_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef cjt_clusters_hh</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define cjt_clusters_hh</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;BinTree.hh&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cluster_8hh.html">cluster.hh</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classcjt__clusters.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcjt__clusters.html">cjt_clusters</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">   22</a></span>&#160;        map &lt;string, cluster&gt; <a class="code" href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">clustmap</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">   23</a></span>&#160;        map &lt;string, map&lt;string, double&gt;&gt; <a class="code" href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">clustdist</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        pair &lt;double, pair&lt;string, string&gt;&gt; distancia_minima() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classcjt__clusters.html">cjt_clusters</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> insertar_especie_dist(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;id1, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;id2, <span class="keyword">const</span> <span class="keywordtype">double</span> dist);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> insertar_cluster(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> imprimir_tabla_distancias() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> imprimir_cluster(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;<span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">bool</span> existe_cluster(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;<span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> fusiona_clusters();</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classcjt__clusters.html#afbe3740d3e4f2f33c7b3c39ac2372cd1">   65</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcjt__clusters.html#afbe3740d3e4f2f33c7b3c39ac2372cd1">imprimir_clusters</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">int</span> size() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">void</span> borrar_conjunto();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> imprimir_arbol_filogenetico() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classcjt__clusters.html#a385aaed7cbaf924f6e0f0f3a749d8383">   81</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classcjt__clusters.html#a385aaed7cbaf924f6e0f0f3a749d8383">fusiona_todos_los_clusters</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="acluster_8hh_html"><div class="ttname"><a href="cluster_8hh.html">cluster.hh</a></div><div class="ttdoc">Especificación de la clase cluster.</div></div>
+<div class="ttc" id="aclasscjt__clusters_html_ae0fadd265338dc823762a46abaee018a"><div class="ttname"><a href="classcjt__clusters.html#ae0fadd265338dc823762a46abaee018a">cjt_clusters::clustdist</a></div><div class="ttdeci">map&lt; string, map&lt; string, double &gt; &gt; clustdist</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8hh_source.html#l00023">cjt_clusters.hh:23</a></div></div>
+<div class="ttc" id="aclasscjt__clusters_html_a385aaed7cbaf924f6e0f0f3a749d8383"><div class="ttname"><a href="classcjt__clusters.html#a385aaed7cbaf924f6e0f0f3a749d8383">cjt_clusters::fusiona_todos_los_clusters</a></div><div class="ttdeci">void fusiona_todos_los_clusters()</div><div class="ttdoc">Fusiona todos los clusters hasta que solo queda uno.</div></div>
+<div class="ttc" id="aclasscjt__clusters_html"><div class="ttname"><a href="classcjt__clusters.html">cjt_clusters</a></div><div class="ttdoc">Cjt_clusters.</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8hh_source.html#l00020">cjt_clusters.hh:20</a></div></div>
+<div class="ttc" id="aclasscjt__clusters_html_a8bbb860fb412474da9af5d0da057b59a"><div class="ttname"><a href="classcjt__clusters.html#a8bbb860fb412474da9af5d0da057b59a">cjt_clusters::clustmap</a></div><div class="ttdeci">map&lt; string, cluster &gt; clustmap</div><div class="ttdef"><b>Definition:</b> <a href="cjt__clusters_8hh_source.html#l00022">cjt_clusters.hh:22</a></div></div>
+<div class="ttc" id="aclasscjt__clusters_html_afbe3740d3e4f2f33c7b3c39ac2372cd1"><div class="ttname"><a href="classcjt__clusters.html#afbe3740d3e4f2f33c7b3c39ac2372cd1">cjt_clusters::imprimir_clusters</a></div><div class="ttdeci">void imprimir_clusters() const</div><div class="ttdoc">Imprime los clusters.</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

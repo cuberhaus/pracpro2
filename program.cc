@@ -1,3 +1,15 @@
+/** @mainpage
+
+    El programa principal se encuentra en el módulo program.cc.
+    Para Almacenar y tratar los datos descritos en el enunciado de la práctica,
+    usaremos el módulo especie para representar las especies son sus
+    identificadores y genes, el módulo cjt_especies para representar un conjunto
+    de especies donde almacenaremos las distancias entre especies i el conjunto.
+    Para los clusters usaremos el módulo cluster i el módulo cjt_clusters para
+    almacenar un conjunto de estos.
+
+*/
+
 /** @file program.cc
     @brief Programa principal
 */

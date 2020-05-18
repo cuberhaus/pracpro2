@@ -1,4 +1,4 @@
-/** @file cjt_clusters.cc
+/** @file cjt_clusters.hh
     @brief Especificación de la clase cjt_clusters
 */
 
@@ -14,7 +14,7 @@
 #include "cluster.hh"
 using namespace std;
 
-/** @brief Cjt_clusters
+/** @class cjt_clusters
  * @brief Contiene un conjunto de clusters
  */
 class cjt_clusters {

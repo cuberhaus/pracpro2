@@ -1,0 +1,154 @@
+\hypertarget{classcluster}{}\doxysection{Referencia de la Clase cluster}
+\label{classcluster}\index{cluster@{cluster}}
+
+
+Contiene un cluster.  
+
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcluster_aa4e5f899744fa668e2dadc188013e562}{cluster}} ()
+\begin{DoxyCompactList}\small\item\em Constructora. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcluster_a5a7a6523f824720c07ac25a565828277}{cluster}} (Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\+\_\+tree}})
+\begin{DoxyCompactList}\small\item\em Constructora. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcluster_a24dc436f4620f71ae36b098cd1ecba1f}{cluster}} (const pair$<$ string, double $>$ \&newclust, const \mbox{\hyperlink{classcluster}{cluster}} \&left, const \mbox{\hyperlink{classcluster}{cluster}} \&right)
+\item 
+void \mbox{\hyperlink{classcluster_a8066fb892f8decb3842c34242bcc2f55}{imprimir\+\_\+cluster}} () const
+\begin{DoxyCompactList}\small\item\em Imprime la estructura del cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+Bin\+Tree$<$ pair$<$ string, double $>$ $>$ \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\+\_\+tree}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Contiene un cluster. 
+
+Definición en la línea 20 del archivo cluster.\+hh.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classcluster_aa4e5f899744fa668e2dadc188013e562}\label{classcluster_aa4e5f899744fa668e2dadc188013e562}} 
+\index{cluster@{cluster}!cluster@{cluster}}
+\index{cluster@{cluster}!cluster@{cluster}}
+\doxysubsubsection{\texorpdfstring{cluster()}{cluster()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily cluster\+::cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructora. 
+
+\begin{DoxyPrecond}{Precondición}
+True 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un cluster con distancia 0 
+\end{DoxyPostcond}
+
+
+Definición en la línea 6 del archivo cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                  \{}
+\DoxyCodeLine{7 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classcluster_a5a7a6523f824720c07ac25a565828277}\label{classcluster_a5a7a6523f824720c07ac25a565828277}} 
+\index{cluster@{cluster}!cluster@{cluster}}
+\index{cluster@{cluster}!cluster@{cluster}}
+\doxysubsubsection{\texorpdfstring{cluster()}{cluster()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily cluster\+::cluster (\begin{DoxyParamCaption}\item[{Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&}]{c\+\_\+tree }\end{DoxyParamCaption})}
+
+
+
+Constructora. 
+
+\begin{DoxyPrecond}{Precondición}
+True 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un cluster con sus distancia y ID 
+\end{DoxyPostcond}
+
+
+Definición en la línea 9 del archivo cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                                                      \{}
+\DoxyCodeLine{10     \textcolor{keyword}{this} -\/> \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}} = \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}};}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classcluster_a24dc436f4620f71ae36b098cd1ecba1f}\label{classcluster_a24dc436f4620f71ae36b098cd1ecba1f}} 
+\index{cluster@{cluster}!cluster@{cluster}}
+\index{cluster@{cluster}!cluster@{cluster}}
+\doxysubsubsection{\texorpdfstring{cluster()}{cluster()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily cluster\+::cluster (\begin{DoxyParamCaption}\item[{const pair$<$ string, double $>$ \&}]{newclust,  }\item[{const \mbox{\hyperlink{classcluster}{cluster}} \&}]{left,  }\item[{const \mbox{\hyperlink{classcluster}{cluster}} \&}]{right }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 13 del archivo cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13                                                                                                  \{}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     BinTree <pair<string,double>> \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}}(newclust, left.\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}}, right.\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}});}
+\DoxyCodeLine{16     \textcolor{keyword}{this} -\/> \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}}  = \mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}};}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classcluster_a8066fb892f8decb3842c34242bcc2f55}\label{classcluster_a8066fb892f8decb3842c34242bcc2f55}} 
+\index{cluster@{cluster}!imprimir\_cluster@{imprimir\_cluster}}
+\index{imprimir\_cluster@{imprimir\_cluster}!cluster@{cluster}}
+\doxysubsubsection{\texorpdfstring{imprimir\_cluster()}{imprimir\_cluster()}}
+{\footnotesize\ttfamily void cluster\+::imprimir\+\_\+cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprime la estructura del cluster. 
+
+\begin{DoxyPrecond}{Precondición}
+True 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Imprime en el output la estructura del cluster 
+\end{DoxyPostcond}
+
+
+Definición en la línea 32 del archivo cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{32                                      \{}
+\DoxyCodeLine{33     \mbox{\hyperlink{cluster_8cc_ae51b406880d55e6f7e2d5483482024d4}{imprimir\_cluster\_aux}}(\mbox{\hyperlink{classcluster_acaafa7007591615fa7739114bcea274c}{c\_tree}});}
+\DoxyCodeLine{34 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classcluster_acaafa7007591615fa7739114bcea274c}\label{classcluster_acaafa7007591615fa7739114bcea274c}} 
+\index{cluster@{cluster}!c\_tree@{c\_tree}}
+\index{c\_tree@{c\_tree}!cluster@{cluster}}
+\doxysubsubsection{\texorpdfstring{c\_tree}{c\_tree}}
+{\footnotesize\ttfamily Bin\+Tree$<$pair$<$string,double$>$ $>$ cluster\+::c\+\_\+tree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 23 del archivo cluster.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cluster_8hh}{cluster.\+hh}}\item 
+\mbox{\hyperlink{cluster_8cc}{cluster.\+cc}}\end{DoxyCompactItemize}

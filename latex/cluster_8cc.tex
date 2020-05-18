@@ -1,0 +1,53 @@
+\hypertarget{cluster_8cc}{}\doxysection{Referencia del Archivo cluster.\+cc}
+\label{cluster_8cc}\index{cluster.cc@{cluster.cc}}
+
+
+Código de la clase cluster.  
+
+
+Dependencia gráfica adjunta para cluster.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{cluster_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cluster_8cc_ae51b406880d55e6f7e2d5483482024d4}{imprimir\+\_\+cluster\+\_\+aux}} (const Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&c\+\_\+tree)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Código de la clase cluster. 
+
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{cluster_8cc_ae51b406880d55e6f7e2d5483482024d4}\label{cluster_8cc_ae51b406880d55e6f7e2d5483482024d4}} 
+\index{cluster.cc@{cluster.cc}!imprimir\_cluster\_aux@{imprimir\_cluster\_aux}}
+\index{imprimir\_cluster\_aux@{imprimir\_cluster\_aux}!cluster.cc@{cluster.cc}}
+\doxysubsubsection{\texorpdfstring{imprimir\_cluster\_aux()}{imprimir\_cluster\_aux()}}
+{\footnotesize\ttfamily void imprimir\+\_\+cluster\+\_\+aux (\begin{DoxyParamCaption}\item[{const Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&}]{c\+\_\+tree }\end{DoxyParamCaption})}
+
+
+
+Definición en la línea 19 del archivo cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19                                                                         \{}
+\DoxyCodeLine{20     \textcolor{keywordflow}{if} (not c\_tree.empty() and c\_tree.left().empty() and c\_tree.right().empty()) \{}
+\DoxyCodeLine{21         cout << \textcolor{charliteral}{'['} << c\_tree.value().first << \textcolor{charliteral}{']'};}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not c\_tree.empty()) \{}
+\DoxyCodeLine{24         cout << \textcolor{stringliteral}{"["};}
+\DoxyCodeLine{25         cout << \textcolor{charliteral}{'('} << c\_tree.value().first << \textcolor{stringliteral}{", "} << c\_tree.value().second << \textcolor{stringliteral}{") "};}
+\DoxyCodeLine{26         \mbox{\hyperlink{cluster_8cc_ae51b406880d55e6f7e2d5483482024d4}{imprimir\_cluster\_aux}}(c\_tree.left());}
+\DoxyCodeLine{27         \mbox{\hyperlink{cluster_8cc_ae51b406880d55e6f7e2d5483482024d4}{imprimir\_cluster\_aux}}(c\_tree.right());}
+\DoxyCodeLine{28         cout << \textcolor{charliteral}{']'};}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30 \}}
+
+\end{DoxyCode}
