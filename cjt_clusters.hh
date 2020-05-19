@@ -35,7 +35,7 @@ class cjt_clusters {
         pair <double, pair<string, string>> distancia_minima() const;
 
     public:
-        
+
         // Constructora
 
         /** @brief Constructora por defecto
@@ -64,10 +64,10 @@ class cjt_clusters {
          * \post Se han juntado dos clusters en uno
          */
         void fusiona_clusters();
-        
+
         /** @brief Modificadora del conjunto de clusters y sus distancias, borra el conjunto de clusters
          * \pre True
-         * \post El conjunto de clusters está vacio 
+         * \post El conjunto de clusters está vacio
          */
         void borrar_conjunto();
 
@@ -88,7 +88,7 @@ class cjt_clusters {
         // Entrada / Salida
 
         /** @brief Operación de escritura de la tabla de distancias entre clusters
-         * \pre True 
+         * \pre True
          * \post Se ha escrito la tabla de distancias entre clusters por el canal de salida estándard
          */
         void imprimir_tabla_distancias() const;

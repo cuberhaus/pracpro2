@@ -3,9 +3,9 @@
 /** @mainpage
 
     Nombre del Proyecto: Práctica PRO2 Primavera 2020
-    
+
     Versión: 1.0
-    
+
     Lenguaje i Versión: C++ 17
 
     El programa principal se encuentra en el módulo program.cc.
@@ -33,7 +33,7 @@
     10. ejecuta_paso_wpgma: ejecuta un paso del algoritmo WPGMA (fusiona los dos clústers a menor distancia en uno nuevo) e imprime la tabla de distancias entre clústers resultante. Al imprimir la tabla de distancias se usarán los identificadores de los clústers para indexar filas y columnas. En caso de que el número de clústers del conjunto sea menor o igual que uno solamente se debe imprimir un mensaje de error.
     11. imprime_cluster: dado un identificador α, imprime el clúster con el identificador dado, o un error si no existe un clúster con dicho identificador en el conjunto de clústers.
     12. imprime_arbol_filogenetico:imprime el árbol filogenético para el conjunto deespecies actual; dicho árbol es el clúster que agrupa todas las especies, resultante de aplicar el algoritmo WPGMA. El contenido del conjunto de clústers previo se descarta y se reinicializa con el conjunto de especies en el estado en el que esté en ese momento, para a continuación aplicar el algoritmo. El conjunto de clústers final es el que queda después de aplicar el algoritmo.
-Se imprimirá la estructura arborescente del clúster con los identificadores de los clústers (raíces de los subárboles) y la distancia entre cada clúster y sus hojas descendientes. 
+Se imprimirá la estructura arborescente del clúster con los identificadores de los clústers (raíces de los subárboles) y la distancia entre cada clúster y sus hojas descendientes.
     13. fin: finaliza la ejecución del programa.
 
 */

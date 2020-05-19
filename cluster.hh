@@ -18,7 +18,7 @@ using namespace std;
  * @brief Contiene un cluster
  */
 class cluster {
-    
+
     private:
 
         /** @brief Estructura del cluster */
@@ -27,7 +27,7 @@ class cluster {
     public:
 
         // Constructoras
-        
+
         /** @brief Constructora por defecto
          * \pre True
          * \post El resultado es un cluster con distancia 0
@@ -42,12 +42,12 @@ class cluster {
 
         /**  @brief Constructora dado un pair y dos clusters
          * \pre True
-         * \post El resultado es la fusión de un cluster con otros dos clusters y con el identificador y la distancia del par 
+         * \post El resultado es la fusión de un cluster con otros dos clusters y con el identificador y la distancia del par
          */
         cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right);
 
         // Entrada / Salida
-        
+
         /** @brief Operación de escritura, imprime la estructura del cluster
          * \pre True
          * \post Se ha escrito en el canal de salida estándard la estructura del cluster

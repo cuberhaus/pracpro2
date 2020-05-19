@@ -38,23 +38,23 @@ class cjt_especies {
          * \post Crea un conjunto de especies vacío
          */
         cjt_especies();
-        
+
         // Modificadoras
-        
+
         /** @brief Modificadora del Conjunto de clusters
          * \pre True
-         * \post Dado un conjunto de clusters lo inicializa con las distancias i las especies del conjunto de espécies   
+         * \post Dado un conjunto de clusters lo inicializa con las distancias i las especies del conjunto de espécies
          */
         void inicializa_clusters(cjt_clusters &clusters);
-        
+
         /** @brief Modificadora añade una especie al set de especies
          * \pre especie e
-         * \post La especie se ha añadido al parámetro implícito 
+         * \post La especie se ha añadido al parámetro implícito
          */
         void insertar_especie (const especie& e);
 
         /** Modificadora borra el conjunto de especies
-         * \pre True 
+         * \pre True
          * \post Se ha eliminado el conjunto de especies del P.I.
          */
         void borrar_conjunto ();
@@ -66,10 +66,10 @@ class cjt_especies {
         void eliminar_especie(const string& id);
 
         // Consultores
-        
+
         /** @brief Consultora que a partir de un identificador, devuelve la especie correspondiente
          * \pre Existe una especie con el identificador id en el P.I.
-         * \post El resultado es la especie con ese identificador 
+         * \post El resultado es la especie con ese identificador
          */
         especie obtener_especie(const string& id) const;
 
@@ -86,16 +86,16 @@ class cjt_especies {
         double consultar_distancia(const string id1,const string id2) const ;
 
         // Entrada / Salida
-        
+
         /** @brief Operación de escritura del conjunto de especies
-         * \pre True 
+         * \pre True
          * \post Se ha escrito por el canal de salida estándard el conjunto de especies
          */
         void imprimir_conjunto() const;
 
-        /** @brief Operación de escritura de las distancias entre especies 
+        /** @brief Operación de escritura de las distancias entre especies
          * \pre True
-         * \post Se han escrito por el canal de salida estándard las distancias entre especies 
+         * \post Se han escrito por el canal de salida estándard las distancias entre especies
          */
         void imprimir_tabla_distancias() const;
 };

@@ -1,5 +1,5 @@
 /** @file especie.cc
-    @brief Código de la clase Celula 
+    @brief Código de la clase Celula
 */
 #include "especie.hh"
 

@@ -4,7 +4,7 @@
 #include "cjt_clusters.hh"
 
 cjt_clusters::cjt_clusters() {
-    clustmap = map <string, cluster> (); 
+    clustmap = map <string, cluster> ();
     clustdist = map <string, map<string, double>> ();
 }
 

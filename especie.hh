@@ -28,7 +28,7 @@ class especie {
         /** @brief Gen de la especie */
         string gen;
 
-        /** @brief Kmeros para el cálculo de las distancias*/ 
+        /** @brief Kmeros para el cálculo de las distancias*/
         map <string, int> kmeros;
 
         /** @brief Genera los kmeros correspondientes al gen de la especie
@@ -40,7 +40,7 @@ class especie {
     public:
 
     // Constructoras
-    
+
     /** @brief Constructora
      * \pre True
      * \post El resultado es una especie nueva
@@ -54,12 +54,12 @@ class especie {
     especie(const string & id , const string & gen);
 
     // Modificadoras
-    
+
     /** @brief Modificadora del parámetro k
      *  \pre True
      *  \post El parámetro k toma el nuevo valor
      */
-    static void insertar_k(int k); 
+    static void insertar_k(int k);
 
     // Consultoras
 
