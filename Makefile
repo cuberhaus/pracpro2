@@ -6,13 +6,13 @@ html: Doxyfile
 	doxygen
 program.exe: program.o especie.o cjt_especies.o cjt_clusters.o cluster.o
 	g++ -o program.exe program.o especie.o cjt_especies.o cjt_clusters.o cluster.o
-program.o: program.cc especie.hh cjt_especies.hh 
+program.o: program.cc especie.hh cjt_especies.hh
 	g++ -c program.cc especie.hh cjt_especies.hh $(OPCIONS)
 especie.o: especie.cc especie.hh
 	g++ -c especie.cc especie.hh $(OPCIONS)
 cjt_especies.o: cjt_especies.cc especie.hh cjt_especies.hh
 	g++ -c cjt_especies.cc especie.hh cjt_especies.hh $(OPCIONS)
-cjt_clusters.o: cjt_clusters.cc cjt_clusters.hh cluster.hh BinTree.hh 
+cjt_clusters.o: cjt_clusters.cc cjt_clusters.hh cluster.hh BinTree.hh
 	g++ -c cjt_clusters.cc cluster.hh cjt_clusters.hh BinTree.hh $(OPCIONS)
 cluster.o: cluster.cc cluster.hh BinTree.hh
 	g++ -c cluster.cc cluster.hh BinTree.hh $(OPCIONS)
