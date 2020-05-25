@@ -167,8 +167,8 @@ int main() {
             clusters.imprimir_tabla_distancias();
             cout << endl;
         }
-        else if (s == "ejecuta_paso_wpgma") {
-            cout << "# ejecuta_paso_wpgma" << endl;
+        else if (s == "ejecuta_paso_clust") {
+            cout << "# ejecuta_paso_clust" << endl;
             if (clusters.size() > 1) {
                 clusters.fusiona_clusters();
                 clusters.imprimir_tabla_distancias();

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <cmath>
 #endif
 
 using namespace std;
@@ -38,6 +39,8 @@ class especie {
         void generar_kmeros();
 
     public:
+
+    //double distancia_coseno(const especie &e1, const especie &e2);
 
     // Constructoras
 

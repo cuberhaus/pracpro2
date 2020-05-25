@@ -9,10 +9,12 @@ cluster::cluster() {
 
 cluster::cluster(pair <string,double> info) {
     BinTree <pair<string,double>> c_tree (info);
+    dist = 1;
     this->c_tree = c_tree;
 }
 
-cluster::cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right) {
+cluster::cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right,int dist) {
+    this->dist = dist;
 
     BinTree <pair<string,double>> c_tree(newclust, left.c_tree, right.c_tree);
     this -> c_tree  = c_tree;

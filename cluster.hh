@@ -25,6 +25,7 @@ class cluster {
         BinTree <pair<string,double>> c_tree;
 
     public:
+        int dist;
 
         // Constructoras
 
@@ -44,7 +45,7 @@ class cluster {
          * \pre True
          * \post El resultado es la fusión de un cluster con otros dos clusters y con el identificador y la distancia del par
          */
-        cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right);
+        cluster(const pair <string, double>& newclust, const cluster &left, const cluster& right, int dist);
 
         // Entrada / Salida
 

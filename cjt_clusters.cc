@@ -76,25 +76,27 @@ void cjt_clusters::fusiona_clusters() {
     string id1 = ids_min.second.first;
     string id2 = ids_min.second.second;
     string fus;
+    int A = clustmap.at(id1).dist;
+    int B = clustmap.at(id2).dist;
     fus = ids_min.second.first + ids_min.second.second;
     clustdist[fus];
     map<string, map<string,double>>::iterator it, it2;
     for (it = clustdist.begin(); it != clustdist.end(); ++it) {
         if (fus > it->first and it->first != id1 and it->first != id2) {
-            clustdist[it->first][fus] = (clustdist.at(it->first).at(id1)+clustdist.at(it->first).at(id2)) / 2;
+            clustdist[it->first][fus] = A*(clustdist.at(it->first).at(id1)+clustdist.at(it->first).at(id2)*B) / (A+B);
         }
         else if (fus < it->first) {
             if (id1 < it->first and id2 < it->first) {
-                clustdist[fus][it->first] = (clustdist.at(id1).at(it->first) + clustdist.at(id2).at(it->first)) / 2;
+                clustdist[fus][it->first] = A*(clustdist.at(id1).at(it->first) + clustdist.at(id2).at(it->first)*B) / (A+B);
             }
             else if (id1 < it->first and id2 > it->first) {
-                clustdist[fus][it->first] = (clustdist.at(id1).at(it->first) + clustdist.at(it->first).at(id2)) / 2;
+                clustdist[fus][it->first] = A*(clustdist.at(id1).at(it->first) + clustdist.at(it->first).at(id2)*B) / (A+B);
             }
             else if (id1 > it->first and id2 < it->first) {
-                clustdist[fus][it->first] = (clustdist.at(it->first).at(id1) + clustdist.at(id2).at(it->first)) / 2;
+                clustdist[fus][it->first] = A*(clustdist.at(it->first).at(id1) + clustdist.at(id2).at(it->first)*B) / (A+B); 
             }
             else if (id1 > it->first and id2 > it->first) {
-                clustdist[fus][it->first] = (clustdist.at(it->first).at(id1) + clustdist.at(it->first).at(id2)) / 2;
+                clustdist[fus][it->first] = A*(clustdist.at(it->first).at(id1) + clustdist.at(it->first).at(id2)*B) / (A+B);
             }
         }
     }
@@ -108,7 +110,8 @@ void cjt_clusters::fusiona_clusters() {
     newclust.first = fus;
     clustdist.erase(id1);
     clustdist.erase(id2);
-    cluster clust (newclust, clustmap[id1], clustmap[id2]);
+    dist = A+B+1;
+    cluster clust (newclust, clustmap[id1], clustmap[id2],dist);
     clustmap.erase(id1);
     clustmap.erase(id2);
     clustmap[fus] = clust;
