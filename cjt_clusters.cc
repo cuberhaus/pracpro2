@@ -1,6 +1,6 @@
 /** @file cjt_clusters.cc
-    @brief Código de la clase cjt_clusters
-*/
+  @brief Código de la clase cjt_clusters
+  */
 #include "cjt_clusters.hh"
 
 cjt_clusters::cjt_clusters() {

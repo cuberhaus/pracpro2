@@ -11,17 +11,17 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-$argadd BinTree.hh
-$argadd cjt_clusters.hh
-$argadd cjt_especies.hh
-$argadd cluster.hh
-$argadd especie.hh
 $argadd cjt_clusters.cc
 $argadd cjt_especies.cc
 $argadd cluster.cc
 $argadd especie.cc
 $argadd program.cc
-edit program.cc
+$argadd BinTree.hh
+$argadd cjt_clusters.hh
+$argadd cjt_especies.hh
+$argadd cluster.hh
+$argadd especie.hh
+edit cjt_clusters.cc
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -31,7 +31,6 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-if bufexists("program.cc") | buffer program.cc | else | edit program.cc | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -41,23 +40,23 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 178 - ((41 * winheight(0) + 21) / 42)
+let s:l = 102 - ((14 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-178
-normal! 0
+102
+normal! 05|
 tabnext 1
-badd +71 BinTree.hh
-badd +1 cjt_clusters.hh
-badd +14 cjt_especies.hh
-badd +25 cluster.hh
-badd +27 especie.hh
-badd +108 cjt_clusters.cc
-badd +107 cjt_especies.cc
-badd +25 cluster.cc
-badd +1 especie.cc
-badd +1 program.cc
+badd +0 cjt_clusters.cc
+badd +0 cjt_especies.cc
+badd +0 cluster.cc
+badd +0 especie.cc
+badd +0 program.cc
+badd +0 BinTree.hh
+badd +0 cjt_clusters.hh
+badd +0 cjt_especies.hh
+badd +0 cluster.hh
+badd +0 especie.hh
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
