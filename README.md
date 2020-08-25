@@ -1,1 +1,1 @@
-# Practica Pro2 primavera 2019
+#  Pràctica de Pro2 Primavera 2020
