@@ -13,6 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: make
+    - name: make Matrix
       run: make -C ./Cpp/Matrix/
 
