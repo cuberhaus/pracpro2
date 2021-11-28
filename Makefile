@@ -18,6 +18,21 @@ cjt_clusters.o: cjt_clusters.cc cjt_clusters.hh cluster.hh BinTree.hh
 	$(CCCC) cjt_clusters.cc cluster.hh cjt_clusters.hh BinTree.hh $(OPCIONS)
 cluster.o: cluster.cc cluster.hh BinTree.hh
 	$(CCCC) cluster.cc cluster.hh BinTree.hh $(OPCIONS)
+
+# THE CODE BELOW ALSO WORKS, KEEPING THE ABOVE JUST AS AN EXAMPLE	
+#program.exe: program.o especie.o cjt_especies.o cjt_clusters.o cluster.o
+#	$(CCCO) program.exe $^
+#program.o: program.cc especie.hh cjt_especies.hh
+#	$(CCCC) $^ $(OPCIONS)
+#especie.o: especie.cc especie.hh
+#	$(CCCC) $^ $(OPCIONS)
+#cjt_especies.o: cjt_especies.cc especie.hh cjt_especies.hh
+#	$(CCCC) $^ $(OPCIONS)
+#cjt_clusters.o: cjt_clusters.cc cjt_clusters.hh cluster.hh BinTree.hh
+#	$(CCCC) $^ $(OPCIONS)
+#cluster.o: cluster.cc cluster.hh BinTree.hh
+#	$(CCCC) $^ $(OPCIONS)
+
 clean:
 	rm *.o
 	rm -r html
