@@ -13,8 +13,6 @@ void especie::generar_kmeros() {
 }
 
 especie::especie() {
-    string id;
-    string gen;
 }
 
 especie::especie(const string & id , const string & gen ) {

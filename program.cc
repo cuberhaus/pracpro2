@@ -40,23 +40,41 @@
 
 #ifndef NO_DIAGRAM
 #include <iostream>
-#include <string>
 #endif
 
 #include "especie.hh"
 #include "cjt_especies.hh"
-#include "cluster.hh"
 #include "cjt_clusters.hh"
 using namespace std;
+
+void opcions() {
+    cout << "OPCIONS: " << endl;
+    cout << "crea_especie" << endl <<
+         "obtener_gen" << endl <<
+         "distancia" << endl <<
+         "elimina_especie" << endl <<
+         "existe_especie" << endl <<
+         "lee_cjt_especies" << endl <<
+         "imprime_cjt_especies" << endl <<
+         "tabla_distancias" << endl <<
+         "inicialitza_clusters" << endl <<
+         "ejecuta_paso_wpgma" << endl <<
+         "imprime_cluster" << endl <<
+         "imprime_arbol_filogenetico" << endl <<
+         "fin" << endl;
+
+}
 
 int main() {
     string s;
     bool fin = false;
     cjt_especies c;
     int k;
+    cout << "Inserta k" << endl;
     cin >> k;
     especie::insertar_k(k);
     cjt_clusters clusters;
+    opcions();
     while (cin >> s and not fin) {
 
         if (s == "crea_especie") {
@@ -213,5 +231,6 @@ int main() {
         else if (s == "fin") {
             fin = true;
         }
+        opcions();
     }
 }

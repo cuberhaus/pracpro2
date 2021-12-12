@@ -43,7 +43,7 @@ bool cjt_especies::existe_especie(const string &id) const {
 
 void cjt_especies::insertar_especie(const especie &e) {
     espmap.insert(make_pair(e.consultar_id(),e));
-    map<string, map<string, double>>::iterator it = distmap.begin();
+    map<string, map<string, double>>::iterator it;
     for (it = distmap.begin(); it != distmap.end(); ++it) {
         if (it->first > e.consultar_id()) {
             double dist;

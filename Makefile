@@ -33,6 +33,9 @@ cluster.o: cluster.cc cluster.hh BinTree.hh
 #cluster.o: cluster.cc cluster.hh BinTree.hh
 #	$(CCCC) $^ $(OPCIONS)
 
+run:program.exe
+	./program.exe
+
 clean:
 	rm *.o
 	rm -r html
