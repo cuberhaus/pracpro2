@@ -48,21 +48,21 @@
 using namespace std;
 
 void opcions() {
-    cout << "OPCIONS: " << endl;
-    cout << "crea_especie" << endl <<
-         "obtener_gen" << endl <<
-         "distancia" << endl <<
-         "elimina_especie" << endl <<
-         "existe_especie" << endl <<
-         "lee_cjt_especies" << endl <<
-         "imprime_cjt_especies" << endl <<
-         "tabla_distancias" << endl <<
-         "inicialitza_clusters" << endl <<
-         "ejecuta_paso_wpgma" << endl <<
-         "imprime_cluster" << endl <<
-         "imprime_arbol_filogenetico" << endl <<
-         "fin" << endl;
-
+    const char *opcions = "OPCIONS:\n"
+                          "crea_especie\n"
+                          "obtener_gen\n"
+                          "distancia\n"
+                          "elimina_especie\n"
+                          "existe_especie\n"
+                          "lee_cjt_especies\n"
+                          "imprime_cjt_especies\n"
+                          "tabla_distancias\n"
+                          "inicialitza_clusters\n"
+                          "ejecuta_paso_wpgma\n"
+                          "imprime_cluster\n"
+                          "imprime_arbol_filogenetico\n"
+                          "fin";
+    cout << opcions << endl;
 }
 
 int main() {
@@ -168,7 +168,7 @@ int main() {
             }
         }
         else if (s == "imprime_cjt_especies") {
-            cout << "# imprime_cjt_especies" << endl;;
+            cout << "# imprime_cjt_especies" << endl;
             c.imprimir_conjunto();
             cout << endl;
         }
