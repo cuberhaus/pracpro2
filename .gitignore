@@ -10,3 +10,4 @@ practica.tar
 program.exe
 program.o
 *.tmp
+.idea

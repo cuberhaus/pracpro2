@@ -1,0 +1,202 @@
+\hypertarget{program_8cc_source}{}\doxysection{program.\+cc}
+\mbox{\hyperlink{program_8cc}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00041}00041 \textcolor{preprocessor}{\#ifndef NO\_DIAGRAM}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00042}00042 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00043}00043 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00045}00045 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{especie_8hh}{especie.hh}}"{}}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00046}00046 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cjt__especies_8hh}{cjt\_especies.hh}}"{}}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00047}00047 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cjt__clusters_8hh}{cjt\_clusters.hh}}"{}}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00048}00048 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00050}\mbox{\hyperlink{program_8cc_a108f1a75f7f52ad3f2830451f268cc24}{00050}} \textcolor{keywordtype}{void} \mbox{\hyperlink{program_8cc_a108f1a75f7f52ad3f2830451f268cc24}{opcions}}() \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00051}00051     cout << \textcolor{stringliteral}{"{}OPCIONS: "{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00052}00052     cout << \textcolor{stringliteral}{"{}crea\_especie"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00053}00053          \textcolor{stringliteral}{"{}obtener\_gen"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00054}00054          \textcolor{stringliteral}{"{}distancia"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00055}00055          \textcolor{stringliteral}{"{}elimina\_especie"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00056}00056          \textcolor{stringliteral}{"{}existe\_especie"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00057}00057          \textcolor{stringliteral}{"{}lee\_cjt\_especies"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00058}00058          \textcolor{stringliteral}{"{}imprime\_cjt\_especies"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00059}00059          \textcolor{stringliteral}{"{}tabla\_distancias"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00060}00060          \textcolor{stringliteral}{"{}inicialitza\_clusters"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00061}00061          \textcolor{stringliteral}{"{}ejecuta\_paso\_wpgma"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00062}00062          \textcolor{stringliteral}{"{}imprime\_cluster"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00063}00063          \textcolor{stringliteral}{"{}imprime\_arbol\_filogenetico"{}} << endl <<}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00064}00064          \textcolor{stringliteral}{"{}fin"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00066}00066 \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00068}\mbox{\hyperlink{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{00068}} \textcolor{keywordtype}{int} \mbox{\hyperlink{program_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00069}00069     \textcolor{keywordtype}{string} s;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00070}00070     \textcolor{keywordtype}{bool} fin = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00071}00071     \mbox{\hyperlink{classcjt__especies}{cjt\_especies}} c;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00072}00072     \textcolor{keywordtype}{int} k;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00073}00073     cout << \textcolor{stringliteral}{"{}Inserta k"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00074}00074     cin >> k;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00075}00075     \mbox{\hyperlink{classespecie_aac8aa5469203a4a9556318ac51f96456}{especie::insertar\_k}}(k);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00076}00076     \mbox{\hyperlink{classcjt__clusters}{cjt\_clusters}} clusters;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00077}00077     \mbox{\hyperlink{program_8cc_a108f1a75f7f52ad3f2830451f268cc24}{opcions}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00078}00078     \textcolor{keywordflow}{while} (cin >> s and not fin) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00080}00080         \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}crea\_especie"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00081}00081             \textcolor{keywordtype}{bool} existe;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00082}00082             \textcolor{keywordtype}{string} id, gen;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00083}00083             cin >> \textcolor{keywordtype}{id} >> gen;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00084}00084             cout << \textcolor{stringliteral}{"{}\# crea\_especie "{}} << \textcolor{keywordtype}{id} << \textcolor{charliteral}{' '} << gen << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00085}00085             \mbox{\hyperlink{classespecie}{especie}} e(\textcolor{keywordtype}{id},gen);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00086}00086             existe = c.\mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{existe\_especie}}(e.\mbox{\hyperlink{classespecie_a4e0b39e2a7c152fa20c5858a4bb6b3ea}{consultar\_id}}());}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00087}00087             \textcolor{keywordflow}{if} (not existe) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00088}00088                 c.\mbox{\hyperlink{classcjt__especies_a760a5da25737c5844b63b155a21e0dbc}{insertar\_especie}}(e);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00089}00089             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00090}00090             \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}ERROR: La especie "{}} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{"{} ya existe."{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00091}00091             cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00092}00092         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00093}00093         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}obtener\_gen"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00094}00094             \textcolor{keywordtype}{string} s;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00095}00095             \mbox{\hyperlink{classespecie}{especie}} e;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00096}00096             \textcolor{keywordtype}{bool} existe;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00097}00097             cin >> s;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00098}00098             cout << \textcolor{stringliteral}{"{}\# obtener\_gen "{}} << s << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00099}00099             existe = c.\mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{existe\_especie}}(s);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00100}00100             \textcolor{keywordflow}{if} (existe) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00101}00101                 e = c.\mbox{\hyperlink{classcjt__especies_a1a1aa0bfb43dcc48c52250568c48e0c5}{obtener\_especie}}(s);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00102}00102                 cout << e.\mbox{\hyperlink{classespecie_a9a87ec1c1d3b50549e4a3ea580be5633}{consultar\_gen}}() << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00103}00103             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00104}00104             \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}ERROR: La especie "{}}<< s << \textcolor{stringliteral}{"{} no existe."{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00105}00105             cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00107}00107         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00109}00109         \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}distancia"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00111}00111             \textcolor{keywordtype}{string} id1,id2;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00112}00112             \textcolor{keywordtype}{bool} existe, existe2;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00113}00113             cin >> id1 >> id2;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00114}00114             cout << \textcolor{stringliteral}{"{}\# distancia "{}} << id1 << \textcolor{charliteral}{' '} << id2 << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00115}00115             existe = c.\mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{existe\_especie}}(id1);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00116}00116             existe2 = c.\mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{existe\_especie}}(id2);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00117}00117             \textcolor{keywordflow}{if} (not existe and not existe2) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00118}00118                 cout << \textcolor{stringliteral}{"{}ERROR: La especie "{}} << id1 << \textcolor{stringliteral}{"{} y la especie "{}} << id2 << \textcolor{stringliteral}{"{} no existen."{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00119}00119             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00120}00120             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not existe) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00121}00121                 cout << \textcolor{stringliteral}{"{}ERROR: La especie "{}} << id1 << \textcolor{stringliteral}{"{} no existe."{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00122}00122             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00123}00123             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not existe2) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00125}00125                 cout << \textcolor{stringliteral}{"{}ERROR: La especie "{}} << id2  << \textcolor{stringliteral}{"{} no existe."{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00126}00126             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00127}00127             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00128}00128                 cout << c.\mbox{\hyperlink{classcjt__especies_a8e4a90d62fc2085d521bed73b39a0332}{consultar\_distancia}}(id1,id2) << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00129}00129             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00130}00130             cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00131}00131         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00134}00134         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}elimina\_especie"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00135}00135             \textcolor{keywordtype}{bool} existe;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00136}00136             \textcolor{keywordtype}{string} id;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00137}00137             cin >> id;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00138}00138             cout << \textcolor{stringliteral}{"{}\# elimina\_especie "{}} << \textcolor{keywordtype}{id} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00139}00139             existe = c.\mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{existe\_especie}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00140}00140             \textcolor{keywordflow}{if} (existe) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00141}00141                 c.\mbox{\hyperlink{classcjt__especies_a3cfb8a617d0236238a9793e6bf7c475c}{eliminar\_especie}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00142}00142             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00143}00143             \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}ERROR: La especie "{}} << \textcolor{keywordtype}{id} << \textcolor{stringliteral}{"{} no existe."{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00144}00144             cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00145}00145         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00147}00147         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}existe\_especie"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00148}00148             \textcolor{keywordtype}{string} id;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00149}00149             cin >> id;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00150}00150             cout << \textcolor{stringliteral}{"{}\# existe\_especie "{}} << \textcolor{keywordtype}{id} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00151}00151             \textcolor{keywordflow}{if} (c.\mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{existe\_especie}}(\textcolor{keywordtype}{id})) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00152}00152                 cout << \textcolor{stringliteral}{"{}SI"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00153}00153             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00154}00154             \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}NO"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00155}00155             cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00156}00156         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00158}00158         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}lee\_cjt\_especies"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00159}00159             cout << \textcolor{stringliteral}{"{}\# lee\_cjt\_especies"{}} << endl << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00160}00160             \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00161}00161             cin >> n;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00162}00162             c.\mbox{\hyperlink{classcjt__especies_a65d9816cfb742671f38d6e31309f78bd}{borrar\_conjunto}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00163}00163             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00164}00164                 \textcolor{keywordtype}{string} id, gen;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00165}00165                 cin >> \textcolor{keywordtype}{id} >> gen;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00166}00166                 \mbox{\hyperlink{classespecie}{especie}} e(\textcolor{keywordtype}{id}, gen);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00167}00167                 c.\mbox{\hyperlink{classcjt__especies_a760a5da25737c5844b63b155a21e0dbc}{insertar\_especie}}(e);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00168}00168             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00169}00169         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00170}00170         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}imprime\_cjt\_especies"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00171}00171             cout << \textcolor{stringliteral}{"{}\# imprime\_cjt\_especies"{}} << endl;;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00172}00172             c.\mbox{\hyperlink{classcjt__especies_a719283577ec3f24bec7ca59d0ed09375}{imprimir\_conjunto}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00173}00173             cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00174}00174         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00176}00176         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}tabla\_distancias"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00177}00177             cout << \textcolor{stringliteral}{"{}\# tabla\_distancias"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00178}00178             c.\mbox{\hyperlink{classcjt__especies_ab8fba19e9fb70722959b9c564d518fc7}{imprimir\_tabla\_distancias}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00179}00179             cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00180}00180         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00182}00182         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}inicializa\_clusters"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00183}00183             cout << \textcolor{stringliteral}{"{}\# inicializa\_clusters"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00184}00184             c.\mbox{\hyperlink{classcjt__especies_a87b5acf459eb12a21f876d3c37e8cd82}{inicializa\_clusters}}(clusters);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00185}00185             clusters.\mbox{\hyperlink{classcjt__clusters_a07b56ded100ab1bf37255ad38da3e7f7}{imprimir\_tabla\_distancias}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00186}00186             cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00187}00187         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00188}00188         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}ejecuta\_paso\_wpgma"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00189}00189             cout << \textcolor{stringliteral}{"{}\# ejecuta\_paso\_wpgma"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00190}00190             \textcolor{keywordflow}{if} (clusters.\mbox{\hyperlink{classcjt__clusters_a400e6d129b40f5dd8be83a19b09eb088}{size}}() > 1) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00191}00191                 clusters.\mbox{\hyperlink{classcjt__clusters_a09941885773e2096da21389da23d26e4}{fusiona\_clusters}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00192}00192                 clusters.\mbox{\hyperlink{classcjt__clusters_a07b56ded100ab1bf37255ad38da3e7f7}{imprimir\_tabla\_distancias}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00193}00193                 cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00194}00194             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00195}00195             \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}ERROR: num\_clusters <= 1"{}} << endl << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00196}00196         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00197}00197         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}imprime\_cluster"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00198}00198             \textcolor{keywordtype}{string} id;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00199}00199             cin >> id;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00200}00200             cout << \textcolor{stringliteral}{"{}\# imprime\_cluster "{}} << \textcolor{keywordtype}{id} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00202}00202             \textcolor{keywordflow}{if} (clusters.\mbox{\hyperlink{classcjt__clusters_ad1733d062bcc1a3a5e2778328ba24d18}{existe\_cluster}}(\textcolor{keywordtype}{id}))\{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00203}00203                 clusters.\mbox{\hyperlink{classcjt__clusters_a96c03b95281162ae25e29fde9636a4e9}{imprimir\_cluster}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00204}00204                 cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00205}00205                 cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00206}00206             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00207}00207             \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}ERROR: El cluster "{}}<< \textcolor{keywordtype}{id} << \textcolor{stringliteral}{"{} no existe."{}} << endl << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00208}00208         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00210}00210         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}imprime\_arbol\_filogenetico"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00211}00211             cout << \textcolor{stringliteral}{"{}\# imprime\_arbol\_filogenetico"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00212}00212             c.\mbox{\hyperlink{classcjt__especies_a87b5acf459eb12a21f876d3c37e8cd82}{inicializa\_clusters}}(clusters);}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00213}00213             \textcolor{keywordflow}{if} (clusters.\mbox{\hyperlink{classcjt__clusters_a400e6d129b40f5dd8be83a19b09eb088}{size}}() > 1) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00214}00214                 \textcolor{keywordflow}{while} (clusters.\mbox{\hyperlink{classcjt__clusters_a400e6d129b40f5dd8be83a19b09eb088}{size}}() > 1) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00215}00215                     clusters.\mbox{\hyperlink{classcjt__clusters_a09941885773e2096da21389da23d26e4}{fusiona\_clusters}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00216}00216                 \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00217}00217                 clusters.\mbox{\hyperlink{classcjt__clusters_a704794d77cf3dfde1a742f810c01535c}{imprimir\_arbol\_filogenetico}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00218}00218                 cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00219}00219                 cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00220}00220             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00221}00221             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (clusters.\mbox{\hyperlink{classcjt__clusters_a400e6d129b40f5dd8be83a19b09eb088}{size}}() == 1) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00222}00222                 clusters.\mbox{\hyperlink{classcjt__clusters_a704794d77cf3dfde1a742f810c01535c}{imprimir\_arbol\_filogenetico}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00223}00223                 cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00224}00224                 cout << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00225}00225             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00226}00226             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (clusters.\mbox{\hyperlink{classcjt__clusters_a400e6d129b40f5dd8be83a19b09eb088}{size}}() == 0) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00227}00227                 cout << \textcolor{stringliteral}{"{}ERROR: El conjunto de clusters es vacio."{}} << endl << endl;}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00228}00228             \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00229}00229         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00231}00231         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (s == \textcolor{stringliteral}{"{}fin"{}}) \{}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00232}00232             fin = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00233}00233         \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00234}00234         \mbox{\hyperlink{program_8cc_a108f1a75f7f52ad3f2830451f268cc24}{opcions}}();}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00235}00235     \}}
+\DoxyCodeLine{\Hypertarget{program_8cc_source_l00236}00236 \}}
+
+\end{DoxyCode}

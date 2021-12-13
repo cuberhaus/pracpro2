@@ -75,7 +75,7 @@ int main() {
     especie::insertar_k(k);
     cjt_clusters clusters;
     opcions();
-    while (cin >> s and not fin) {
+    while (not fin and cin >> s) {
 
         if (s == "crea_especie") {
             bool existe;
@@ -231,6 +231,6 @@ int main() {
         else if (s == "fin") {
             fin = true;
         }
-        opcions();
+        if (!fin) opcions();
     }
 }

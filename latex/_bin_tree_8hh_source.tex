@@ -1,0 +1,81 @@
+\hypertarget{_bin_tree_8hh_source}{}\doxysection{Bin\+Tree.\+hh}
+\mbox{\hyperlink{_bin_tree_8hh}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00001}00001 \textcolor{preprocessor}{\#ifndef BINTREE\_HH}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00002}00002 \textcolor{preprocessor}{\#define BINTREE\_HH}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00004}00004 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00005}00005 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00006}00006 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00008}00008 \textcolor{comment}{// A BinTree<T> implements binary trees with values of type T.}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00009}\mbox{\hyperlink{class_bin_tree}{00009}} \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keyword}{class }\mbox{\hyperlink{class_bin_tree}{BinTree}} \{}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00011}\mbox{\hyperlink{struct_bin_tree_1_1_node}{00011}}     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_bin_tree_1_1_node}{Node}} \{}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00012}\mbox{\hyperlink{struct_bin_tree_1_1_node_a9c268d4af01559e8237dbeb5bd19af91}{00012}}         T \mbox{\hyperlink{struct_bin_tree_1_1_node_a9c268d4af01559e8237dbeb5bd19af91}{x}};}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00013}\mbox{\hyperlink{struct_bin_tree_1_1_node_a265a6367635a38838e6a6366564be78d}{00013}}         shared\_ptr<Node> \mbox{\hyperlink{struct_bin_tree_1_1_node_a265a6367635a38838e6a6366564be78d}{left}};}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00014}\mbox{\hyperlink{struct_bin_tree_1_1_node_a6df770137090da60cd0376ce06893cbd}{00014}}         shared\_ptr<Node> \mbox{\hyperlink{struct_bin_tree_1_1_node_a6df770137090da60cd0376ce06893cbd}{right}};}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00016}\mbox{\hyperlink{struct_bin_tree_1_1_node_af45885e303875c018e89fa5c8b96bde0}{00016}}         \mbox{\hyperlink{struct_bin_tree_1_1_node_af45885e303875c018e89fa5c8b96bde0}{Node}} (\textcolor{keyword}{const} T\& \mbox{\hyperlink{struct_bin_tree_1_1_node_a9c268d4af01559e8237dbeb5bd19af91}{x}}, shared\_ptr<Node> \mbox{\hyperlink{struct_bin_tree_1_1_node_a265a6367635a38838e6a6366564be78d}{left}}, shared\_ptr<Node> \mbox{\hyperlink{struct_bin_tree_1_1_node_a6df770137090da60cd0376ce06893cbd}{right}})}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00017}00017         :   \mbox{\hyperlink{struct_bin_tree_1_1_node_a9c268d4af01559e8237dbeb5bd19af91}{x}}(\mbox{\hyperlink{struct_bin_tree_1_1_node_a9c268d4af01559e8237dbeb5bd19af91}{x}}), \mbox{\hyperlink{struct_bin_tree_1_1_node_a265a6367635a38838e6a6366564be78d}{left}}(\mbox{\hyperlink{struct_bin_tree_1_1_node_a265a6367635a38838e6a6366564be78d}{left}}), \mbox{\hyperlink{struct_bin_tree_1_1_node_a6df770137090da60cd0376ce06893cbd}{right}}(\mbox{\hyperlink{struct_bin_tree_1_1_node_a6df770137090da60cd0376ce06893cbd}{right}})}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00018}00018         \{   \}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00020}00020     \};}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00022}00022     \textcolor{comment}{// A tree only holds a node pointer.}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00023}\mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{00023}}     shared\_ptr<Node> \mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}};}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00025}00025     \textcolor{comment}{// Constructs a tree from a node pointer.}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00026}\mbox{\hyperlink{class_bin_tree_a1408d37d1afda12d99747d09543c15f4}{00026}}     \mbox{\hyperlink{class_bin_tree_a1408d37d1afda12d99747d09543c15f4}{BinTree}} (shared\_ptr<Node> \mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}})}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00027}00027     :   \mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}}(\mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}})}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00028}00028     \{   \}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00030}00030     \textcolor{comment}{// Notes:}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00031}00031     \textcolor{comment}{//   -\/ default operator=() is good.}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00032}00032     \textcolor{comment}{//   -\/ default destructor is good. Θ(n) where n is the number of nodes in the tree.}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00033}00033     \textcolor{comment}{//   -\/ std::swap() already works by default.}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00035}00035 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00037}00037     \textcolor{comment}{// Constructs an empty tree. Θ(1).}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00038}\mbox{\hyperlink{class_bin_tree_a47eef22d29cd023449d97c073c08e5b6}{00038}}     \mbox{\hyperlink{class_bin_tree_a47eef22d29cd023449d97c073c08e5b6}{BinTree}} ()}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00039}00039     :   \mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}}(nullptr)}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00040}00040     \{   \}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00042}00042     \textcolor{comment}{// Constructs a tree with a value x and no subtrees. Θ(1).}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00043}\mbox{\hyperlink{class_bin_tree_a1ab686e0bcf990093ff91fe71744c1a4}{00043}}     \mbox{\hyperlink{class_bin_tree_a1ab686e0bcf990093ff91fe71744c1a4}{BinTree}} (\textcolor{keyword}{const} T\& x) \{}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00044}00044         \mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}} = make\_shared<Node>(x, \textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00047}00047     \textcolor{comment}{// Constructs a tree with a value x and two subtrees left and right. Θ(1).}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00048}\mbox{\hyperlink{class_bin_tree_adb7eeff76d08130c943b36af215eb521}{00048}}     \mbox{\hyperlink{class_bin_tree_adb7eeff76d08130c943b36af215eb521}{BinTree}} (\textcolor{keyword}{const} T\& x, \textcolor{keyword}{const} \mbox{\hyperlink{class_bin_tree}{BinTree}}\& \mbox{\hyperlink{class_bin_tree_a82108db4c1b08d1f111027788c196d4e}{left}}, \textcolor{keyword}{const} \mbox{\hyperlink{class_bin_tree}{BinTree}}\& \mbox{\hyperlink{class_bin_tree_aff8e96651b27284c329667b5ad3e4d0b}{right}}) \{}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00049}00049         \mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}} = make\_shared<Node>(x, \mbox{\hyperlink{class_bin_tree_a82108db4c1b08d1f111027788c196d4e}{left}}.\mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}}, \mbox{\hyperlink{class_bin_tree_aff8e96651b27284c329667b5ad3e4d0b}{right}}.\mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}});}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00050}00050     \}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00052}00052     \textcolor{comment}{// Tells if this tree is empty. Θ(1).}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00053}\mbox{\hyperlink{class_bin_tree_a74cda259ba5c25b8ee38ed4dc33e4fad}{00053}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_bin_tree_a74cda259ba5c25b8ee38ed4dc33e4fad}{empty}} ()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00054}00054         \textcolor{keywordflow}{return} not \mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}};}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00057}00057     \textcolor{comment}{// Returns the left subtree of this tree (cannot be empty). Θ(1).}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00058}\mbox{\hyperlink{class_bin_tree_a82108db4c1b08d1f111027788c196d4e}{00058}}     \mbox{\hyperlink{class_bin_tree}{BinTree}} \mbox{\hyperlink{class_bin_tree_a82108db4c1b08d1f111027788c196d4e}{left}} ()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00059}00059         assert(not \mbox{\hyperlink{class_bin_tree_a74cda259ba5c25b8ee38ed4dc33e4fad}{empty}}());}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00060}00060         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_bin_tree_a47eef22d29cd023449d97c073c08e5b6}{BinTree}}(\mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}}-\/>left);}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00063}00063     \textcolor{comment}{// Returns the right subtree of this tree (cannot be empty). Θ(1).}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00064}\mbox{\hyperlink{class_bin_tree_aff8e96651b27284c329667b5ad3e4d0b}{00064}}     \mbox{\hyperlink{class_bin_tree}{BinTree}} \mbox{\hyperlink{class_bin_tree_aff8e96651b27284c329667b5ad3e4d0b}{right}} ()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00065}00065         assert(not \mbox{\hyperlink{class_bin_tree_a74cda259ba5c25b8ee38ed4dc33e4fad}{empty}}());}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00066}00066         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_bin_tree_a47eef22d29cd023449d97c073c08e5b6}{BinTree}}(\mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}}-\/>right);}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00069}00069     \textcolor{comment}{// Returns the value of this tree (cannot be empty). Θ(1).}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00070}\mbox{\hyperlink{class_bin_tree_aaccb0c5b6cfe3b84dfeefc58efa24cda}{00070}}     \textcolor{keyword}{const} T\& \mbox{\hyperlink{class_bin_tree_aaccb0c5b6cfe3b84dfeefc58efa24cda}{value}} ()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00071}00071         assert(not \mbox{\hyperlink{class_bin_tree_a74cda259ba5c25b8ee38ed4dc33e4fad}{empty}}());}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00072}00072         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_bin_tree_afe3647af1dda90f6ddf1deee6560fcf1}{p}}-\/>x;}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00073}00073     \}}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00074}00074 \};}
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_bin_tree_8hh_source_l00076}00076 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,109 @@
+\hypertarget{cjt__especies_8cc_source}{}\doxysection{cjt\+\_\+especies.\+cc}
+\mbox{\hyperlink{cjt__especies_8cc}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cjt__especies_8hh}{cjt\_especies.hh}}"{}}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00006}\mbox{\hyperlink{classcjt__especies_a7b7d59f2e553fd3135f6477c7ff64907}{00006}} \mbox{\hyperlink{classcjt__especies_a7b7d59f2e553fd3135f6477c7ff64907}{cjt\_especies::cjt\_especies}}() \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00007}00007     \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}} = map <string,especie>();}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00008}00008     \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}} = map <string, map <string, double >>();}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00009}00009 \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00011}\mbox{\hyperlink{classcjt__especies_a87b5acf459eb12a21f876d3c37e8cd82}{00011}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcjt__especies_a87b5acf459eb12a21f876d3c37e8cd82}{cjt\_especies::inicializa\_clusters}}(\mbox{\hyperlink{classcjt__clusters}{cjt\_clusters}} \&clusters) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00012}00012     clusters.\mbox{\hyperlink{classcjt__clusters_a41c74c62d7cf27bc30b56b00dc05b816}{borrar\_conjunto}}();}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00013}00013     map <string, map<string, double>>::iterator it1;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00014}00014     map <string,double>::iterator it2;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00015}00015     \textcolor{keywordflow}{for} (it1 = \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.begin(); it1 != \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.end(); ++it1) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00016}00016         \textcolor{keywordtype}{string} id1 = it1-\/>first;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00017}00017         clusters.\mbox{\hyperlink{classcjt__clusters_a667be5741fd81e4f3c7da9151db49f12}{insertar\_cluster}}(it1-\/>first);}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00018}00018         \textcolor{keywordflow}{for} (it2 = it1-\/>second.begin(); it2 != it1-\/>second.end(); ++it2) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00019}00019             \textcolor{keywordtype}{string} id2 = it2-\/>first;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00020}00020             \textcolor{keywordtype}{double} dist = it2-\/>second;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00021}00021             clusters.\mbox{\hyperlink{classcjt__clusters_a0520a5050bee689a01bf14d6950fd661}{insertar\_especie\_dist}}(id1,id2,dist);}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00022}00022         \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00023}00023     \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00024}00024     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.size() != 0) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00025}00025         it1 = \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.end();}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00026}00026         -\/-\/it1;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00027}00027         \textcolor{keywordtype}{double} d = -\/1;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00028}00028         \textcolor{keywordtype}{string} s;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00029}00029         clusters.\mbox{\hyperlink{classcjt__clusters_a0520a5050bee689a01bf14d6950fd661}{insertar\_especie\_dist}}(it1-\/>first, s, d);}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00031}00031 \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00033}\mbox{\hyperlink{classcjt__especies_a1a1aa0bfb43dcc48c52250568c48e0c5}{00033}} \mbox{\hyperlink{classespecie}{especie}} \mbox{\hyperlink{classcjt__especies_a1a1aa0bfb43dcc48c52250568c48e0c5}{cjt\_especies::obtener\_especie}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& \textcolor{keywordtype}{id})\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00034}00034     map <string, especie>::const\_iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00035}00035     \textcolor{keywordflow}{return} it-\/>second;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00038}\mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{00038}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classcjt__especies_a65dde2fa05614d8c0939a39a70c11e34}{cjt\_especies::existe\_especie}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&\textcolor{keywordtype}{id})\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00039}00039     map<string,especie>::const\_iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00040}00040     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00041}00041     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00044}\mbox{\hyperlink{classcjt__especies_a760a5da25737c5844b63b155a21e0dbc}{00044}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcjt__especies_a760a5da25737c5844b63b155a21e0dbc}{cjt\_especies::insertar\_especie}}(\textcolor{keyword}{const} \mbox{\hyperlink{classespecie}{especie}} \&e) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00045}00045     \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.insert(make\_pair(e.\mbox{\hyperlink{classespecie_a4e0b39e2a7c152fa20c5858a4bb6b3ea}{consultar\_id}}(),e));}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00046}00046     map<string, map<string, double>>::iterator it;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00047}00047     \textcolor{keywordflow}{for} (it = \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.begin(); it != \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.end(); ++it) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00048}00048         \textcolor{keywordflow}{if} (it-\/>first > e.\mbox{\hyperlink{classespecie_a4e0b39e2a7c152fa20c5858a4bb6b3ea}{consultar\_id}}()) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00049}00049             \textcolor{keywordtype}{double} dist;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00050}00050             dist = \mbox{\hyperlink{classespecie_a25ba45d5de5d71cf7a7233ee004b1b94}{especie::distancia}}(\mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}[it-\/>first], e);}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00051}00051             \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}[e.\mbox{\hyperlink{classespecie_a4e0b39e2a7c152fa20c5858a4bb6b3ea}{consultar\_id}}()][it-\/>first] = dist;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00052}00052         \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00053}00053         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00054}00054             \textcolor{keywordtype}{double} dist;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00055}00055             dist = \mbox{\hyperlink{classespecie_a25ba45d5de5d71cf7a7233ee004b1b94}{especie::distancia}}(\mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}[it-\/>first], e);}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00056}00056             it-\/>second[e.\mbox{\hyperlink{classespecie_a4e0b39e2a7c152fa20c5858a4bb6b3ea}{consultar\_id}}()] = dist;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00057}00057         \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00058}00058     \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00059}00059     \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}[e.\mbox{\hyperlink{classespecie_a4e0b39e2a7c152fa20c5858a4bb6b3ea}{consultar\_id}}()];}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00063}\mbox{\hyperlink{classcjt__especies_a65d9816cfb742671f38d6e31309f78bd}{00063}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcjt__especies_a65d9816cfb742671f38d6e31309f78bd}{cjt\_especies::borrar\_conjunto}}() \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00064}00064     \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.clear();}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00065}00065     \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.clear();}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00066}00066 \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00068}\mbox{\hyperlink{classcjt__especies_a8e4a90d62fc2085d521bed73b39a0332}{00068}} \textcolor{keywordtype}{double} \mbox{\hyperlink{classcjt__especies_a8e4a90d62fc2085d521bed73b39a0332}{cjt\_especies::consultar\_distancia}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} id1, \textcolor{keyword}{const} \textcolor{keywordtype}{string} id2)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00069}00069     \textcolor{keywordtype}{double} x;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00070}00070     \textcolor{keywordflow}{if} (id1 < id2) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00071}00071         x = \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.at(id1).at(id2);}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00072}00072     \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00073}00073     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00074}00074         x = \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.at(id2).at(id1);}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00075}00075     \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00076}00076     \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00077}00077 \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00079}\mbox{\hyperlink{classcjt__especies_a3cfb8a617d0236238a9793e6bf7c475c}{00079}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcjt__especies_a3cfb8a617d0236238a9793e6bf7c475c}{cjt\_especies::eliminar\_especie}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&\textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00080}00080     map <string, especie>::iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00081}00081     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.end()) \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.erase(it);}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00082}00082     \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.erase(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00083}00083     map<string, map<string, double>>::iterator it2;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00084}00084     \textcolor{keywordflow}{for} (it2 = \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.begin(); it2 != \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.end(); ++it2) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00085}00085         it2-\/>second.erase(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00087}00087 \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00089}\mbox{\hyperlink{classcjt__especies_a719283577ec3f24bec7ca59d0ed09375}{00089}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcjt__especies_a719283577ec3f24bec7ca59d0ed09375}{cjt\_especies::imprimir\_conjunto}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00090}00090     \textcolor{keywordflow}{for}(map <string, especie>::const\_iterator it = \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.begin(); it != \mbox{\hyperlink{classcjt__especies_acff68a049e610c4d7040f8fb45a753bd}{espmap}}.end(); ++it) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00091}00091         cout << it-\/>second.consultar\_id() << \textcolor{charliteral}{' '} << it-\/>second.consultar\_gen();}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00092}00092         cout << endl;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00093}00093     \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00096}\mbox{\hyperlink{classcjt__especies_ab8fba19e9fb70722959b9c564d518fc7}{00096}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcjt__especies_ab8fba19e9fb70722959b9c564d518fc7}{cjt\_especies::imprimir\_tabla\_distancias}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00097}00097     map <string, map<string, double >>::const\_iterator it1;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00098}00098     map<string,double>::const\_iterator it2;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00099}00099     \textcolor{keywordflow}{for} (it1 = \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.begin(); it1 != \mbox{\hyperlink{classcjt__especies_a0297ee4494c60e0c4d8fe3036b375586}{distmap}}.end(); ++it1) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00100}00100         cout << it1-\/>first << \textcolor{charliteral}{':'} ;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00101}00101         \textcolor{keywordflow}{for} (it2 = it1-\/>second.begin(); it2 != it1-\/>second.end(); ++it2) \{}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00102}00102             cout << \textcolor{charliteral}{' '} << it2-\/>first << \textcolor{stringliteral}{"{} ("{}} << it2-\/>second << \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00103}00103         \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00104}00104         cout << endl;}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00105}00105     \}}
+\DoxyCodeLine{\Hypertarget{cjt__especies_8cc_source_l00106}00106 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica de PRO2 - Primavera 2020 - Entrega final definitiva: Fichero Fuente BinTree.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica de PRO2 - Primavera 2020 - Entrega final definitiva<span id="projectnumber">&#160;Pol Casacuberta Gil</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BinTree.hh</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_bin_tree_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BINTREE_HH</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BINTREE_HH</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// A BinTree&lt;T&gt; implements binary trees with values of type T.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_bin_tree.html">    9</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="class_bin_tree.html">BinTree</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_bin_tree_1_1_node.html">   11</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_bin_tree_1_1_node.html">Node</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_bin_tree_1_1_node.html#a9c268d4af01559e8237dbeb5bd19af91">   12</a></span>        T <a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a9c268d4af01559e8237dbeb5bd19af91">x</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_bin_tree_1_1_node.html#a265a6367635a38838e6a6366564be78d">   13</a></span>        shared_ptr&lt;Node&gt; <a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a265a6367635a38838e6a6366564be78d">left</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_bin_tree_1_1_node.html#a6df770137090da60cd0376ce06893cbd">   14</a></span>        shared_ptr&lt;Node&gt; <a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a6df770137090da60cd0376ce06893cbd">right</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_bin_tree_1_1_node.html#af45885e303875c018e89fa5c8b96bde0">   16</a></span>        <a class="code hl_function" href="struct_bin_tree_1_1_node.html#af45885e303875c018e89fa5c8b96bde0">Node</a> (<span class="keyword">const</span> T&amp; <a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a9c268d4af01559e8237dbeb5bd19af91">x</a>, shared_ptr&lt;Node&gt; <a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a265a6367635a38838e6a6366564be78d">left</a>, shared_ptr&lt;Node&gt; <a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a6df770137090da60cd0376ce06893cbd">right</a>)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        :   <a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a9c268d4af01559e8237dbeb5bd19af91">x</a>(<a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a9c268d4af01559e8237dbeb5bd19af91">x</a>), <a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a265a6367635a38838e6a6366564be78d">left</a>(<a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a265a6367635a38838e6a6366564be78d">left</a>), <a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a6df770137090da60cd0376ce06893cbd">right</a>(<a class="code hl_variable" href="struct_bin_tree_1_1_node.html#a6df770137090da60cd0376ce06893cbd">right</a>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {   }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    };</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// A tree only holds a node pointer.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">   23</a></span>    shared_ptr&lt;Node&gt; <a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// Constructs a tree from a node pointer.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_bin_tree.html#a1408d37d1afda12d99747d09543c15f4">   26</a></span>    <a class="code hl_function" href="class_bin_tree.html#a1408d37d1afda12d99747d09543c15f4">BinTree</a> (shared_ptr&lt;Node&gt; <a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    :   <a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>(<a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {   }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Notes:</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">//   - default operator=() is good.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">//   - default destructor is good. Θ(n) where n is the number of nodes in the tree.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">//   - std::swap() already works by default.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// Constructs an empty tree. Θ(1).</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_bin_tree.html#a47eef22d29cd023449d97c073c08e5b6">   38</a></span>    <a class="code hl_function" href="class_bin_tree.html#a47eef22d29cd023449d97c073c08e5b6">BinTree</a> ()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    :   <a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>(nullptr)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {   }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// Constructs a tree with a value x and no subtrees. Θ(1).</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_bin_tree.html#a1ab686e0bcf990093ff91fe71744c1a4">   43</a></span>    <a class="code hl_function" href="class_bin_tree.html#a1ab686e0bcf990093ff91fe71744c1a4">BinTree</a> (<span class="keyword">const</span> T&amp; x) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a> = make_shared&lt;Node&gt;(x, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// Constructs a tree with a value x and two subtrees left and right. Θ(1).</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_bin_tree.html#adb7eeff76d08130c943b36af215eb521">   48</a></span>    <a class="code hl_function" href="class_bin_tree.html#adb7eeff76d08130c943b36af215eb521">BinTree</a> (<span class="keyword">const</span> T&amp; x, <span class="keyword">const</span> <a class="code hl_class" href="class_bin_tree.html">BinTree</a>&amp; <a class="code hl_function" href="class_bin_tree.html#a82108db4c1b08d1f111027788c196d4e">left</a>, <span class="keyword">const</span> <a class="code hl_class" href="class_bin_tree.html">BinTree</a>&amp; <a class="code hl_function" href="class_bin_tree.html#aff8e96651b27284c329667b5ad3e4d0b">right</a>) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a> = make_shared&lt;Node&gt;(x, <a class="code hl_function" href="class_bin_tree.html#a82108db4c1b08d1f111027788c196d4e">left</a>.<a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>, <a class="code hl_function" href="class_bin_tree.html#aff8e96651b27284c329667b5ad3e4d0b">right</a>.<a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// Tells if this tree is empty. Θ(1).</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_bin_tree.html#a74cda259ba5c25b8ee38ed4dc33e4fad">   53</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bin_tree.html#a74cda259ba5c25b8ee38ed4dc33e4fad">empty</a> ()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span> not <a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// Returns the left subtree of this tree (cannot be empty). Θ(1).</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_bin_tree.html#a82108db4c1b08d1f111027788c196d4e">   58</a></span>    <a class="code hl_class" href="class_bin_tree.html">BinTree</a> <a class="code hl_function" href="class_bin_tree.html#a82108db4c1b08d1f111027788c196d4e">left</a> ()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        assert(not <a class="code hl_function" href="class_bin_tree.html#a74cda259ba5c25b8ee38ed4dc33e4fad">empty</a>());</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="class_bin_tree.html#a47eef22d29cd023449d97c073c08e5b6">BinTree</a>(<a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>-&gt;left);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// Returns the right subtree of this tree (cannot be empty). Θ(1).</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_bin_tree.html#aff8e96651b27284c329667b5ad3e4d0b">   64</a></span>    <a class="code hl_class" href="class_bin_tree.html">BinTree</a> <a class="code hl_function" href="class_bin_tree.html#aff8e96651b27284c329667b5ad3e4d0b">right</a> ()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        assert(not <a class="code hl_function" href="class_bin_tree.html#a74cda259ba5c25b8ee38ed4dc33e4fad">empty</a>());</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="class_bin_tree.html#a47eef22d29cd023449d97c073c08e5b6">BinTree</a>(<a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>-&gt;right);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// Returns the value of this tree (cannot be empty). Θ(1).</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_bin_tree.html#aaccb0c5b6cfe3b84dfeefc58efa24cda">   70</a></span>    <span class="keyword">const</span> T&amp; <a class="code hl_function" href="class_bin_tree.html#aaccb0c5b6cfe3b84dfeefc58efa24cda">value</a> ()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        assert(not <a class="code hl_function" href="class_bin_tree.html#a74cda259ba5c25b8ee38ed4dc33e4fad">empty</a>());</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">p</a>-&gt;x;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_bin_tree_html"><div class="ttname"><a href="class_bin_tree.html">BinTree</a></div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00009">BinTree.hh:9</a></div></div>
+<div class="ttc" id="aclass_bin_tree_html_a1408d37d1afda12d99747d09543c15f4"><div class="ttname"><a href="class_bin_tree.html#a1408d37d1afda12d99747d09543c15f4">BinTree::BinTree</a></div><div class="ttdeci">BinTree(shared_ptr&lt; Node &gt; p)</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00026">BinTree.hh:26</a></div></div>
+<div class="ttc" id="aclass_bin_tree_html_a1ab686e0bcf990093ff91fe71744c1a4"><div class="ttname"><a href="class_bin_tree.html#a1ab686e0bcf990093ff91fe71744c1a4">BinTree::BinTree</a></div><div class="ttdeci">BinTree(const T &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00043">BinTree.hh:43</a></div></div>
+<div class="ttc" id="aclass_bin_tree_html_a47eef22d29cd023449d97c073c08e5b6"><div class="ttname"><a href="class_bin_tree.html#a47eef22d29cd023449d97c073c08e5b6">BinTree::BinTree</a></div><div class="ttdeci">BinTree()</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00038">BinTree.hh:38</a></div></div>
+<div class="ttc" id="aclass_bin_tree_html_a74cda259ba5c25b8ee38ed4dc33e4fad"><div class="ttname"><a href="class_bin_tree.html#a74cda259ba5c25b8ee38ed4dc33e4fad">BinTree::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00053">BinTree.hh:53</a></div></div>
+<div class="ttc" id="aclass_bin_tree_html_a82108db4c1b08d1f111027788c196d4e"><div class="ttname"><a href="class_bin_tree.html#a82108db4c1b08d1f111027788c196d4e">BinTree::left</a></div><div class="ttdeci">BinTree left() const</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00058">BinTree.hh:58</a></div></div>
+<div class="ttc" id="aclass_bin_tree_html_aaccb0c5b6cfe3b84dfeefc58efa24cda"><div class="ttname"><a href="class_bin_tree.html#aaccb0c5b6cfe3b84dfeefc58efa24cda">BinTree::value</a></div><div class="ttdeci">const T &amp; value() const</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00070">BinTree.hh:70</a></div></div>
+<div class="ttc" id="aclass_bin_tree_html_adb7eeff76d08130c943b36af215eb521"><div class="ttname"><a href="class_bin_tree.html#adb7eeff76d08130c943b36af215eb521">BinTree::BinTree</a></div><div class="ttdeci">BinTree(const T &amp;x, const BinTree &amp;left, const BinTree &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00048">BinTree.hh:48</a></div></div>
+<div class="ttc" id="aclass_bin_tree_html_afe3647af1dda90f6ddf1deee6560fcf1"><div class="ttname"><a href="class_bin_tree.html#afe3647af1dda90f6ddf1deee6560fcf1">BinTree::p</a></div><div class="ttdeci">shared_ptr&lt; Node &gt; p</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00023">BinTree.hh:23</a></div></div>
+<div class="ttc" id="aclass_bin_tree_html_aff8e96651b27284c329667b5ad3e4d0b"><div class="ttname"><a href="class_bin_tree.html#aff8e96651b27284c329667b5ad3e4d0b">BinTree::right</a></div><div class="ttdeci">BinTree right() const</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00064">BinTree.hh:64</a></div></div>
+<div class="ttc" id="astruct_bin_tree_1_1_node_html"><div class="ttname"><a href="struct_bin_tree_1_1_node.html">BinTree::Node</a></div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00011">BinTree.hh:11</a></div></div>
+<div class="ttc" id="astruct_bin_tree_1_1_node_html_a265a6367635a38838e6a6366564be78d"><div class="ttname"><a href="struct_bin_tree_1_1_node.html#a265a6367635a38838e6a6366564be78d">BinTree::Node::left</a></div><div class="ttdeci">shared_ptr&lt; Node &gt; left</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00013">BinTree.hh:13</a></div></div>
+<div class="ttc" id="astruct_bin_tree_1_1_node_html_a6df770137090da60cd0376ce06893cbd"><div class="ttname"><a href="struct_bin_tree_1_1_node.html#a6df770137090da60cd0376ce06893cbd">BinTree::Node::right</a></div><div class="ttdeci">shared_ptr&lt; Node &gt; right</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00014">BinTree.hh:14</a></div></div>
+<div class="ttc" id="astruct_bin_tree_1_1_node_html_a9c268d4af01559e8237dbeb5bd19af91"><div class="ttname"><a href="struct_bin_tree_1_1_node.html#a9c268d4af01559e8237dbeb5bd19af91">BinTree::Node::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00012">BinTree.hh:12</a></div></div>
+<div class="ttc" id="astruct_bin_tree_1_1_node_html_af45885e303875c018e89fa5c8b96bde0"><div class="ttname"><a href="struct_bin_tree_1_1_node.html#af45885e303875c018e89fa5c8b96bde0">BinTree::Node::Node</a></div><div class="ttdeci">Node(const T &amp;x, shared_ptr&lt; Node &gt; left, shared_ptr&lt; Node &gt; right)</div><div class="ttdef"><b>Definition:</b> <a href="_bin_tree_8hh_source.html#l00016">BinTree.hh:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>
