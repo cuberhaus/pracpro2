@@ -25,3 +25,49 @@ almacenar un conjunto de estos.
   Se imprimirá la estructura arborescente del clúster con los identificadores de los clústers (raíces de los subárboles) y la distancia entre cada clúster y sus hojas descendientes.
   13. _fin:_ finaliza la ejecución del programa.
 
+---
+
+## Compilación y Ejecución
+
+El proyecto incluye un `Makefile` para gestionar la compilación del código C++ (estándar C++11).
+
+Para compilar el proyecto y generar el ejecutable `program.exe`:
+```bash
+make
+```
+
+Para limpiar los archivos objeto y ejecutables generados:
+```bash
+make clean
+```
+
+Para ejecutar el programa de forma manual:
+```bash
+./program.exe
+```
+
+---
+
+## Testeo (Jocs de Prova)
+
+La carpeta `jocs_de_prova` contiene juegos de prueba para validar el correcto funcionamiento del algoritmo WPGMA y la gestión de especies.
+
+### Cómo ejecutar los tests manualmente
+
+1. **Compilar el programa**: Asegúrate de haber ejecutado `make`.
+2. **Ejecutar con redirección**: Usa los archivos de entrada (`.txt` o `.input`) y redirige la salida a un archivo temporal.
+   ```bash
+   ./program.exe < jocs_de_prova/entrada.txt > mi_salida.txt
+   ```
+3. **Comparar resultados**: Usa el comando `diff` para comparar tu salida con la salida correcta esperada.
+   ```bash
+   diff mi_salida.txt jocs_de_prova/correct.txt
+   ```
+   Si el comando no devuelve nada, significa que la salida es idéntica y el test ha pasado correctamente.
+
+### Generación de documentación
+Puedes generar la documentación técnica en HTML y LaTeX usando Doxygen:
+```bash
+make html
+```
+La documentación se generará en las carpetas `html/` y `latex/`.
