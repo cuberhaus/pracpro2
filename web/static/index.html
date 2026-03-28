@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pracpro2 — Phylogenetic Tree Builder</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Top bar -->
+    <header class="topbar">
+      <h1>pracpro2 <span class="subtitle">WPGMA Phylogenetic Tree Builder</span></h1>
+      <div class="status-bar">
+        <span :class="['status-dot', alive ? 'alive' : 'dead']"></span>
+        <span v-if="alive">k = {{ kValue }}</span>
+        <span v-else>Not initialized</span>
+      </div>
+    </header>
+
+    <!-- Init overlay -->
+    <div v-if="!alive" class="init-overlay">
+      <div class="init-card">
+        <h2>Initialize Process</h2>
+        <p>Set the k-mer length to begin.</p>
+        <form @submit.prevent="initProcess">
+          <label for="k-input">k value</label>
+          <input id="k-input" v-model.number="kInput" type="number" min="1" placeholder="e.g. 3" autofocus>
+          <button type="submit" :disabled="!kInput || kInput < 1">Start</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main layout -->
+    <div v-else class="main-layout">
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div v-for="group in commandGroups" :key="group.label" class="command-group">
+          <h3>{{ group.label }}</h3>
+          <button
+            v-for="cmd in group.commands"
+            :key="cmd.name"
+            :class="['cmd-btn', { active: selectedCommand === cmd.name }]"
+            @click="selectCommand(cmd.name)"
+          >{{ cmd.label }}</button>
+        </div>
+
+        <div class="command-group">
+          <h3>Session</h3>
+          <button class="cmd-btn danger" @click="resetProcess">Reset (new k)</button>
+        </div>
+      </nav>
+
+      <!-- Content area -->
+      <main class="content">
+        <!-- Command form -->
+        <section class="command-form">
+          <h2>{{ selectedCommandLabel }}</h2>
+
+          <form @submit.prevent="executeCommand">
+            <!-- crea_especie -->
+            <template v-if="selectedCommand === 'crea_especie'">
+              <div class="form-row">
+                <label>Species ID</label>
+                <input v-model="formData.id" placeholder="e.g. a" required>
+              </div>
+              <div class="form-row">
+                <label>Gene</label>
+                <input v-model="formData.gen" placeholder="e.g. AAAAGATGACCAGCGTAATG" required>
+              </div>
+            </template>
+
+            <!-- obtener_gen / elimina_especie / existe_especie / imprime_cluster -->
+            <template v-if="['obtener_gen','elimina_especie','existe_especie','imprime_cluster'].includes(selectedCommand)">
+              <div class="form-row">
+                <label>{{ selectedCommand === 'imprime_cluster' ? 'Cluster ID' : 'Species ID' }}</label>
+                <input v-model="formData.id" placeholder="e.g. a" required>
+              </div>
+            </template>
+
+            <!-- distancia -->
+            <template v-if="selectedCommand === 'distancia'">
+              <div class="form-row">
+                <label>Species ID 1</label>
+                <input v-model="formData.id1" placeholder="e.g. a" required>
+              </div>
+              <div class="form-row">
+                <label>Species ID 2</label>
+                <input v-model="formData.id2" placeholder="e.g. b" required>
+              </div>
+            </template>
+
+            <!-- lee_cjt_especies -->
+            <template v-if="selectedCommand === 'lee_cjt_especies'">
+              <div class="form-row">
+                <label>Species (one per line: <code>id gene</code>)</label>
+                <textarea v-model="formData.speciesText" rows="6" placeholder="a AAAAGATGACCAGCGTAATG&#10;b GCAACCTTTGTGGGCGCAGT&#10;c ACGATTTGCGTAAGCTATGT"></textarea>
+              </div>
+            </template>
+
+            <button type="submit" :disabled="loading">
+              {{ loading ? 'Running...' : 'Execute' }}
+            </button>
+          </form>
+        </section>
+
+        <!-- Output panel -->
+        <section class="output-panel">
+          <div class="output-header">
+            <h2>Output</h2>
+            <label class="toggle-raw">
+              <input type="checkbox" v-model="showRaw"> Show raw
+            </label>
+          </div>
+
+          <div v-if="loading" class="loading-spinner">Processing...</div>
+
+          <div v-else-if="lastOutput !== null" class="output-content">
+            <!-- Error display -->
+            <div v-if="isError" class="error-box">{{ lastOutput }}</div>
+
+            <!-- Distance table -->
+            <div v-else-if="distanceTable" class="table-wrapper">
+              <table class="dist-table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th v-for="id in distanceTable.ids" :key="id">{{ id }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="row in distanceTable.rows" :key="row.id">
+                    <th>{{ row.id }}</th>
+                    <td v-for="id in distanceTable.ids" :key="id"
+                        :class="{ 'self-cell': id === row.id, 'has-value': row.distances[id] != null }">
+                      {{ row.distances[id] != null ? row.distances[id].toFixed(4) : (id === row.id ? '—' : '') }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Species table -->
+            <div v-else-if="speciesTable" class="table-wrapper">
+              <table class="species-table">
+                <thead><tr><th>ID</th><th>Gene</th></tr></thead>
+                <tbody>
+                  <tr v-for="sp in speciesTable" :key="sp.id">
+                    <td class="species-id">{{ sp.id }}</td>
+                    <td class="species-gen">{{ sp.gen }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Tree visualization -->
+            <div v-else-if="treeData" class="tree-panel">
+              <div ref="treeContainer" class="tree-svg-container"></div>
+            </div>
+
+            <!-- Plain text -->
+            <div v-else class="plain-output">
+              <pre>{{ lastOutput }}</pre>
+            </div>
+
+            <!-- Raw output toggle -->
+            <div v-if="showRaw && (distanceTable || speciesTable || treeData)" class="raw-output">
+              <h4>Raw Output</h4>
+              <pre>{{ lastOutput }}</pre>
+            </div>
+          </div>
+
+          <div v-else class="empty-output">
+            Select a command and click Execute to see results.
+          </div>
+
+          <!-- History -->
+          <div v-if="history.length > 0" class="history-section">
+            <h3>History</h3>
+            <div v-for="(entry, i) in reversedHistory" :key="i" class="history-entry">
+              <div class="history-cmd">{{ entry.command }}</div>
+              <pre class="history-output" :class="{ 'history-error': entry.isError }">{{ entry.output }}</pre>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
