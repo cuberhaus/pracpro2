@@ -36,9 +36,48 @@ cluster.o: cluster.cc cluster.hh BinTree.hh
 run:program.exe
 	./program.exe
 
+# ── Web frontend ──────────────────────────────────────
+
+.PHONY: dev install-web
+
+install-web:
+	pip install -r web/requirements.txt
+
+dev: program.exe install-web
+	python3 -m uvicorn web.app:app --reload --port 8000
+
+# ── Docker ────────────────────────────────────────────
+
+.PHONY: docker-build docker-run
+
+docker-build:
+	docker build -t pracpro2 .
+
+docker-run:
+	docker run --rm -p 8000:8000 pracpro2
+	@echo ""
+	@echo "  PRO2 Phylogenetic Tree is running at:"
+	@echo "    ➜  http://localhost:8000"
+	@echo ""
+
+# ── Cleanup ───────────────────────────────────────────
+
 clean:
-	rm *.o
-	rm -r html
-	rm -r latex
-	rm *.exe
-	rm practica.tar
+	rm -f *.o *.exe practica.tar
+	rm -rf html latex
+
+# ── Help ──────────────────────────────────────────────
+
+.PHONY: help
+
+help:
+	@echo "Usage:"
+	@echo "  make program.exe    Compile the C++ program"
+	@echo "  make run            Compile and run the CLI program"
+	@echo "  make dev            Compile + start web UI on :8000"
+	@echo "  make install-web    Install Python dependencies"
+	@echo "  make docker-build   Build Docker image"
+	@echo "  make docker-run     Run Docker container on :8000"
+	@echo "  make html           Generate Doxygen docs"
+	@echo "  make practica.tar   Package submission tarball"
+	@echo "  make clean          Remove build artifacts"

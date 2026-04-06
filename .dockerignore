@@ -1,0 +1,15 @@
+html/
+latex/
+jocs_de_prova/
+*.o
+*.exe
+*.tar
+*.gch
+*.tmp
+.git/
+.gitignore
+.gitattributes
+.editorconfig
+.ycm_extra_conf.py
+.idea/
+__pycache__/
