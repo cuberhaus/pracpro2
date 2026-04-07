@@ -12,3 +12,6 @@ program.exe
 program.o
 *.tmp
 .idea
+
+# Rust
+web/backend/target/

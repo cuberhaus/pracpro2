@@ -408,3 +408,197 @@ async fn main() {
     tracing::info!("listening on 0.0.0.0:{port}");
     axum::serve(listener, app).await.expect("server error");
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use axum::body::Body;
+    use axum::http::{self, Request};
+    use http_body_util::BodyExt;
+    use tower::ServiceExt;
+
+    fn test_ctx() -> Ctx {
+        Ctx {
+            pm: Arc::new(Mutex::new(ProcessManager::new())),
+            exe_path: PathBuf::from("/nonexistent/program.exe"),
+            cwd: PathBuf::from("/tmp"),
+        }
+    }
+
+    fn test_router() -> Router {
+        Router::new()
+            .route("/api/init", post(api_init))
+            .route("/api/command", post(api_command))
+            .route("/api/read_species", post(api_read_species))
+            .route("/api/status", get(api_status))
+            .with_state(test_ctx())
+    }
+
+    async fn body_string(body: Body) -> String {
+        let bytes = body.collect().await.unwrap().to_bytes();
+        String::from_utf8(bytes.to_vec()).unwrap()
+    }
+
+    #[tokio::test]
+    async fn test_status_no_process() {
+        let app = test_router();
+        let resp = app
+            .oneshot(
+                Request::builder()
+                    .uri("/api/status")
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(resp.status(), StatusCode::OK);
+        let body = body_string(resp.into_body()).await;
+        let v: serde_json::Value = serde_json::from_str(&body).unwrap();
+        assert_eq!(v["alive"], false);
+        assert_eq!(v["k"], serde_json::Value::Null);
+    }
+
+    #[tokio::test]
+    async fn test_init_invalid_k() {
+        let app = test_router();
+        let resp = app
+            .oneshot(
+                Request::builder()
+                    .method(http::Method::POST)
+                    .uri("/api/init")
+                    .header("content-type", "application/json")
+                    .body(Body::from(r#"{"k": 0}"#))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(resp.status(), StatusCode::BAD_REQUEST);
+    }
+
+    #[tokio::test]
+    async fn test_init_negative_k() {
+        let app = test_router();
+        let resp = app
+            .oneshot(
+                Request::builder()
+                    .method(http::Method::POST)
+                    .uri("/api/init")
+                    .header("content-type", "application/json")
+                    .body(Body::from(r#"{"k": -5}"#))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(resp.status(), StatusCode::BAD_REQUEST);
+    }
+
+    #[tokio::test]
+    async fn test_command_without_init() {
+        let app = test_router();
+        let resp = app
+            .oneshot(
+                Request::builder()
+                    .method(http::Method::POST)
+                    .uri("/api/command")
+                    .header("content-type", "application/json")
+                    .body(Body::from(r#"{"command": "foo"}"#))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(resp.status(), StatusCode::BAD_REQUEST);
+        let body = body_string(resp.into_body()).await;
+        assert!(body.contains("not running"));
+    }
+
+    #[tokio::test]
+    async fn test_read_species_without_init() {
+        let app = test_router();
+        let resp = app
+            .oneshot(
+                Request::builder()
+                    .method(http::Method::POST)
+                    .uri("/api/read_species")
+                    .header("content-type", "application/json")
+                    .body(Body::from(r#"{"species": []}"#))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(resp.status(), StatusCode::BAD_REQUEST);
+    }
+
+    #[test]
+    fn test_status_response_serialization() {
+        let resp = StatusResponse {
+            alive: true,
+            k: Some(5),
+        };
+        let json = serde_json::to_value(&resp).unwrap();
+        assert_eq!(json["alive"], true);
+        assert_eq!(json["k"], 5);
+    }
+
+    #[test]
+    fn test_status_response_null_k() {
+        let resp = StatusResponse {
+            alive: false,
+            k: None,
+        };
+        let json = serde_json::to_value(&resp).unwrap();
+        assert_eq!(json["alive"], false);
+        assert!(json["k"].is_null());
+    }
+
+    #[test]
+    fn test_init_response_serialization() {
+        let resp = InitResponse {
+            status: "ok".into(),
+            k: 3,
+        };
+        let json = serde_json::to_value(&resp).unwrap();
+        assert_eq!(json["status"], "ok");
+        assert_eq!(json["k"], 3);
+    }
+
+    #[test]
+    fn test_command_response_serialization() {
+        let resp = CommandResponse {
+            output: "hello\nworld".into(),
+            lines: vec!["hello".into(), "world".into()],
+        };
+        let json = serde_json::to_value(&resp).unwrap();
+        assert_eq!(json["output"], "hello\nworld");
+        assert_eq!(json["lines"].as_array().unwrap().len(), 2);
+    }
+
+    #[test]
+    fn test_process_manager_initial_state() {
+        let pm = ProcessManager::new();
+        assert!(!pm.alive());
+        assert_eq!(pm.k_value, None);
+    }
+
+    #[test]
+    fn test_menu_lines_contains_expected() {
+        let ml = menu_lines();
+        assert!(ml.contains("fin"));
+        assert!(ml.contains("crea_especie"));
+        assert!(ml.contains("tabla_distancias"));
+        assert!(!ml.contains("nonexistent"));
+    }
+
+    #[test]
+    fn test_strip_echo() {
+        assert_eq!(strip_echo("  \nhello\nworld\n  \n"), "hello\nworld");
+        assert_eq!(strip_echo(""), "");
+        assert_eq!(strip_echo("   \n\n   "), "");
+        assert_eq!(strip_echo("single"), "single");
+        assert_eq!(strip_echo("# comment\ndata"), "data");
+    }
+}
