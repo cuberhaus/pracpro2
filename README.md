@@ -71,3 +71,43 @@ Puedes generar la documentación técnica en HTML y LaTeX usando Doxygen:
 make html
 ```
 La documentación se generará en las carpetas `html/` y `latex/`.
+
+---
+
+## Web App
+
+An interactive web frontend for the WPGMA clustering algorithm: input species with gene sequences and watch the algorithm merge clusters step by step into a dendrogram.
+
+**Stack:** Vue 3 (CDN) + D3.js dendrogram + FastAPI backend wrapping the compiled C++ engine
+
+### Quick Start
+
+```bash
+# Docker (recommended)
+docker build -t pracpro2 . && docker run -p 8000:8000 pracpro2
+# http://localhost:8000
+
+# Dev mode (requires compiled program.exe)
+make
+cd web && pip install -r requirements.txt
+uvicorn app:app --host 127.0.0.1 --port 8000 --reload
+```
+
+### Features
+
+- Add/remove species with gene sequences through an interactive form
+- Step-by-step WPGMA execution with animated D3.js dendrogram visualization
+- Distance matrix display updated after each merge step
+- Full phylogenetic tree generation from current species set
+
+### Web Structure
+
+```
+web/
+├── static/
+│   ├── index.html     # Vue 3 + D3.js single-page app
+│   ├── app.js         # Vue application logic
+│   └── style.css      # Dark theme CSS
+├── app.py             # FastAPI wrapping C++ program.exe via stdin/stdout
+└── requirements.txt
+```
