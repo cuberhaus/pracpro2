@@ -13,3 +13,4 @@ jocs_de_prova/
 .ycm_extra_conf.py
 .idea/
 __pycache__/
+web/backend/target/

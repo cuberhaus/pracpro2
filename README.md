@@ -78,7 +78,7 @@ La documentación se generará en las carpetas `html/` y `latex/`.
 
 An interactive web frontend for the WPGMA clustering algorithm: input species with gene sequences and watch the algorithm merge clusters step by step into a dendrogram.
 
-**Stack:** Vue 3 (CDN) + D3.js dendrogram + FastAPI backend wrapping the compiled C++ engine
+**Stack:** Vue 3 (CDN) + D3.js dendrogram + Rust/Axum backend wrapping the compiled C++ engine
 
 ### Quick Start
 
@@ -87,10 +87,8 @@ An interactive web frontend for the WPGMA clustering algorithm: input species wi
 docker build -t pracpro2 . && docker run -p 8000:8000 pracpro2
 # http://localhost:8000
 
-# Dev mode (requires compiled program.exe)
-make
-cd web && pip install -r requirements.txt
-uvicorn app:app --host 127.0.0.1 --port 8000 --reload
+# Dev mode (requires compiled program.exe + Rust toolchain)
+make dev    # compiles C++, then runs Axum dev server on :8000
 ```
 
 ### Features
@@ -108,6 +106,8 @@ web/
 │   ├── index.html     # Vue 3 + D3.js single-page app
 │   ├── app.js         # Vue application logic
 │   └── style.css      # Dark theme CSS
-├── app.py             # FastAPI wrapping C++ program.exe via stdin/stdout
-└── requirements.txt
+└── backend/
+    ├── Cargo.toml     # Rust dependencies (axum, tokio, tower-http, serde)
+    └── src/
+        └── main.rs    # Axum server wrapping C++ program.exe via stdin/stdout
 ```

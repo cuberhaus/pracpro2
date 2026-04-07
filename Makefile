@@ -38,13 +38,13 @@ run:program.exe
 
 # ── Web frontend ──────────────────────────────────────
 
-.PHONY: dev install-web
+.PHONY: dev build-backend
 
-install-web:
-	pip install -r web/requirements.txt
+build-backend: ## Build Rust backend (release)
+	cd web/backend && cargo build --release
 
-dev: program.exe install-web
-	python3 -m uvicorn web.app:app --reload --port 8000
+dev: program.exe ## Compile C++ and start Rust dev server on :8000
+	cd web/backend && EXE_PATH=../../program.exe STATIC_DIR=../static cargo run
 
 # ── Docker ────────────────────────────────────────────
 
@@ -74,8 +74,8 @@ help:
 	@echo "Usage:"
 	@echo "  make program.exe    Compile the C++ program"
 	@echo "  make run            Compile and run the CLI program"
-	@echo "  make dev            Compile + start web UI on :8000"
-	@echo "  make install-web    Install Python dependencies"
+	@echo "  make dev            Compile + start Rust/Axum dev server on :8000"
+	@echo "  make build-backend  Build Rust backend (release)"
 	@echo "  make docker-build   Build Docker image"
 	@echo "  make docker-run     Run Docker container on :8000"
 	@echo "  make html           Generate Doxygen docs"
