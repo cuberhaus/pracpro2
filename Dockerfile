@@ -5,7 +5,11 @@ COPY *.cc *.hh Makefile ./
 RUN make program.exe
 
 # Stage 2: Build Rust backend
-FROM rust:1.85-slim AS rust-build
+# Pinned to 1.88-slim because Sentry SDK 0.34 transitively pulls in
+# `time` 0.3.47, which requires rustc 1.88 (Phase 14 / Option A).
+# Bumping further (rust:slim) is fine but pin avoids surprise toolchain
+# bumps breaking reproducibility.
+FROM rust:1.88-slim AS rust-build
 WORKDIR /src
 RUN apt-get update && apt-get install -y pkg-config && rm -rf /var/lib/apt/lists/*
 COPY web/backend/Cargo.toml web/backend/Cargo.lock* ./

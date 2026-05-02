@@ -14,6 +14,54 @@ use tokio::process::{Child, Command};
 use tokio::sync::Mutex;
 use tower_http::cors::CorsLayer;
 use tower_http::services::ServeDir;
+use sentry_tower::NewSentryLayer;
+
+// Phase 14 (Option A) — held for the lifetime of `main()`.
+fn _init_sentry() -> Option<sentry::ClientInitGuard> {
+    let dsn = std::env::var("SENTRY_DSN").ok().filter(|s| !s.is_empty())?;
+    let environment = std::env::var("SENTRY_ENVIRONMENT")
+        .unwrap_or_else(|_| "local-dev".to_string());
+    // Mirror the Python helper's convention: default 0.1 in production,
+    // 1.0 elsewhere, when the explicit env var is unset. Keeps free-tier
+    // production deploys safe by default.
+    let default_rate: f32 = if environment == "production" { 0.1 } else { 1.0 };
+    let traces_sample_rate = std::env::var("SENTRY_TRACES_SAMPLE_RATE")
+        .ok()
+        .and_then(|v| v.parse::<f32>().ok())
+        .unwrap_or(default_rate);
+    let guard = sentry::init((
+        dsn,
+        sentry::ClientOptions {
+            release: sentry::release_name!(),
+            environment: Some(environment.into()),
+            traces_sample_rate,
+            send_default_pii: false,
+            ..Default::default()
+        },
+    ));
+    sentry::configure_scope(|s| s.set_tag("service", "pro2"));
+    Some(guard)
+}
+
+// Per-request middleware: read X-Session-Id off the incoming request and
+// stamp it on the per-request Sentry scope (created by NewSentryLayer
+// upstream). Falls through silently when the header is missing.
+async fn _session_id_middleware(
+    req: axum::extract::Request,
+    next: axum::middleware::Next,
+) -> axum::response::Response {
+    if let Some(sid) = req
+        .headers()
+        .get("X-Session-Id")
+        .and_then(|v| v.to_str().ok())
+        .map(|s| s.to_owned())
+    {
+        sentry::configure_scope(|scope| {
+            scope.set_tag("session_id", &sid);
+        });
+    }
+    next.run(req).await
+}
 
 const OPCIONS_MARKER: &str = "OPCIONS:";
 const INIT_MARKER: &str = "Inserta k";
@@ -360,7 +408,9 @@ async fn api_status(State(ctx): State<Ctx>) -> Json<StatusResponse> {
 
 #[tokio::main]
 async fn main() {
-    tracing_subscriber::fmt::init();
+    // Phase 14 (Option A) — keep the guard alive for the entire run.
+    let _sentry_guard = _init_sentry();
+    tracing_subscriber::fmt().json().init();
 
     let port: u16 = std::env::var("PORT")
         .ok()
@@ -399,6 +449,15 @@ async fn main() {
                 static_dir.join("index.html"),
             )),
         )
+        // Cross-service session correlation: read X-Session-Id from the
+        // incoming request (set by the parent page's network tap, see
+        // `PersonalPortfolio/src/lib/debug-network.ts`) and stamp it on
+        // the per-request Sentry scope so backend events join the same
+        // session as frontend / iframe events. NewSentryLayer creates a
+        // fresh hub per request so the tag doesn't leak between
+        // concurrent requests.
+        .layer(axum::middleware::from_fn(_session_id_middleware))
+        .layer(NewSentryLayer::new_from_top())
         .layer(CorsLayer::permissive());
 
     let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{port}"))
