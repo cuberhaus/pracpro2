@@ -13,7 +13,7 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
 opentelemetry = "0.31.0"
 opentelemetry_sdk = { version = "0.31.0", features = ["rt-tokio"] }
-opentelemetry-otlp = { version = "0.31.1", default-features = false, features = ["grpc-tonic", "tls-roots", "trace"] }
+opentelemetry-otlp = { version = "0.31.1", default-features = false, features = ["grpc-tonic", "tls", "tls-roots", "trace"] }
 opentelemetry-semantic-conventions = "0.31.0"
 tracing-opentelemetry = "0.32.1"
 

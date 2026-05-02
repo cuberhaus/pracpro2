@@ -65,10 +65,27 @@ Zero local containers. The entire PoC is account + env vars + Rust code.
    cd web/backend && cargo run
    # browser tab → http://localhost:8000 → click around the WPGMA UI
    ```
-6. **First trace check**: <https://ui.honeycomb.io/your-team/environments/local-dev/datasets/pracpro2>
-   should show traces within ~30 s of the first request. Click any trace
-   to see the `http_request` → `api_command` → `send_command` waterfall
-   with the wide-event fields populated.
+6. **First trace check**: <https://ui.honeycomb.io> → datasets → `pracpro2`.
+   Traces should show within ~30 s of the first request (the BatchSpanProcessor
+   has a 5 s scheduled flush; in practice it's faster on shutdown). Click
+   any trace to see the `http_request` → `api_command` → `send_command`
+   waterfall with the wide-event fields populated.
+
+   EU users: dashboard URL is <https://ui.eu1.honeycomb.io>; flip
+   `OTEL_EXPORTER_OTLP_ENDPOINT` to `https://api.eu1.honeycomb.io:443`.
+
+## Two gotchas worth flagging
+
+- **TLS is opt-in, not feature-gated.** `opentelemetry-otlp`'s `tls-roots`
+  feature compiles in TLS support but does NOT auto-wire it; you have to
+  call `.with_tls_config(ClientTlsConfig::new().with_native_roots())`
+  explicitly when the endpoint is `https://`. `observability.rs` does
+  this for you, gated on the URL scheme so `http://` local Collectors
+  still work without changes.
+- **The `:443` port is required** even though it's the HTTPS default.
+  tonic's URL parser defaults to plaintext for "implicit-port" URIs;
+  omitting `:443` causes a silent connection failure after the TLS
+  handshake never even starts.
 
 ## What gets instrumented
 

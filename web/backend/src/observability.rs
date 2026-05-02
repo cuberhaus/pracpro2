@@ -19,7 +19,8 @@
 use opentelemetry::global;
 use opentelemetry::trace::TracerProvider as _;
 use opentelemetry::KeyValue;
-use opentelemetry_otlp::SpanExporter;
+use opentelemetry_otlp::tonic_types::transport::ClientTlsConfig;
+use opentelemetry_otlp::{SpanExporter, WithTonicConfig};
 use opentelemetry_sdk::trace::SdkTracerProvider;
 use opentelemetry_sdk::Resource;
 use opentelemetry_semantic_conventions::attribute::SERVICE_NAME;
@@ -69,8 +70,22 @@ pub fn init_otel(default_service: &str) -> Option<OtelGuard> {
     let service_name =
         std::env::var("OTEL_SERVICE_NAME").unwrap_or_else(|_| default_service.to_string());
 
-    let exporter = SpanExporter::builder()
-        .with_tonic()
+    // tonic only auto-wires TLS when an explicit `ClientTlsConfig` is set on
+    // the channel — having `tls-roots` enabled in features is necessary but
+    // not sufficient. Honeycomb's gRPC endpoint is HTTPS so we always pass
+    // a native-roots config; for plain-HTTP local Collectors users can
+    // override `OTEL_EXPORTER_OTLP_ENDPOINT=http://...` and the tonic
+    // builder will skip the TLS handshake regardless.
+    let endpoint_uses_tls = endpoint
+        .as_deref()
+        .map(|e| e.starts_with("https://"))
+        .unwrap_or(false);
+
+    let mut builder = SpanExporter::builder().with_tonic();
+    if endpoint_uses_tls {
+        builder = builder.with_tls_config(ClientTlsConfig::new().with_native_roots());
+    }
+    let exporter = builder
         .build()
         .expect("failed to build OTLP gRPC exporter");
 
