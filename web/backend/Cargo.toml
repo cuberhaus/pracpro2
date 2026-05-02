@@ -11,10 +11,16 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
-# Phase 14 (Option A) — distributed tracing + breadcrumbs to shared Sentry project
-sentry = { version = "0.34", default-features = false, features = ["backtrace", "contexts", "panic", "reqwest", "rustls"] }
-sentry-tower = { version = "0.34", features = ["http"] }
-sentry-tracing = "0.34"
+# Phase 14 (Option A) — distributed tracing + breadcrumbs to shared Sentry project.
+# Pinned to 0.36 (minimum version that supports axum 0.8) — 0.34 / 0.35 ship a
+# `SentryLayer` whose `Layer<S>` impl requires `Request: Sync`, but axum 0.8's
+# `Body` is `UnsyncBoxBody` (no `Sync`), so the `.layer(NewSentryLayer::...)`
+# call below fails to compile against axum 0.8. sentry-tower 0.36 PR #721
+# loosened the bound: "Make SentryLayer and SentryService `Sync` if request
+# isn't". The three crates must stay version-locked (released in lockstep).
+sentry = { version = "0.36", default-features = false, features = ["backtrace", "contexts", "panic", "reqwest", "rustls"] }
+sentry-tower = { version = "0.36", features = ["http"] }
+sentry-tracing = "0.36"
 
 [dev-dependencies]
 tower = { version = "0.5", features = ["util"] }
