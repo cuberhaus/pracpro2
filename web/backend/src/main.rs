@@ -14,53 +14,34 @@ use tokio::process::{Child, Command};
 use tokio::sync::Mutex;
 use tower_http::cors::CorsLayer;
 use tower_http::services::ServeDir;
-use sentry_tower::NewSentryLayer;
+use tracing::Instrument;
 
-// Phase 14 (Option A) — held for the lifetime of `main()`.
-fn _init_sentry() -> Option<sentry::ClientInitGuard> {
-    let dsn = std::env::var("SENTRY_DSN").ok().filter(|s| !s.is_empty())?;
-    let environment = std::env::var("SENTRY_ENVIRONMENT")
-        .unwrap_or_else(|_| "local-dev".to_string());
-    // Mirror the Python helper's convention: default 0.1 in production,
-    // 1.0 elsewhere, when the explicit env var is unset. Keeps free-tier
-    // production deploys safe by default.
-    let default_rate: f32 = if environment == "production" { 0.1 } else { 1.0 };
-    let traces_sample_rate = std::env::var("SENTRY_TRACES_SAMPLE_RATE")
-        .ok()
-        .and_then(|v| v.parse::<f32>().ok())
-        .unwrap_or(default_rate);
-    let guard = sentry::init((
-        dsn,
-        sentry::ClientOptions {
-            release: sentry::release_name!(),
-            environment: Some(environment.into()),
-            traces_sample_rate,
-            send_default_pii: false,
-            ..Default::default()
-        },
-    ));
-    sentry::configure_scope(|s| s.set_tag("service", "pro2"));
-    Some(guard)
-}
+mod observability;
 
-// Per-request middleware: read X-Session-Id off the incoming request and
-// stamp it on the per-request Sentry scope (created by NewSentryLayer
-// upstream). Falls through silently when the header is missing.
-async fn _session_id_middleware(
+// Per-request middleware: opens an `http_request` span with `session.id`
+// declared so the field is recordable, then runs the inner handler chain
+// inside that span via `Instrument`. Every handler span downstream becomes
+// a child of this one, so Honeycomb sees one trace per request rooted at
+// the HTTP entry point.
+async fn session_id_middleware(
     req: axum::extract::Request,
     next: axum::middleware::Next,
 ) -> axum::response::Response {
-    if let Some(sid) = req
+    let session_id = req
         .headers()
         .get("X-Session-Id")
         .and_then(|v| v.to_str().ok())
-        .map(|s| s.to_owned())
-    {
-        sentry::configure_scope(|scope| {
-            scope.set_tag("session_id", &sid);
-        });
-    }
-    next.run(req).await
+        .unwrap_or("")
+        .to_owned();
+    let method = req.method().clone();
+    let uri = req.uri().clone();
+    let span = tracing::info_span!(
+        "http_request",
+        "session.id" = %session_id,
+        "http.method" = %method,
+        "http.target" = %uri.path(),
+    );
+    next.run(req).instrument(span).await
 }
 
 const OPCIONS_MARKER: &str = "OPCIONS:";
@@ -110,6 +91,7 @@ impl ProcessManager {
             .unwrap_or(false)
     }
 
+    #[tracing::instrument(skip_all, fields(child.k = k, child.pid = tracing::field::Empty))]
     async fn start(&mut self, k: i32, exe_path: &PathBuf, cwd: &PathBuf) -> Result<(), String> {
         self.stop().await;
         self.k_value = Some(k);
@@ -121,7 +103,14 @@ impl ProcessManager {
             .stderr(std::process::Stdio::null())
             .current_dir(cwd)
             .spawn()
-            .map_err(|e| format!("Failed to start process: {e}"))?;
+            .map_err(|e| {
+                tracing::error!(error.kind = "spawn", error.message = %e, "child spawn failed");
+                format!("Failed to start process: {e}")
+            })?;
+
+        if let Some(pid) = child.id() {
+            tracing::Span::current().record("child.pid", pid);
+        }
 
         let stdout = child.stdout.take().ok_or("No stdout")?;
         let stdin = child.stdin.take().ok_or("No stdin")?;
@@ -155,8 +144,21 @@ impl ProcessManager {
         self.stdin = None;
     }
 
+    #[tracing::instrument(
+        skip_all,
+        fields(
+            child.command = command,
+            child.argv_len = args.len(),
+            child.input_bytes = tracing::field::Empty,
+            child.output_bytes = tracing::field::Empty,
+            child.lines = tracing::field::Empty,
+            child.elapsed_ms = tracing::field::Empty,
+        )
+    )]
     async fn send_command(&mut self, command: &str, args: &[String]) -> Result<String, String> {
+        let span = tracing::Span::current();
         if !self.alive() {
+            tracing::error!(error.kind = "process_dead", "child not running");
             return Err("Process not running. Call POST /api/init first.".into());
         }
 
@@ -175,10 +177,20 @@ impl ProcessManager {
             format!("{command} {}\n", args.join(" "))
         };
 
+        span.record("child.input_bytes", input.len());
+
+        let start = std::time::Instant::now();
         self.drain_buffer().await;
         self.send_raw(&input).await;
         let raw = self.collect_until_opcions().await;
-        Ok(strip_echo(&raw))
+        let elapsed_ms = start.elapsed().as_millis() as u64;
+        let stripped = strip_echo(&raw);
+
+        span.record("child.output_bytes", stripped.len());
+        span.record("child.lines", stripped.lines().count());
+        span.record("child.elapsed_ms", elapsed_ms);
+
+        Ok(stripped)
     }
 
     async fn send_raw_and_collect(&mut self, text: &str) -> String {
@@ -320,63 +332,111 @@ impl IntoResponse for AppError {
     }
 }
 
+#[tracing::instrument(
+    skip_all,
+    fields(
+        request.k = req.k,
+        process.restarted = tracing::field::Empty,
+        init.outcome = tracing::field::Empty,
+    )
+)]
 async fn api_init(
     State(ctx): State<Ctx>,
     Json(req): Json<InitRequest>,
 ) -> Result<Json<InitResponse>, AppError> {
+    let span = tracing::Span::current();
     if req.k < 1 {
+        span.record("init.outcome", "invalid_k");
+        tracing::error!(error.kind = "validation", error.message = "k must be >= 1");
         return Err(AppError(StatusCode::BAD_REQUEST, "k must be >= 1".into()));
     }
     let mut pm = ctx.pm.lock().await;
-    pm.start(req.k, &ctx.exe_path, &ctx.cwd)
-        .await
-        .map_err(|e| AppError(StatusCode::INTERNAL_SERVER_ERROR, e))?;
+    span.record("process.restarted", pm.alive());
+    pm.start(req.k, &ctx.exe_path, &ctx.cwd).await.map_err(|e| {
+        span.record("init.outcome", "spawn_failed");
+        tracing::error!(error.kind = "spawn", error.message = %e);
+        AppError(StatusCode::INTERNAL_SERVER_ERROR, e)
+    })?;
+    span.record("init.outcome", "ok");
     Ok(Json(InitResponse {
         status: "ok".into(),
         k: req.k,
     }))
 }
 
+#[tracing::instrument(
+    skip_all,
+    fields(
+        command.name = tracing::field::Empty,
+        command.argv_len = req.args.len(),
+        command.outcome = tracing::field::Empty,
+        command.elapsed_ms = tracing::field::Empty,
+    )
+)]
 async fn api_command(
     State(ctx): State<Ctx>,
     Json(req): Json<CommandRequest>,
 ) -> Result<Json<CommandResponse>, AppError> {
+    let span = tracing::Span::current();
+    let cmd = req.command.trim().to_string();
+    span.record("command.name", cmd.as_str());
+
+    let start = std::time::Instant::now();
     let mut pm = ctx.pm.lock().await;
     if !pm.alive() {
+        span.record("command.outcome", "process_dead");
+        span.record("command.elapsed_ms", start.elapsed().as_millis() as u64);
+        tracing::error!(error.kind = "process_dead", "child not running");
         return Err(AppError(
             StatusCode::BAD_REQUEST,
             "Process not running. Call POST /api/init first.".into(),
         ));
     }
 
-    let cmd = req.command.trim().to_string();
     if cmd == "fin" {
         pm.stop().await;
+        span.record("command.outcome", "fin");
+        span.record("command.elapsed_ms", start.elapsed().as_millis() as u64);
         return Ok(Json(CommandResponse {
             output: "Process terminated.".into(),
             lines: vec![],
         }));
     }
 
-    let output = pm
-        .send_command(&cmd, &req.args)
-        .await
-        .map_err(|e| AppError(StatusCode::BAD_REQUEST, e))?;
+    let output = pm.send_command(&cmd, &req.args).await.map_err(|e| {
+        span.record("command.outcome", "send_failed");
+        span.record("command.elapsed_ms", start.elapsed().as_millis() as u64);
+        tracing::error!(error.kind = "send_failed", error.message = %e);
+        AppError(StatusCode::BAD_REQUEST, e)
+    })?;
 
     let lines: Vec<String> = output
         .lines()
         .filter(|l| !l.trim().is_empty())
         .map(String::from)
         .collect();
+    span.record("command.outcome", "ok");
+    span.record("command.elapsed_ms", start.elapsed().as_millis() as u64);
     Ok(Json(CommandResponse { output, lines }))
 }
 
+#[tracing::instrument(
+    skip_all,
+    fields(
+        payload.species_parsed = req.species.len(),
+        payload.bytes = tracing::field::Empty,
+        parse.outcome = tracing::field::Empty,
+    )
+)]
 async fn api_read_species(
     State(ctx): State<Ctx>,
     Json(req): Json<ReadSpeciesRequest>,
 ) -> Result<Json<CommandResponse>, AppError> {
+    let span = tracing::Span::current();
     let mut pm = ctx.pm.lock().await;
     if !pm.alive() {
+        span.record("parse.outcome", "process_dead");
+        tracing::error!(error.kind = "process_dead", "child not running");
         return Err(AppError(
             StatusCode::BAD_REQUEST,
             "Process not running. Call POST /api/init first.".into(),
@@ -388,6 +448,7 @@ async fn api_read_species(
     for sp in &req.species {
         raw_input.push_str(&format!("{} {}\n", sp.id, sp.gen));
     }
+    span.record("payload.bytes", raw_input.len());
 
     let output = pm.send_raw_and_collect(&raw_input).await;
     let lines: Vec<String> = output
@@ -395,22 +456,32 @@ async fn api_read_species(
         .filter(|l| !l.trim().is_empty())
         .map(String::from)
         .collect();
+    span.record("parse.outcome", "ok");
     Ok(Json(CommandResponse { output, lines }))
 }
 
+#[tracing::instrument(
+    skip_all,
+    fields(
+        process.alive = tracing::field::Empty,
+        process.k = tracing::field::Empty,
+    )
+)]
 async fn api_status(State(ctx): State<Ctx>) -> Json<StatusResponse> {
     let pm = ctx.pm.lock().await;
-    Json(StatusResponse {
-        alive: pm.alive(),
-        k: pm.k_value,
-    })
+    let alive = pm.alive();
+    let k = pm.k_value;
+    let span = tracing::Span::current();
+    span.record("process.alive", alive);
+    if let Some(k_val) = k {
+        span.record("process.k", k_val);
+    }
+    Json(StatusResponse { alive, k })
 }
 
 #[tokio::main]
 async fn main() {
-    // Phase 14 (Option A) — keep the guard alive for the entire run.
-    let _sentry_guard = _init_sentry();
-    tracing_subscriber::fmt().json().init();
+    let _otel = observability::init_otel("pracpro2");
 
     let port: u16 = std::env::var("PORT")
         .ok()
@@ -449,15 +520,7 @@ async fn main() {
                 static_dir.join("index.html"),
             )),
         )
-        // Cross-service session correlation: read X-Session-Id from the
-        // incoming request (set by the parent page's network tap, see
-        // `PersonalPortfolio/src/lib/debug-network.ts`) and stamp it on
-        // the per-request Sentry scope so backend events join the same
-        // session as frontend / iframe events. NewSentryLayer creates a
-        // fresh hub per request so the tag doesn't leak between
-        // concurrent requests.
-        .layer(axum::middleware::from_fn(_session_id_middleware))
-        .layer(NewSentryLayer::new_from_top())
+        .layer(axum::middleware::from_fn(session_id_middleware))
         .layer(CorsLayer::permissive());
 
     let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{port}"))

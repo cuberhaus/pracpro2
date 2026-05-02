@@ -1,0 +1,2 @@
+# Honeycomb ingest keys are real secrets; only the .example is safe to commit.
+.env.honeycomb
