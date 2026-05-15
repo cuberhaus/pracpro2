@@ -1,0 +1,36 @@
+# Weekly Dependabot scans against master. Existing test.yml + Docs.yml +
+# c-cpp.yml CI gate each PR. Major-version bumps ignored — those need
+# focused review.
+
+version: 2
+updates:
+  - package-ecosystem: cargo
+    directory: /web/backend
+    target-branch: master
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
+    commit-message:
+      prefix: chore(deps)
+      include: scope
+    labels:
+      - dependencies
+
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: master
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: chore(ci)
+      include: scope
+    labels:
+      - dependencies
+      - ci
