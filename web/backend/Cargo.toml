@@ -19,7 +19,7 @@ tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
 # loosened the bound: "Make SentryLayer and SentryService `Sync` if request
 # isn't". The three crates must stay version-locked (released in lockstep).
 sentry = { version = "0.36", default-features = false, features = ["backtrace", "contexts", "panic", "reqwest", "rustls"] }
-sentry-tower = { version = "0.36", features = ["http"] }
+sentry-tower = { version = "0.49", features = ["http"] }
 sentry-tracing = "0.36"
 
 [dev-dependencies]
