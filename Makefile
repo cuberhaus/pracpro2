@@ -38,10 +38,16 @@ run:program.exe
 
 # ── Web frontend ──────────────────────────────────────
 
-.PHONY: dev build-backend
+.PHONY: dev build-backend web-test web-check
 
 build-backend: ## Build Rust backend (release)
 	cd web/backend && cargo build --release
+
+web-test: ## Run Rust backend tests
+	cd web/backend && cargo test --verbose
+
+web-check: ## Type-check Rust backend
+	cd web/backend && cargo check --all-targets
 
 dev: program.exe ## Compile C++ and start Rust dev server on :8000
 	cd web/backend && EXE_PATH=../../program.exe STATIC_DIR=../static cargo run
@@ -76,6 +82,8 @@ help:
 	@echo "  make run            Compile and run the CLI program"
 	@echo "  make dev            Compile + start Rust/Axum dev server on :8000"
 	@echo "  make build-backend  Build Rust backend (release)"
+	@echo "  make web-test       Run Rust backend tests"
+	@echo "  make web-check      Type-check Rust backend"
 	@echo "  make docker-build   Build Docker image"
 	@echo "  make docker-run     Run Docker container on :8000"
 	@echo "  make html           Generate Doxygen docs"
