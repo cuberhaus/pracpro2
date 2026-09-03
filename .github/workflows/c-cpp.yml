@@ -3,8 +3,24 @@ name: C/C++ CI
 on:
   push:
     branches: [ master ]
+    paths:
+      - '**.cc'
+      - '**.hh'
+      - BinTree.hh
+      - Makefile
+      - .github/workflows/c-cpp.yml
   pull_request:
     branches: [ master ]
+    paths:
+      - '**.cc'
+      - '**.hh'
+      - BinTree.hh
+      - Makefile
+      - .github/workflows/c-cpp.yml
+
+concurrency:
+  group: c-cpp-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -12,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: make
       run: make
 
